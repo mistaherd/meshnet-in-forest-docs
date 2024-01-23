@@ -1,0 +1,108 @@
+\documentclass[11pt]{report}
+\usepackage[a4paper,bottom=3.0cm]{geometry} % Adjust margins as needed
+
+\usepackage{subcaption}
+\usepackage[table,xcdraw]{xcolor}
+% Packages for document formatting
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{multicol}
+\usepackage{placeins}
+\usepackage{makeidx}
+% \usepackage{cite}
+\usepackage{gensymb}
+\usepackage{float}
+\usepackage[english]{babel}
+\usepackage[nottoc]{tocbibind}
+\usepackage{tabularx}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{lipsum}
+% \graphicspath{/Users/User/Documents/latexfilesFYP/Images}
+\definecolor{light-gray}{gray}{0.92}
+\definecolor{mainColor}{RGB}{211, 47, 47} % some dark red
+
+\lstdefinestyle{mystyle}{
+  language=Python,        % Specify the language (e.g., Python)
+  keywordstyle=\color{blue},   % Color for keywords
+  commentstyle=\color{green},  % Color for comments
+  basicstyle=\ttfamily,   % Use a monospace font
+  numbers=left,           % Add line numbers to the left
+  numberstyle=\tiny\color{black}, % Style for line numbers
+  breaklines=true,        % Allow line breaks
+  frame=single,           % Add a frame around the code
+  tabsize=4               % Set the tab size
+keywordstyle=\color{BurntOrange}\bfseries,
+}
+% Define page margins
+\geometry{margin=1in}
+
+\usepackage{natbib}
+% Title and author information
+% C:\Users\User\Documents\latexfilesFYP\Images
+
+
+\begin{document}
+\input{Chapters/cover.tex}
+
+\newpage
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+\newpage
+\begin{abstract}
+  \lipsum[1-3]
+\end{abstract}
+\onehalfspacing
+\chapter{Introduction}
+\lipsum[1-3]
+% \input{Chapters/chpIntro/chpIntro-Intro.tex}
+% \input{Chapters/chpIntro/chpIntro-Motive.tex}
+% \input{Chapters/chpIntro/chpIntro-History.tex}		%	Done
+% \input{Chapters/chpIntro/chpIntro-Limitations.tex}	%	30% complete (H)
+% \input{Chapters/chpIntro/chpIntro-Overview.tex} % Include your introduction content from a separate file
+
+\chapter{Literature Review}
+\input{Chapters/Literature_Review.tex}
+
+\chapter{Methodology}
+\input{Chapters/Methodology.tex} % Include your methodology content from a separate file
+
+\chapter{Results}
+\lipsum[1-3]
+%\input{chapters/results.tex} % Include your results content from a separate file
+
+\chapter{Discussion}
+\lipsum[1-3]
+%\input{chapters/discussion.tex} % Include your discussion content from a separate file
+
+\chapter{Conclusion \& Future Work }
+\lipsum[1-3]
+%\input{chapters/conclusion.tex} % Include your conclusion content from a separate file
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{ieeetr}
+
+\bibliography{References.bib}
+
+\appendix
+\chapter{Appendix A}
+\FloatBarrier
+\chapter{Python Scripts}
+\label{appPythonScripts}
+
+\FloatBarrier
+\chapter{Bash scripts}
+\label{appBashScripts}
+
+\clearpage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+\end{document}

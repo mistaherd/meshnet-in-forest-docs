@@ -1,0 +1,468 @@
+In this project we need to have data to transmit firstly let's describe what we want our network to have:
+\begin{enumerate}
+	\item we want our mesh network to transmit  data for  example  temperature, humidity and  light and camera
+	\item I want there to  be data read every hour  and  stored  as a CSV file  the image file  will depend on the module I pick
+	\item I want to have a  motion to  detect  any animal that passes  the  node 
+\end{enumerate}
+the following is  a  rough circuit diagram  for the project:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/block_diagram_for_mesh_device.png}
+	\caption{Rough circuit diagram for project}
+	\label{Rough circuit diagram for project}
+\end{figure}
+firstly let's establish the following:
+\begin{enumerate}
+	\item I can't use  PCB due to  the ordering process taking too long to come due to the  time given  to me 
+	\item using any  type of board like wire wrap  would take too long and is  outside of  the  goals of this project
+	\item This leaves with  a  choice of either the  Arduino or pi
+\end{enumerate}
+
+
+\subsection{Sensor consideration}
+In this section, we will discuss  the process of thinking considering each section of the sensors
+\subsubsection{Temperature \& Humidity sensor}
+In our consideration for  this  sensor we can establish that we want our sensor to work in the following  conditions:
+\begin{enumerate}
+	\item our mesh node will be outside
+	\item Our device is in Ireland		\item Our device is in a forest
+\end{enumerate}
+From that knowledge, I researched the  temperature range in Ireland,
+
+
+According to  Met eireann\cite{Eirrean}, we get the following table which  the highest temperature in a  Shaded
+\begin{table}[h!]
+	\begin{tabular}{ | c | c | c | }
+		\hline
+		Highest Shaded Air (°C) & Station & Date \\ \hline
+		18.5°C & Dublin (Glasnevin) & 10th 1998 \\ \hline
+		18.1°C & Dublin (Phoenix Park) & 23rd 1891 \\ \hline
+		23.6°C & Dublin (Trinity College) & 28th 1965 \\ \hline
+		25.8°C & Donegal (Glenties) & 26th 1984 \\ \hline
+		28.4°C & Kerry (Ardfert Liscahane) & 31st 1997 \\ \hline
+		33.3°C & Kilkenny (Kilkenny Castle) & 26th 1887 \\ \hline
+		33.0°C & Dublin (Phoenix Park) & 18th 2022 \\ \hline
+		31.7°C & Carlow (Oak Park) & 12th 2022 \\ \hline
+		29.1°C & Kildare (Clongowes Wood College) & 1st 1906 \\ \hline
+		25.2°C & Kildare (Clongowes Wood College) & 3rd 1908 \\ \hline
+		20.1°C & Kerry (Dooks) & 1st 2015 \\ \hline
+		18.1°C & Dublin (Peamount) & 2nd 1948 \\ \hline
+		\end{tabular}
+		\caption{Highest shader air Met Eireann(13$^{th}$ June 2023)}
+		\label{Highest shader air Met eirrean}
+	\end{table}
+
+According to the table, the highest temperature is 33.3  
+now to look at the  other  extreme for the Lowest temperature:
+	\begin{table}[h!]
+		\begin{tabular}{ | c | c | c | }
+		\hline
+		Lowest Shaded Air (°C) & Station & Date \\ \hline
+		-19.1°C & Sligo (Markree) & 16th 1881 \\ \hline
+		-17.8°C & Longford (Mostrim) & 7th 1895 \\ \hline
+		-17.2°C & Sligo (Markree) & 3rd 1947 \\ \hline
+		-7.7°C & Sligo (Markree) & 15th 1892 \\ \hline
+		-5.6°C & Donegal (Glenties) & 4th 1979 \\ \hline
+		-3.3°C & Offaly (Clonsast) & 1st 1962 \\ \hline
+		-0.3°C & Longford (Mostrim) & 8th 1889 \\ \hline
+		-2.7°C & Wicklow (Rathdrum) & 30th 1964 \\ \hline
+		-3.5°C & Offaly (Clonsast) & 8th 1972 \\ \hline
+		-8.3°C & Sligo (Markree) & 31st 1926 \\ \hline
+		-11.5°C & Wexford (Clonroche) & 29th 2010 \\ \hline
+		-17.5°C & Mayo (Straide) & 25th 2010 \\ \hline
+		\end{tabular}
+	\caption{Lowest shader air Met Eireann(13$^{th}$ June 2023)}
+	\label{Lowest shader air Met eirrean}	
+	\end{table}
+According to the table above the lowest temp is -19.1
+In consideration for where the project our condition was a range of -19.1\textdegree C to 33.3\textdegree C.
+I also  looked  at  humdity this  referes to the amount of water vaper in the  air . from  met eirrean \cite{eirrean2}
+got this  table:
+\begin{table}[h!]
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\space & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec & Year %14
+		\hline
+		Mean at 0900UTC &87.0 &86.4&84.0&79.5&76.9&76.7&78.5&81.0&83.4&85.5&88.5&88.0&83.0
+		Mean at 1500UTC &80.6&75.7&71.0&68.3&68.0&68.3&69.0&69.3&71.5&75.1&80.3&83.1&73.3
+	\end{tabular}
+	\caption{Realtive Humidity(\%) according to met eirrean}
+	\label{Realtive Humidity according to met eirrean}
+\end{table}
+the ranges are 68.3\% to 88 \% So with these  conserdations here are  the  diffrent components:
+
+\begin{table}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/tempssenorscompared.png}
+	\caption{Comparing of temperature sensors}
+	\label{Comparing of temperature sensors}
+\end{table}
+After this, I limited this down to two sensors DHT22 and DHT11. The  following are the advantages and disadvantages of the DHT22 and DHT11:
+\begin{table}[h!]
+	\centering
+	\scalebox{0.8}{\begin{tabular}{|c|c|c|}
+	\hline
+		Device & Advantages & Disadvantages  \\
+		\hline
+		\hline
+		DHT22 & good accuracy has temp and humidity, falls in our temp range & sample period 2 seconds \\
+		\hline
+		DHT11 & OK voltage,better sample period & draws a lot of current , and our of range \\
+	\hline
+	\end{tabular}}
+	\caption{Comparing DHT22 and DHT11}
+	\label{Compareing DHT22 and DHT11}
+
+\end{table}
+So in conclusion I choose DHT22 which is a  Digital output. See a wiring diagram below
+This will have an Interface of the following:
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{Images/InterfaceforDHT22.png}
+		\caption{Interface for DHT22}
+		\label{Interface for DHT22}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{Images/schematicforDHT22.png}
+		\caption{Schematic for DHT22}
+		\label{Sychematic for DHT22 revised}
+	\end{subfigure}
+\end{figure}
+From above we see our schematic, DHT22 connections are the following:
+\begin{itemize}
+	\item VDD is connected to 5v of the pi
+	\item the Data pin is connected to GPIO 3
+	\item Gnd pin  of the  pi is  connected to the ground  of DHT22 
+
+\end{itemize}
+\cite{sparkfun} The following is the  \href{https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf}{link} to the datasheet of this  module
+\newpage
+\subsubsection{Light sensor}
+In this section, we want to consider the following:
+\begin{enumerate}
+	\item What region are we in 
+	\item What light levels do we  expect in this  country
+	\item What sensor  will  accommodate this  range
+\end{enumerate}
+For this sensor we also must consider the outside aspect of the  project  i found this table on \cite{wiki_2023}
+	\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|l|}
+	\hline
+		Imminence & Example \\ \hline
+		**0.002 lux** & Moonless clear night sky \\ \hline
+		**0.2 lux** & Design minimum for emergency lighting (AS2293). \\ \hline
+		**0.27 \& 1 lux** & Full moon on a clear night \\ \hline
+		**3.4 lux** & Dark limit of civil twilight under a clear sky \\ \hline
+		**50 lux** & Family living room \\ \hline
+		**80 lux** & Hallway/toilet \\ \hline
+		**100 lux** & Very dark overcast day \\ \hline
+		**300 to 500 lux** & Sunrise or Sunset on a clear day. Well-lit office area. \\ \hline
+		**1,000 lux** & Overcast day; typical TV studio lighting \\ \hline
+		**10,000 to 25,000 lux** & Full daylight (not direct sun) \\ \hline
+		**32,000 to 130,000 lux** & Direct sunlight \\ \hline
+	\end{tabular}
+	\caption{Illuminates values}
+	\label{Illuminates values}
+\end{table}
+	From  above  we want our sensor to be 0.002 to 25000 lux ideally, with that in mind  here are the components I found  through research:
+	\begin{table}[h!]
+	\small
+	\centering
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+		Modules & Voltage Range & Analogue /Digital Outputs & illumination range & Current rating \\ 
+		\hline
+		LM393 with GL5528 & 3.3v to 5v & Analogue & 0 lux to 100lux & 250nA \\ 
+		\hline
+		DFR0026 & 3.3v to 5v & Analogue & 1 Lux to 6000 Lux & 120uA \\ \hline
+		LM393 with n5ac501085 & max 150V & Analogue & 10 lux to 100lux & 1mW \\ 
+		\hline
+		LM393 with NSL-06S53 & max 100v & analogue & 1 to 100 & 50mw \\ \hline
+	\end{tabular}
+	\caption{table of light sensors}
+	\label{table of light sensors}
+\end{table}
+\newpage
+After doing research DFR0026 \cite{DFR0026} is the option I propose to use as it is  the best for our application  which will  have an analogue  output to see the interface see below:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/InterfaceofDFR0026.png}
+	\caption{Interface for  DFR0026}
+	\label{Interface for  DFR0026}
+\end{figure}
+
+The following are  the connections:
+\begin{enumerate}
+	\item VCC pin is connected  to 5v
+	\item Gnd of the  sensor is connected to Gnd of the Pi
+	\item The output is connected to  ch 0 
+\end{enumerate}
+
+\subsubsection{Motion sensor}
+
+For this section, we have  to consider the following:
+\begin{enumerate}
+	\item The range of the  sensor
+	\item The degree of the  sensor
+	\item How long of a  delay is the sensor
+\end{enumerate}
+The  following are  the components I considered:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		Modules & Voltage Range & Distance & Max angle & Analogue /Digital Outputs & Power \\
+		\hline
+		HC-SR501 & 5-20V & 3 to 7m & 110 & Digital & 50uA \\
+		AM312 & 4.5-20v & 3m & 130 & Digital & 60uA \\
+		AS312 & -0.3 - 3.6V & 12m & 130 & Digital & 100mA \\
+		\hline
+	\end{tabular}
+	\caption{Motion sensor components}
+	\label{Motion sensor components}
+\end{table}
+
+The sensor I'm choosing is AS312\cite{micros}( which has a delay time of 2 seconds) which is a Digital  interface  to see the wiring see below:
+\newpage
+the following is the interface for our device
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{Images/interfaceofAS312.png}
+	\caption{Interface for  AS312}
+	\label{Interface for  AS312}
+	\end{center}
+
+\end{figure}
+
+The connections are the following:
+\begin{enumerate}
+	\item VCC is connected  to 5v pin of the Pi
+	\item GND is connected to the GND of the  Pi
+	\item Vout is connected to GPIO 27
+\end{enumerate}
+
+\subsubsection{Radio Module}
+For this section, we have the following considerations:
+\begin{itemize}
+	\item The devices are in a forest
+	\item Meaning  Gigahertz  isn't  a desirable frequency
+	\item We want a module that low low-power
+	\item a model that  will have a high throughput 
+\end{itemize}
+
+Through research, I found the following table:
+\begin{table}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/radiomoudles.png}
+		
+	\caption{Radio modules found in research}
+	\label{Radio modules found in research}
+	
+\end{table}
+
+Out of these, I picked the MM2 Series 900 MHz\cite{freewave}.Note that the seller of this  radio module has  limited the documentation  of this module makes it hard to  draw an interface for this module which will be done  next  semester
+\subsection{ADC Considerations}
+for the ADC  the following considerations:
+\begin{enumerate}
+	\item low power
+	\item high bit resolution
+	\item low amount of channels
+	\item high sample rate
+\end{enumerate}
+the two things we  want  for this is the high bit  Resolution  and  a  high sample rate
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Device & Resolution & Sample rate & Input range & Power consumption \\
+			\hline
+			ADC pi Zero & 17 bits & 100KHz & 0-5.06v & 10mA \\
+			MCP3008 & 10 bits & 200 ksps & 2.7v- 5.5v & 500uA \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Above are the components I had to choose from 
+for this project, I picked  MCP3008 due to its  resolution and  sample rate
+the following is the   schematic for the  MCP3008\cite{ada}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/SchematicforMCP300.png}
+	\caption{Schematic for  MCP3008}
+	\label{Schematic for  MCP3008}
+\end{figure}
+the following are connections:
+\begin{enumerate}
+	\item VDD is connected to 3v3 pin of the  Pi
+	\item VRef is  also connected to  3v3 pin of the  Pi
+	\item AGND is connected to the gnd pin 
+	\item CLK pin is connected to GPIO port 11
+	\item Dout pin is connected to GPIO port 9
+	\item Din pin is connected to GPIO port 19
+	\item CS pin  is connected  to GPIO port 8
+	\item DGND ping is connected to the gnd pin
+\end{enumerate}
+\subsection{Camera}
+For the camera, we have to keep in mind the following:
+\begin{enumerate}
+	\item Focal length
+	\item Resolution
+	\item Power
+	\item what lux values it works at
+\end{enumerate}
+\begin{table}[h!]
+	\centering
+	\scalebox{0.6}{\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	
+		\hline
+		Modules & Voltage range & lens size & Image Resolution & Video Resolution & Frame Rate & Type of Output & Preferred condition & Power \\
+		Raspberry Pi VR 220 Camera & 3.3V ac &can change with lens & 3280 X 2462 & 1920 x 1080 &  30 FPS & Need to research & Daytime & 38mA \\
+		DIGILENT 410-358 & 3.6v &  optical size 1/4 inches  & 2592 x 1944 &? &? &Digital &? & 200mA \\
+		The Raspberry Pi NoIR & 3.3v  & 1/4 inches  &3280 x 2464  & 1080 or 720  &30 60 fps &need to research & house & 38mA \\
+		OV7670 VGA & 2.45 to 3.0v ac & 1/6 inches & 2.36mm x 3.6um &? & 30 fps & analogue &  need to research &60mW \\
+		\hline
+	\end{tabular}}
+	\caption{Camera module}
+	\label{Camera module}
+\end{table}
+The camera I pick is a Raspberry Pi VR 220\cite{RS} Camera to see how to connect look at the  following \href{https://youtu.be/yhM1NhD-kGs?si=yxgFZb84yxSGLtM3}{link} 
+\subsection{Memory module}
+For this section, we consider the following:
+\begin{enumerate}
+	\item The file formatting of the sensor data
+	\item The file formatting of  the camera data
+	\item What are  the possible sizes of data 
+\end{enumerate}
+in my project, I plan on using the following:
+\begin{enumerate}
+	\item For the sensor I plan on use storing the data  in a  CSV file   with the following heading: (timestamp, heat, humidity, light level, anything detected) which can be around 25KB
+	\item For the camera in the plan using 10 MB is the  largest file  size
+\end{enumerate}
+
+this depends on the onboard storage but here is what I found through research:
+\begin{table}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Images/memory_devices.png}
+	\caption{Memory usb to consider}
+	\label{Memory usb to consider}
+\end{table}
+The Raspberry Pi 4 supports USB 2 and  USB 3. For this, I'll pick the Turbo 1GB USB 2 Flash Drive
+
+\subsection{Battery}
+In this section, we want to consider the  following:
+\begin{enumerate}
+	\item Have enough power for all  sensors  and  radio module
+	\item Have storage of the battery
+	\item Discharge rate of the  battery (how many operating hours can I get out of the  battery)
+\end{enumerate}
+Here are the following  Devices I found :
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		Modules & Voltage & Interface & Power & Chemistry & Supply time\\
+		\hline
+			Li-polymer Battery HAT  & 5v & Micro USB & 1.8A &lithium battery &5 hours \\ \hline
+	\end{tabular}
+	\caption{battery considerations}
+	\label{battery considerations}
+\end{table}
+
+The battery I'm going for is the li-polymer which has a micro USB 
+how to charge:
+\begin{itemize}
+	\item Step 1: Insert the Li-polymer battery into a 2.0mm battery socket
+	\item Step 2: Connect the power adapter to a micro USB or Type-C interface by USB cable.
+\end{itemize}
+
+\subsection{Arduino vs PI Consideration }
+In this project, we will have to choose between what microprocessor we will use. we can have 3 options
+\begin{enumerate}
+	\item PCB (printed circuit board)
+	where we design the circuit in a program like Fusion 360. The major issue is due to  the current state of  silicon chips which will slow down  the progress of 
+	the implementation stage
+	\item Arduino 
+	\item Raspberry Pi
+\end{enumerate}
+for these will consider the Arduino and  the Raspberry Pi	the Advantages and  disadvantages of these are the following:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Arduino & pi \\
+	
+	\hline \hline
+	Advantages & Advantages \\
+	\hline \hline
+	1. Arduino has a 10-bit ADC & 1. Pi can compile Python (easier to write ) \\
+
+	\hline \hline
+	Disadvantages & Disadvantages \\
+	\hline \hline
+	1. Arduino has a supper set of C++ & 1. Pi is a technically a small CPU \\
+	2. Arduino only has 6 Analogue pins  & 2. The pi needs an ADC circuit to deal with inputs that are analogue \\
+	
+	\hline
+	\end{tabular}
+	\caption{Advantages /Disadvantages of Arduino vs pi}
+	\label{Advantages /Disadvantages of Arduino vs pi}
+\end{table}
+
+Although the  Arduino would be more efficient than the Raspberry Pi due to
+Raspberry Pi has an Operating System I am picking the Pi as I'm more familiar with Python and Linux. Linux can  be used to handle the networking side  of   the project
+I am willing to lose some efficiency in power for an easier time making the code for  this  project 
+\subsubsection{Picking a Raspberry Pi}
+Now that we have  picked out a device to  use  we need to define what we need in terms of   the following:
+\begin{enumerate}
+	\item The amount of GIPO PORTS we need 
+	\item Nature of the output of the sensor
+	\item Speed of the clock
+\end{enumerate}	
+GPIO(General purpose input/output) is used  to select the input/output the pi can only take in  digital signals only
+Seen as we have our components chosen that require A GPIO port (temperature/ humidity, on page \pageref{Compareing DHT22 and DHT11}, Light on page \pageref{table of light sensors}, motion on page \pageref{Motion sensor components})
+we need at least  3 GPIO ports to be available to us as the light sensor and the motion will  need  an adc as looking through the documentation .firstly let's look at the  different models
+\begin{table}[h!]
+\scalebox{0.6}{\begin{tabular}{|l|l|r|l|l|l|1|}
+\hline
+\rowcolor[HTML]{CE6301} 
+Raspberry Pi Model      & Internal Clock Speed & \multicolumn{1}{l|}{\cellcolor[HTML]{CE6301}Power (Watts)} & GPIO Features & Type of Connectors                                                            & SRAM                   \\ \hline
+Raspberry Pi 1 Model B+ & 700 MHz              & 5.5                                                        & 26 GPIO pins  & 1 HDMI, 1 micro USB, 1 USB 2.0, 1 audio jack                                   & 512 MB                 \\
+Raspberry Pi 2 Model B  & 900 MHz              & 7.5                                                        & 40 GPIO pins  & 1 HDMI, 1 micro USB, 4 USB 2.0, 1 audio jack                                   & 1 GB                   \\
+Raspberry Pi 3 Model B+ & 1.4 GHz              & 8                                                          & 40 GPIO pins  & 1 HDMI, 1 micro USB, 4 USB 2.0, 1 audio jack, 1 Gigabit Ethernet, 1 PoE header & 1 GB                   \\
+Raspberry Pi 3 Model A+ & 1.4 GHz              & 5                                                          & 26 GPIO pins  & 1 HDMI, 1 micro USB, 2 USB 2.0, 1 audio jack                                   & 512 MB                 \\
+Raspberry Pi Zero       & 1 GHz                & 1.2                                                        & 40 GPIO pins  & 1 mini HDMI, 1 micro USB, 1 micro-USB OTG                                      & 512 MB                 \\
+Raspberry Pi Zero W     & 1 GHz                & 1.3                                                        & 40 GPIO pins  & 1 mini HDMI, 1 micro USB, 1 micro-USB OTG, 1 Wi-Fi/Bluetooth module            & 512 MB                 \\
+Raspberry Pi Zero 2 W   & 1 GHz                & 0.8                                                        & 40 GPIO pins  & 1 mini HDMI, 1 micro USB, 1 micro-USB OTG, 1 Wi-Fi/Bluetooth module            & 512 MB                 \\
+Raspberry Pi 4 Model B  & 1.5 GHz              & 7                                                          & 40 GPIO pins  & 2 HDMI, 2 USB 3.0, 2 USB 2.0, 1 Gigabit Ethernet, 1 audio jack                & 1 GB, 2 GB, 4 GB, 8 GB \\ \hline
+\hline
+\end{tabular}}
+\caption{Table of Raspberry Pi's}
+\label{Table of Raspberry Pi's}
+\end{table}
+
+The above table displays the modules seen as our radio modules is 900Mhz  we want  1.5GHZ which is the Raspberry Pi 4  which needs USB\- c charger and an HDMI.
+
+\subsection{Conclusion}
+In this project the hardware needed is the  following:
+\begin{enumerate}
+	\item 1 x Raspberry Pi 4 Model B 
+	\item 1 x HDMI cable
+	\item 1 x USB\-C cable
+	\item 1 x USB \-C charging head
+	\item 1 x DHT22
+	\item 1 x DFR0026
+	\item 1 x AS312
+	\item 1 x MM2 Series 900 MHz
+	\item 1 x MCP3008
+	\item 1 x Raspberry Pi VR 220 Camera
+	\item  1 x Li-polymer Battery HAT 
+	\item 1 x Turbo 1GB 
+	
+	
+\end{enumerate}

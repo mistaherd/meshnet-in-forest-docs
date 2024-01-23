@@ -1,0 +1,72 @@
+[% \graphicspath{/Users/User/Documents/latexfilesFYP/Images}
+
+% Introduction
+\section{Introduction}
+% C:\Users\User\OneDrive\Documents\latexfyp\Chapters\liteature review chapters\Introduction.tex
+\input{Chapters/liteature_review_chapters/Introduction.tex}
+
+% Body of the literature review
+\section{Hardware Consideration}
+\input{Chapters/liteature_review_chapters/hardwareconsiderations.tex}
+\section{Software considerations}
+\input{Chapters/liteature_review_chapters/Software_considerations.tex}
+\section{Attenuation}
+\input{Chapters/liteature_review_chapters/Atteunuation.tex}
+
+
+
+\section{mesh network considerations}
+\input{Chapters/liteature_review_chapters/Mesh_network_considerations.tex}
+
+\section{Review  key of research Papers}
+The following are the research papers I used
+\begin{enumerate}
+	
+	\item zhao
+	
+		In my research, I found  multiple projects that are similar to mine 
+		In Zhao(2023)\cite[zhao]{zhao}  
+		used  LORA to  track  light sensitivity, air pressure
+		one of the challenges Zhao came across was Attenuation as stated above and also the author came across the problem of not having sufficient solar panels 
+	\item Daniel
+	
+		Another paper I found in my research is by Daniel \cite{Daniel}
+		In this, Daniel discusses modeling radio wave propagation in a forest environment which isn't in the scope of the project
+		Daniel's work shows that a better approximation  for transmission loss was a key read to  under what happens on a more in-depth scale in my project
+	
+	\item Anna
+	
+		\cite{Anna} in Anna's paper  she  mainly used LORA where she compared line of sight and  the  non-line  line of sight environments in  urban and  forested areas
+		this paper aims to study the effects of signal propagation in different environments.
+	
+
+	\item ITU
+	
+		\cite{ITU} in ITU in most research papers I found  it  referred back to this  document this document was  very helpful in terms  of  understanding Attenuation  and challenges that face
+
+\end{enumerate}
+
+
+\section{Summary}
+This report  highlights the  challenges at come from  transmitting data in a  wooded area these challenges are  the following:
+\begin{enumerate}
+\item Attenuation 
+\item Absorption
+\end{enumerate}
+In a wooded area, we established that  Attenuation occurs due to the reflection, and penetration of radio through any type of medium.
+We established that our antenna will have to  be in the  Mhz range   but will still have signal loss /errors due to Absorption of  the  signal  received due  to rain or water being in the signal path
+we have yet to consider the non-line of sight environment but this  is  to be  discussed when prototyping, this report mainly focuses on the hardware where the  focus is on  sensors such as:
+\begin{itemize}
+\item Temperature
+\item Light
+\item Motion
+\item Humidity
+\end{itemize} 
+The report focuses on how to read this data from a  Software perspective the code will be an object-oriented program
+where the code will be separated into different blocks of code so the file size is minimized and leads to a faster compile time. 
+
+
+% \bibliographystyle{acm}
+% \bibliography{References.bib}
+
+]

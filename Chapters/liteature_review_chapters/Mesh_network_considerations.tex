@@ -1,0 +1,36 @@
+For this section, we have to consider the following:
+	\begin{enumerate}
+		\item How are we setting up the network
+		\item What framework are we using to set this Up
+		\item What are the advantages/disadvantages
+	\end{enumerate}
+	In my research I found two main frameworks that this project could use to achieve the mesh network these are the following:
+	\begin{enumerate}
+		\item LORA
+		\item Zigbee
+	\end{enumerate}
+	According to Chen (2023)\cite{chen} "LoRa, as one of Low Power Wide Area Networks (LP-WANs) technologies, aims to enable IoT devices to perform long-range communications with lower power consumption [18]. LoRa makes use of the chirp spread spectrum (CSS) modulation to improve the transmission distance up to kilometres and also be resistant to multi-path effects."
+	\par
+	According to Vlad\cite{Gavra_Pop_Dobra_2023}, "ZigBee is an LP-WPAN (Low-Power-Wireless Personal Area Network) with short range and low power consumption, as mentioned before. The range for ZigBee devices is up to fifty meters and it is characterized by a low data rate, having a maximum value of 250 kbps. The protocol is suitable for sensors and IoT applications because of the low data rate and low power consumption"
+	\par
+	the following are the  differences between the two:
+	\begin{table}[h]
+		\centering
+		
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		\multicolumn{2}{|c|}{LoRa} & \multicolumn{2}{|c|}{ZigBee} \\
+		\hline
+		Advantages & Disadvantages & Advantages & Disadvantages \\
+		\hline
+		Long transmission distance & Low transmission rate & Low power consumption & Low data rate \\
+		Low power consumption & Slow data transfer rate & Long range & Limited range \\
+		Multi-channel information procession & Small payload & Scalability & Signal interference \\
+		Strong anti-interface ability & Low bandwidth & $-$ & High-sensitivity levels \\
+		High-sensitivity levels & Spectrum interference \\
+		\hline
+		\end{tabular}
+		\caption{Advantages and Disadvantages of LoRa and ZigBee}
+		\label{tab:lora_zigbee}
+		\end{table}
+		from research, these are very  similar  but it seems if I plan on adding lots of Zigbee is the best for this challenge  

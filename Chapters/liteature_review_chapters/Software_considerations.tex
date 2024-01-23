@@ -1,0 +1,225 @@
+
+	now that we have established the  essential Hardware needed for our project we must consider the following  for the software of the  project:
+	\begin{enumerate}
+	    \item How to structure code 
+	    \item Linux set up of sever and nodes
+	    \item How will data be sent
+	    \item Is this gonna be an OOP or functional  approach
+	    \item How to program each device?
+	\end{enumerate}
+	\subsection{Sensor code}
+	in this section, I will discuss the following :
+	\begin{enumerate}
+		\item DHT22
+		\item AS312
+		\item MCP3008
+		\item DFR0026
+		\item Kuman for Raspberry Pi 3B+ TFT LCD Display
+		\item Raspberry Pi VR 220 Camera 
+	\end{enumerate}
+	this project code will mainly be object-oriented. so the goal is to first test it with my laptop and  Create A bash file  full of  commands to install  the Libraries
+	making the code to be split up  into  different parts so that all that is needed is the Libraries I make and code that won't all have to  compiled in one file
+
+	\subsubsection{DHT22}
+	in this section we have to consider the following: 
+	\begin{enumerate}
+		\item the GPIO port as on page \pageref{Sychematic for DHT22 revised} this is connected to port 3 
+		\item the type of output is digital so no  extra hardware/code is needed
+	\end{enumerate}
+	the following is  a rough guide on how to read from the DHT22 I got this from the following \href{https://www.instructables.com/Raspberry-Pi-Tutorial-How-to-Use-the-DHT-22/}{link}
+	(\textbf{Note: I haven't tested this due to the constraints of this year so I can only go off what others have done.} )Firstly open the terminal in the pi and
+	type the following commands
+	\begin{verbatim}
+		git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+		cd Adafruit_Python_DHT
+		sudo apt-get update
+		sudo apt-get install build-essential python-dev
+		sudo python setup.py install
+
+	\end{verbatim}
+	\newpage
+	the following is the sample code  for this sensor 
+	\begin{lstlisting}[style=mystyle,caption={Example code for DHT2}]
+		#Libraries
+		import Adafruit_DHT as dht
+		from time import sleep
+		def setup_DHT22(Gpoiport:int):
+		humidityy,temp=dht.read_retry(dht.DHT22, Gpoiport)
+			sleep(5)
+			return humundity,temp
+		h,t=setup_DHT22(3)
+		print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(t,h))
+	\end{lstlisting}
+	this code will  import the DHT Libraries from Adafruit and  the  module of time, next a function is called where the  port is defined and  in the DHT  is mainly used DHT Libraries 
+	
+	\subsubsection{AS312}
+	for this section i followed  this \href{https://pimylifeup.com/raspberry-pi-motion-sensor/}{link}
+	we also want to keep in mind the following:
+	\begin{enumerate}
+		\item This has a  digital interface and is connected  to GPIO 27 
+	\end{enumerate}
+	Here are the rough steps firstly  type the following into the  terminal 
+	\begin{verbatim}
+		sudo apt-get install python-rpi.gpio
+	\end{verbatim}
+	\newpage
+	Then type this into an IDE of your  choosing
+	\begin{lstlisting}[style=mystyle,caption={Example code for AS312}]
+		import RPi.GPIO as GPIO
+		import time
+
+		pir_sensor = 27
+		GPIO.setmode(GPIO.BOARD)
+
+		GPIO.setup(pir_sensor, GPIO.IN)
+		current_state = 0
+		
+		time.sleep(0.1)
+		current_state = GPIO.input(pir_sensor)
+		if current_state == 1:
+			print("GPIO pin %s is %s" % (pir_sensor, current_state))
+			# trigger camera
+		# must look up this 
+		GPIO.cleanup()
+	\end{lstlisting}
+	
+	\subsubsection{DFR0026}	
+	from the last example, nothing has changed from the last component
+	an example code for this can be found on page \pageref{adc code}
+	\subsection{MCP3008}
+	for this section, we want to consider the following:
+	\begin{enumerate}
+		\item The MCP3008 data out is GIPO 9 
+	\end{enumerate}
+	this section follows this \href{https://randomnerdtutorials.com/raspberry-pi-analog-inputs-python-mcp3008/}{link}
+	firstly try the following in command in the terminal 
+	\begin{verbatim}
+	sudo raspi-config nonint do_spi 0
+	\end{verbatim}
+	
+	\label{adc code}
+	\begin{lstlisting}[style=mystyle,caption={ADC code}]
+		from gpiozero import MCP3008
+		from time import sleep
+		DFR0026 = MCP3008(channel=0, device=0,port=9)
+	
+		print ('raw: {:.5f}'.format(DFR0026.value))
+		sleep(0.1)
+	\end{lstlisting}
+	\subsection{Kuman for Raspberry Pi 3B+ TFT LCD Display}
+	first in the terminal type the following:
+	\begin{verbatim}
+		sudo pip install Adafruit_ILI9341
+		sudo pip install Pillow              
+	\end{verbatim}
+	
+	\begin{lstlisting}[style=mystyle,caption={example code for LCD display }]
+		import Adafruit_ILI9341 as ILI9341
+		from PIL import Image, ImageDraw, ImageFont
+		# Configure the display driver GPIO pins
+		disp = ILI9341.ILI9341(dc=25, spi=SPI.SpiDev(0, 0), rst=24, mosi=19, sclk=18, miso=21)
+		# Initialize the display
+		disp.begin()
+		# Set the font
+		font = ImageFont.truetype('Arial.ttf', 16)
+		# Set the text colour
+		text_color = (255, 255, 255)  # White text color
+		# Create a blank image
+		image = Image. new('RGB', (disp.width, disp.height), (0, 0, 0))
+		# Create an ImageDraw object for drawing on the image
+		draw = ImageDraw.Draw(image)
+
+		# Draw the text onto the image
+		draw.text((10, 10), 'Hello, World!', font=font, fill=text_color)
+		disp.display(image.convert('RGB'))
+	\end{lstlisting}
+	\subsection{Raspberry Pi VR 220 Camera}
+	to get started with this simply look at the following \href{https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4}{link}
+	here is an example of the code of this module :
+	\begin{lstlisting}[style=mystyle,caption={example code for camera}]
+		from picamera import PiCamera
+		from time import sleep
+
+		camera = PiCamera()
+
+		camera.start_preview()
+		sleep(5)
+		camera.stop_preview()
+	\end{lstlisting}
+
+	\subsection{MM2 Series 900 MHz}
+	for this section, the seller of this module has no public  documentation so it is hard to  come  with  an make a  interface for  this section   
+	\subsection{code structure}
+	The code structure for this  will be an object-oriented program all the individual sensors and  hardware  for the pi will be as displayed above the code in this section will be formatted into objects for example I will have an  object   called proj\_sensor and  a method of this  would be  DHT22 while an attribute of this would  be  the  sample rate
+	the following is a  rough breakdown of the  structure of the code
+	\begin{itemize}
+		\item Sensor object
+		
+		\begin{itemize}
+			\item Temperature and humanity method
+			\item light method
+			\item Motion method which triggers the camera
+			\item Battery method which is a constructor method
+			\item Memory method which  links with the radio 
+		
+		\end{itemize}
+		
+		\item radio object which reads from Memory and  transmits the data 
+	
+	\end{itemize}
+	\subsection{File structure}
+	For the  File structure, we want our sensor data to be stored every hour in a  CSV file with the following column headings:
+	\begin{enumerate}
+		\item timestamp
+		\item Heat
+		\item Humidity
+		\item light level
+		\item motion detected (True/False)
+	\end{enumerate}
+	for the writing to Date, we will use Pandas to write to the CSV file
+	for file sorting, I will use the Python Library glob  which I can use  to look for  files 
+	the following is an example of how  to  make a CSV file:
+	firstly let's make a data frame:
+	\begin{lstlisting}[style=mystyle,caption={sample code for turning sensor data into a data}]
+		import pandas as pd
+		import numpy as np
+		from datetime import datetime
+		cols_name=["Timestamp","Tempeature","Hummidty","Light_level","Motion_dected"]
+
+		#assume that being recorded now
+		data=[]
+		timestap=datetime.now()
+		timestap=timestap.strftime("%d/%m/%Y %H:%M:%S")
+		Current_state=1
+		Heat=0.40
+		Hummidty=1.0
+		Light_level=0.23
+		data=np.array([[timestap],[Heat],[Hummidty],[Light_level],[Current_state]])
+		data=data.T
+		df= pd.DataFrame(data,columns=cols_name)
+	\end{lstlisting}
+	Next, use the.To\_csv method from  pandas
+	another Libraries that could  be useful is the Tkinter
+	here is a  sample of how to   store where the  file is  gonna be:
+	\begin{lstlisting}[style=mystyle,caption={example code for storing directory}]
+		import tkinter as tk
+		from tkinter import filedialog
+		import json
+		import os
+
+		root = tk.Tk()
+		root.withdraw()
+		selected_dir = filedialog.askdirectory()
+
+		if not os.path.exists('selected_dir.json'):
+			# Write the selected directory to a JSON file
+			with open('selected_dir.json', 'w') as f:
+				json.dump(selected_dir, f)
+				print("Successfully saved selected directory to JSON file.")
+		else:
+			print("File 'selected_dir.json' already exists. Not saving the directory.")
+
+		root.quit()
+	\end{lstlisting}
+	Other useful Libraries allow you to  select all  .csv, png  called glob
+	\subsection{Conclusion}
