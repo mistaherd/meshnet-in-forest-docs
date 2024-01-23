@@ -4,6 +4,7 @@ In this project we need to have data to transmit firstly let's describe what we 
 	\item I want there to  be data read every hour  and  stored  as a CSV file  the image file  will depend on the module I pick
 	\item I want to have a  motion to  detect  any animal that passes  the  node 
 \end{enumerate}
+\newpage
 the following is  a  rough circuit diagram  for the project:
 \begin{figure}[h!]
 	\centering
@@ -138,8 +139,9 @@ From above we see our schematic, DHT22 connections are the following:
 	\item Gnd pin  of the  pi is  connected to the ground  of DHT22 
 
 \end{itemize}
-\cite{sparkfun} The following is the  \href{https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf}{link} to the datasheet of this  module
-\newpage
+\cite{sparkfun} The following is the \href{https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf}{link} to the datasheet of this module
+when reading from this  componet there is  a  delay  of 2 second due to the  sampling period.
+
 \subsubsection{Light sensor}
 In this section, we want to consider the following:
 \begin{enumerate}
@@ -147,6 +149,7 @@ In this section, we want to consider the following:
 	\item What light levels do we  expect in this  country
 	\item What sensor  will  accommodate this  range
 \end{enumerate}
+\newpage
 For this sensor we also must consider the outside aspect of the  project  i found this table on \cite{wiki_2023}
 	\begin{table}[h!]
 	\centering
@@ -168,7 +171,7 @@ For this sensor we also must consider the outside aspect of the  project  i foun
 	\caption{Illuminates values}
 	\label{Illuminates values}
 \end{table}
-	From  above  we want our sensor to be 0.002 to 25000 lux ideally, with that in mind  here are the components I found  through research:
+	From  above we want our sensor to be 0.002 to 25000 lux ideally, with that in mind here are the components I found  through research:
 	\begin{table}[h!]
 	\small
 	\centering
@@ -199,9 +202,10 @@ The following are  the connections:
 \begin{enumerate}
 	\item VCC pin is connected  to 5v
 	\item Gnd of the  sensor is connected to Gnd of the Pi
-	\item The output is connected to  ch 0 
+	\item The output is connected to  ch 0
+	\item the output ranges  from  0 to  5 v
 \end{enumerate}
-
+The commpoent relies on the  ADC  which  is on page\pageref{Adc section}
 \subsubsection{Motion sensor}
 
 For this section, we have  to consider the following:
@@ -226,15 +230,15 @@ The  following are  the components I considered:
 	\label{Motion sensor components}
 \end{table}
 
-The sensor I'm choosing is AS312\cite{micros}( which has a delay time of 2 seconds) which is a Digital  interface  to see the wiring see below:
+The sensor I'm choosing is AS312\cite{micros}(which has a delay time of 2 seconds) which is a Digital interface to see the wiring see below:
 \newpage
 the following is the interface for our device
 
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=0.5\linewidth]{Images/interfaceofAS312.png}
-	\caption{Interface for  AS312}
-	\label{Interface for  AS312}
+	\caption{Interface for AS312}
+	\label{Interface for AS312}
 	\end{center}
 
 \end{figure}
@@ -244,6 +248,12 @@ The connections are the following:
 	\item VCC is connected  to 5v pin of the Pi
 	\item GND is connected to the GND of the  Pi
 	\item Vout is connected to GPIO 27
+\end{enumerate}
+This  component has the following:
+\begin{enumerate}
+	\item Range  of 12 meters 
+	\item An  angle  of  65$^o$ degree
+	\item A Delay of 15 \mu Seconds
 \end{enumerate}
 
 \subsubsection{Radio Module}
@@ -267,6 +277,7 @@ Through research, I found the following table:
 
 Out of these, I picked the MM2 Series 900 MHz\cite{freewave}.Note that the seller of this  radio module has  limited the documentation  of this module makes it hard to  draw an interface for this module which will be done  next  semester
 \subsection{ADC Considerations}
+\label{Adc section}
 for the ADC  the following considerations:
 \begin{enumerate}
 	\item low power
@@ -307,6 +318,12 @@ the following are connections:
 	\item Din pin is connected to GPIO port 19
 	\item CS pin  is connected  to GPIO port 8
 	\item DGND ping is connected to the gnd pin
+\end{enumerate}
+this  commponet has the following:
+\begin{enumerate}
+	\item A 10 bit resultion
+	\item seen as  the  reference  will  be 3.3v this will give 
+	\item 200ksps meaning the delay to read is 5\mu seconds
 \end{enumerate}
 \subsection{Camera}
 For the camera, we have to keep in mind the following:
