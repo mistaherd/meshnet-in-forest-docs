@@ -77,20 +77,22 @@ now to look at the  other  extreme for the Lowest temperature:
 	\end{table}
 According to the table above the lowest temp is -19.1
 In consideration for where the project our condition was a range of -19.1\textdegree C to 33.3\textdegree C.
-I also  looked  at  humdity this  referes to the amount of water vaper in the  air . from  met eirrean \cite{eirrean2}
+\newpage
+I also  looked  at  humdity this  referes to the amount of water vaper in the air. from  met eirrean \cite{eirrean2}
 got this  table:
 \begin{table}[h!]
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 		\hline
-		\space & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec & Year %14
+		\space & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec & Year \\
 		\hline
-		Mean at 0900UTC &87.0 &86.4&84.0&79.5&76.9&76.7&78.5&81.0&83.4&85.5&88.5&88.0&83.0
-		Mean at 1500UTC &80.6&75.7&71.0&68.3&68.0&68.3&69.0&69.3&71.5&75.1&80.3&83.1&73.3
+		Mean at 0900UTC &87.0 &86.4&84.0&79.5&76.9&76.7&78.5&81.0&83.4&85.5&88.5&88.0&83.0 \\
+		Mean at 1500UTC &80.6&75.7&71.0&68.3&68.0&68.3&69.0&69.3&71.5&75.1&80.3&83.1&73.3\\
+		\hline
 	\end{tabular}
 	\caption{Realtive Humidity(\%) according to met eirrean}
 	\label{Realtive Humidity according to met eirrean}
 \end{table}
-the ranges are 68.3\% to 88 \% So with these  conserdations here are  the  diffrent components:
+The ranges are 68.3\% to 88 \% So with these  conserdations here are  the  diffrent components:
 
 \begin{table}[h!]
 	\centering
@@ -171,6 +173,7 @@ For this sensor we also must consider the outside aspect of the  project  i foun
 	\caption{Illuminates values}
 	\label{Illuminates values}
 \end{table}
+	This table is the  assoicated lux level  incate when the vaules are . 
 	From  above we want our sensor to be 0.002 to 25000 lux ideally, with that in mind here are the components I found  through research:
 	\begin{table}[h!]
 	\small
@@ -190,7 +193,8 @@ For this sensor we also must consider the outside aspect of the  project  i foun
 	\label{table of light sensors}
 \end{table}
 \newpage
-After doing research DFR0026 \cite{DFR0026} is the option I propose to use as it is  the best for our application  which will  have an analogue  output to see the interface see below:
+After doing research DFR0026 \cite{DFR0026} is the option I propose to use as it is the best for our application  which will have an analogue  output to see the interface see below:
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Images/InterfaceofDFR0026.png}
@@ -322,8 +326,8 @@ the following are connections:
 this  commponet has the following:
 \begin{enumerate}
 	\item A 10 bit resultion
-	\item seen as  the  reference  will  be 3.3v this will give 
-	\item 200ksps meaning the delay to read is 5\mu seconds
+	\item seen as  the  reference  will  be 3.3v  
+	\item 200ksps meaning the delay to read is 5$\mu$ seconds
 \end{enumerate}
 \subsection{Camera}
 For the camera, we have to keep in mind the following:
@@ -354,14 +358,16 @@ For this section, we consider the following:
 \begin{enumerate}
 	\item The file formatting of the sensor data
 	\item The file formatting of  the camera data
-	\item What are  the possible sizes of data 
+	\item What are  the possible sizes of data
+	\item what is the size of the  raspberry pi OS
 \end{enumerate}
 in my project, I plan on using the following:
 \begin{enumerate}
 	\item For the sensor I plan on use storing the data  in a  CSV file   with the following heading: (timestamp, heat, humidity, light level, anything detected) which can be around 25KB
 	\item For the camera in the plan using 10 MB is the  largest file  size
+	\item For the raspbery pi i downloaded  the raspberry imager  this has  loads of  options such as  the  following on \pageref{pi os}
 \end{enumerate}
-
+after has been we must consider a  mircoSD ,here is the following considerations:
 this depends on the onboard storage but here is what I found through research:
 \begin{table}[h!]
 	\centering
@@ -397,7 +403,12 @@ how to charge:
 	\item Step 1: Insert the Li-polymer battery into a 2.0mm battery socket
 	\item Step 2: Connect the power adapter to a micro USB or Type-C interface by USB cable.
 \end{itemize}
-
+Aside: this commpoent has the following:
+\begin{enumerate}
+	\item A battery that is 3.7v 3000$mAh$ 
+	\item Output voltage of 5 volts
+	\item an estimated Power supply time  of  5 hours
+\end{enumerate}
 \subsection{Arduino vs PI Consideration }
 In this project, we will have to choose between what microprocessor we will use. we can have 3 options
 \begin{enumerate}
@@ -464,7 +475,9 @@ Raspberry Pi 4 Model B  & 1.5 GHz              & 7                              
 \end{table}
 
 The above table displays the modules seen as our radio modules is 900Mhz  we want  1.5GHZ which is the Raspberry Pi 4  which needs USB\- c charger and an HDMI.
-
+\subsubsection{Picking an PI OS}
+\label{pi os}
+Seen as 
 \subsection{Conclusion}
 In this project the hardware needed is the  following: these are from 
 \begin{enumerate}
