@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  23 JAN 2024 13:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  25 JAN 2024 12:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -590,18 +590,20 @@ No file main.lot.
 
  [5
 
+] (Chapters/glossary.tex) [6
+
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.63 \end{abstract}
+l.64 \end{abstract}
                     [1]
 Chapter 1.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.73 \chapter
+l.74 \chapter
              {Literature Review} [1
 
 ]
@@ -623,7 +625,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
                    \relax 
 l.40 	\newpage
                [3]
-<Images/basic mesh network diagram.png, id=77, 695.59875pt x 442.65375pt>
+<Images/basic mesh network diagram.png, id=84, 695.59875pt x 442.65375pt>
 File: Images/basic mesh network diagram.png Graphic file (type png)
 <use Images/basic mesh network diagram.png>
 Package pdftex.def Info: Images/basic mesh network diagram.png  used on input line 56.
@@ -634,7 +636,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has b
                    \relax 
 l.7 \newpage
              [4 <./Images/basic mesh network diagram.png>]
-<Images/block_diagram_for_mesh_device.png, id=91, 580.1675pt x 532.99126pt>
+<Images/block_diagram_for_mesh_device.png, id=98, 580.1675pt x 532.99126pt>
 File: Images/block_diagram_for_mesh_device.png Graphic file (type png)
 <use Images/block_diagram_for_mesh_device.png>
 Package pdftex.def Info: Images/block_diagram_for_mesh_device.png  used on input line 11.
@@ -715,7 +717,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/tempssenorscompared.png, id=92, 703.62875pt x 414.54875pt>
+<Images/tempssenorscompared.png, id=99, 703.62875pt x 414.54875pt>
 File: Images/tempssenorscompared.png Graphic file (type png)
 <use Images/tempssenorscompared.png>
 Package pdftex.def Info: Images/tempssenorscompared.png  used on input line 97.
@@ -732,13 +734,18 @@ l.120
 
 LaTeX Warning: Text page 6 contains only floats.
 
-[6 <./Images/tempssenorscompared.png>]
-<Images/InterfaceforDHT22.png, id=116, 414.79968pt x 306.39468pt>
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120 
+       [6 <./Images/tempssenorscompared.png>]
+<Images/InterfaceforDHT22.png, id=123, 414.79968pt x 306.39468pt>
 File: Images/InterfaceforDHT22.png Graphic file (type png)
 <use Images/InterfaceforDHT22.png>
 Package pdftex.def Info: Images/InterfaceforDHT22.png  used on input line 124.
 (pdftex.def)             Requested size: 181.18439pt x 133.83228pt.
-<Images/schematicforDHT22.png, id=117, 581.92406pt x 394.47375pt>
+<Images/schematicforDHT22.png, id=124, 581.92406pt x 394.47375pt>
 File: Images/schematicforDHT22.png Graphic file (type png)
 <use Images/schematicforDHT22.png>
 Package pdftex.def Info: Images/schematicforDHT22.png  used on input line 130.
@@ -760,7 +767,7 @@ Overfull \hbox (43.04414pt too wide) in paragraph at lines 178--189
 
 Package natbib Warning: Citation `DFR0026' on page 9 undefined on input line 193.
 
-<Images/InterfaceofDFR0026.png, id=138, 371.13657pt x 275.52937pt>
+<Images/InterfaceofDFR0026.png, id=144, 371.13657pt x 275.52937pt>
 File: Images/InterfaceofDFR0026.png Graphic file (type png)
 <use Images/InterfaceofDFR0026.png>
 Package pdftex.def Info: Images/InterfaceofDFR0026.png  used on input line 196.
@@ -772,7 +779,7 @@ LaTeX Warning: Reference `Adc section' on page 9 undefined on input line 208.
 Package natbib Warning: Citation `micros' on page 9 undefined on input line 233.
 
 [9 <./Images/InterfaceofDFR0026.png>]
-<Images/interfaceofAS312.png, id=154, 357.335pt x 216.81pt>
+<Images/interfaceofAS312.png, id=160, 357.335pt x 216.81pt>
 File: Images/interfaceofAS312.png Graphic file (type png)
 <use Images/interfaceofAS312.png>
 Package pdftex.def Info: Images/interfaceofAS312.png  used on input line 239.
@@ -833,7 +840,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<Images/radiomoudles.png, id=155, 554.07pt x 218.31563pt>
+<Images/radiomoudles.png, id=161, 554.07pt x 218.31563pt>
 File: Images/radiomoudles.png Graphic file (type png)
 <use Images/radiomoudles.png>
 Package pdftex.def Info: Images/radiomoudles.png  used on input line 271.
@@ -848,7 +855,7 @@ Package natbib Warning: Citation `freewave' on page 10 undefined on input line 2
 
 Package natbib Warning: Citation `ada' on page 11 undefined on input line 304.
 
-<Images/SchematicforMCP300.png, id=170, 574.39594pt x 378.66469pt>
+<Images/SchematicforMCP300.png, id=176, 574.39594pt x 378.66469pt>
 File: Images/SchematicforMCP300.png Graphic file (type png)
 <use Images/SchematicforMCP300.png>
 Package pdftex.def Info: Images/SchematicforMCP300.png  used on input line 307.
@@ -917,7 +924,7 @@ Overfull \hbox (63.0235pt too wide) in paragraph at lines 347--348
 
 Package natbib Warning: Citation `RS' on page 12 undefined on input line 351.
 
-<Images/memory_devices.png, id=189, 1017.8025pt x 62.48344pt>
+<Images/memory_devices.png, id=195, 1017.8025pt x 62.48344pt>
 File: Images/memory_devices.png Graphic file (type png)
 <use Images/memory_devices.png>
 Package pdftex.def Info: Images/memory_devices.png  used on input line 368.
@@ -1175,7 +1182,7 @@ If that doesn't work, type  X <return>  to quit.
 
 Package natbib Warning: Citation `Savage' on page 23 undefined on input line 19.
 
-<Images/Silver_Maple.png, id=418, 432.61626pt x 342.27875pt>
+<Images/Silver_Maple.png, id=424, 432.61626pt x 342.27875pt>
 File: Images/Silver_Maple.png Graphic file (type png)
 <use Images/Silver_Maple.png>
 Package pdftex.def Info: Images/Silver_Maple.png  used on input line 22.
@@ -1183,7 +1190,7 @@ Package pdftex.def Info: Images/Silver_Maple.png  used on input line 22.
 
 Package natbib Warning: Citation `ITU' on page 23 undefined on input line 28.
 
-<Images/ITU attteuntion.png, id=419, 703.62875pt x 529.98pt>
+<Images/ITU attteuntion.png, id=425, 703.62875pt x 529.98pt>
 File: Images/ITU attteuntion.png Graphic file (type png)
 <use Images/ITU attteuntion.png>
 Package pdftex.def Info: Images/ITU attteuntion.png  used on input line 35.
@@ -1192,7 +1199,7 @@ Package pdftex.def Info: Images/ITU attteuntion.png  used on input line 35.
 
 Package natbib Warning: Citation `Sabetahd_Mousavi_Ghasemi_Vafaei_Poursorkhabi_Mohammadzadeh_Zandi_2022' on page 24 undefined on input line 54.
 
-<Images/atteuntion_2.png, id=435, 794.97pt x 262.73157pt>
+<Images/atteuntion_2.png, id=440, 794.97pt x 262.73157pt>
 File: Images/atteuntion_2.png Graphic file (type png)
 <use Images/atteuntion_2.png>
 Package pdftex.def Info: Images/atteuntion_2.png  used on input line 59.
@@ -1200,7 +1207,7 @@ Package pdftex.def Info: Images/atteuntion_2.png  used on input line 59.
 
 Package natbib Warning: Citation `lunken' on page 24 undefined on input line 66.
 
-<Images/absorstion.png, id=436, 243.91125pt x 306.14375pt>
+<Images/absorstion.png, id=441, 243.91125pt x 306.14375pt>
 File: Images/absorstion.png Graphic file (type png)
 <use Images/absorstion.png>
 Package pdftex.def Info: Images/absorstion.png  used on input line 70.
@@ -1452,17 +1459,17 @@ Package rerunfilecheck Info: Checksums for `main.out':
 ### simple group (level 1) entered at line 126 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16514 strings out of 474586
- 267878 string characters out of 5746153
+ 16526 strings out of 474586
+ 268200 string characters out of 5746153
  2117558 words of memory out of 5000000
- 38036 multiletter control sequences out of 15000+600000
- 567471 words of font info for 68 fonts, out of 8000000 for 9000
+ 38044 multiletter control sequences out of 15000+600000
+ 567780 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,11n,93p,616b,2059s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (44 pages, 698504 bytes).
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (45 pages, 726915 bytes).
 PDF statistics:
- 749 PDF objects out of 1000 (max. 8388607)
- 418 named destinations out of 1000 (max. 500000)
+ 758 PDF objects out of 1000 (max. 8388607)
+ 419 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

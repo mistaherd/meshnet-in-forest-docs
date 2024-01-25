@@ -8,22 +8,22 @@
 \contentsline {subsection}{\numberline {2.1.2}Mesh network}{4}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}Hardware Consideration}{4}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Sensor consideration}{5}{subsection.2.2.1}%
-\contentsline {subsubsection}{Temperature \& Humidity sensor}{5}{section*.7}%
-\contentsline {subsubsection}{Light sensor}{7}{section*.14}%
-\contentsline {subsubsection}{Motion sensor}{9}{section*.18}%
-\contentsline {subsubsection}{Radio Module}{10}{section*.21}%
+\contentsline {subsubsection}{Temperature \& Humidity sensor}{5}{section*.8}%
+\contentsline {subsubsection}{Light sensor}{7}{section*.15}%
+\contentsline {subsubsection}{Motion sensor}{9}{section*.19}%
+\contentsline {subsubsection}{Radio Module}{10}{section*.22}%
 \contentsline {subsection}{\numberline {2.2.2}ADC Considerations}{11}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Camera}{12}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Memory module}{12}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Battery}{13}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}Arduino vs PI Consideration }{13}{subsection.2.2.6}%
-\contentsline {subsubsection}{Picking a Raspberry Pi}{14}{section*.29}%
+\contentsline {subsubsection}{Picking a Raspberry Pi}{14}{section*.30}%
 \contentsline {subsection}{\numberline {2.2.7}Conclusion}{14}{subsection.2.2.7}%
 \contentsline {section}{\numberline {2.3}Software considerations}{15}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Sensor code}{15}{subsection.2.3.1}%
-\contentsline {subsubsection}{DHT22}{16}{section*.31}%
-\contentsline {subsubsection}{AS312}{17}{section*.32}%
-\contentsline {subsubsection}{DFR0026}{18}{section*.33}%
+\contentsline {subsubsection}{DHT22}{16}{section*.32}%
+\contentsline {subsubsection}{AS312}{17}{section*.33}%
+\contentsline {subsubsection}{DFR0026}{18}{section*.34}%
 \contentsline {subsection}{\numberline {2.3.2}MCP3008}{18}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Kuman for Raspberry Pi 3B+ TFT LCD Display}{19}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Raspberry Pi VR 220 Camera}{19}{subsection.2.3.4}%
@@ -43,15 +43,15 @@
 \contentsline {subsection}{\numberline {3.1.3}Research Approach}{28}{subsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.1.4}Research Design}{28}{subsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.1.5}Data Collection Methods}{28}{subsection.3.1.5}%
-\contentsline {subsubsection}{Unit testing}{28}{section*.39}%
-\contentsline {subsubsection}{DHT22}{28}{section*.40}%
-\contentsline {subsubsection}{DFR0026 \& MCP3008}{29}{section*.41}%
-\contentsline {subsubsection}{AS312}{30}{section*.42}%
-\contentsline {subsubsection}{Raspberry Pi VR 220 Camera}{30}{section*.43}%
-\contentsline {subsubsection}{Li-polymer Battery HAT}{31}{section*.44}%
-\contentsline {subsubsection}{Turbo 1GB }{31}{section*.45}%
-\contentsline {subsubsection}{MM2 Series 900 MHz}{31}{section*.46}%
-\contentsline {subsubsection}{conculsion}{31}{section*.47}%
+\contentsline {subsubsection}{Unit testing}{28}{section*.40}%
+\contentsline {subsubsection}{DHT22}{28}{section*.41}%
+\contentsline {subsubsection}{DFR0026 \& MCP3008}{29}{section*.42}%
+\contentsline {subsubsection}{AS312}{30}{section*.43}%
+\contentsline {subsubsection}{Raspberry Pi VR 220 Camera}{30}{section*.44}%
+\contentsline {subsubsection}{Li-polymer Battery HAT}{31}{section*.45}%
+\contentsline {subsubsection}{Turbo 1GB }{31}{section*.46}%
+\contentsline {subsubsection}{MM2 Series 900 MHz}{31}{section*.47}%
+\contentsline {subsubsection}{conculsion}{31}{section*.48}%
 \contentsline {subsection}{\numberline {3.1.6}Model Development}{31}{subsection.3.1.6}%
 \contentsline {subsection}{\numberline {3.1.7}Data Analysis Methods}{31}{subsection.3.1.7}%
 \contentsline {subsection}{\numberline {3.1.8}Ethical Considerations}{31}{subsection.3.1.8}%

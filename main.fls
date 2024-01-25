@@ -221,6 +221,12 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm0800.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm0600.tfm
 OUTPUT main.lol
+INPUT .\Chapters\glossary.tex
+INPUT .\Chapters\glossary.tex
+INPUT Chapters\glossary.tex
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm0500.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\Chapters\Literature_Review.tex
@@ -272,10 +278,8 @@ INPUT .\Images\schematicforDHT22.png
 INPUT .\Images\schematicforDHT22.png
 INPUT .\Images\schematicforDHT22.png
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm0700.tfm
-INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm0500.tfm
 INPUT .\Images\InterfaceofDFR0026.png
 INPUT .\Images\InterfaceofDFR0026.png
 INPUT .\Images\InterfaceofDFR0026.png
@@ -367,6 +371,8 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
