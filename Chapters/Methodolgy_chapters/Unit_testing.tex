@@ -1,0 +1,125 @@
+Fristly i want to made  some unit tests the aim of this  is the  following:
+\begin{itemize}
+    \item To make  test  that will be  there for  the  codeing  section of  the  project 
+\end{itemize}
+this section will discuss the  following for  testing:
+\begin{enumerate}
+    \item 1 x DHT22
+    \item 1 x DFR0026
+    \item 1 x AS312
+    \item 1 x MM2 Series 900 MHz
+    \item 1 x MCP3008
+    \item 1 x Raspberry Pi VR 220 Camera
+    \item  1 x Li-polymer Battery HAT 
+    \item 1 x Turbo 1GB 
+\end{enumerate}
+\subsubsection{DHT22}
+According to the  data sheet \cite{sparkfun} seen as  the data is   8 bits  and  the  range at which this   operates at  -40 to 80$^{o}$c for tempeature
+meaning we have  at least  7 bit in the  exponent to  represent  the   measured value.
+to represent  the  high  end of this  sensor i used the  following calculation:
+$$ 2^6 +2^4 = 80$$ which mean  we have  a 2 bits dedicated to decimal place so the  high temperature to be 80.3$^{o}$c
+for the  lowest temp we have 6 bits  to  represent  - 40 due to  2s complement  so lowest  will   be -40.3$^{o}C$
+so with that  that  stablish we  must  make a  unit  that will do  the  following:
+\begin{enumerate}
+    \item Test if the  output is  a float
+    \item Test the  high end of  the  temp sensor so it  reads  80.3 as  the highest
+    \item Test for the  lowest   temp   around 
+\end{enumerate}
+be sure to follow  steps  for  folder  setup  follow instructions on page \pageref{folderstructure}.
+we get the following sample code:
+\begin{lstlisting}[style=mystyle,caption={sample test intial code}]
+import unittest
+from protest import Read_DHT22
+class test_project_code(unittest.TestCase):
+    def test_DHT_22_temp_output_type(self):
+        self.assertIsInstance(Read_DHT22, float)
+    def test_DHT22_temp_range(self):
+        self.assertGreaterEqual(Read_DHT22,-30.3)
+        self.assertLessEqual(Read_DHT22,80.3)
+    
+\end{lstlisting} 
+for  humidity  the Datasheet which ranges from 0 to 100 \%
+we want to test for the following:
+\begin{enumerate}
+    \item Test if the  output is  a float
+    \item Test if the  output ranges 0 to 100
+\end{enumerate}
+this lead to the  following code 
+\begin{lstlisting}[style=mystyle,caption={sample test for DHT22}]
+import unittest
+from protest import Read_DHT22
+class test_project_code(unittest.TestCase):
+    hum,temp=Read_DHT22(2)
+    def test_DHT22_output_type(self):
+        self.assertIsInstance(Read_DHT22,tuple)
+    #....
+
+    def test_DHT22_hum_output_type(self):
+        self.assertIsInstance(hum,float)
+
+    def test_DHT22_hum_range(self):
+        self.assertGreaterEqual(hum,0.0)
+        self.assertLessEqual(hum,100.0)
+\end{lstlisting}
+\subsubsection{DFR0026 \& MCP3008}
+According to the  datasheet \cite{ada} we must keep in mind  that this  componet is  connected to  an ADC 
+this  will  give  me  the  following  test conditions:
+\begin{enumerate}
+    \item Test if  the output is a float
+
+    \item Test  the  range of this  with the  upper limit being 5v 
+    \item test the  lover limit being 0 
+\end{enumerate}
+\begin{lstlisting}[style=mystyle,caption={unit test for  DFR0026 and  MCP3008}]
+    import unittest
+    from protest import Read_DHT22,Read_MCP3008
+    class test_project_code(unittest.TestCase):
+    def test_DFR0026_MCP3008_out_type(self):
+        self.assertIsInstance(Read_MCP3008,float)
+    def test_DFR0026_MCP3008_out_range(self):
+        self.assertLessEqual(5.0000000)
+        self.assertGreaterEqual(0.0000000)
+\end{lstlisting}
+\subsubsection{AS312}
+for  this section  we  want our  tests  to  be  the following:
+\begin{enumerate}
+    \item test for type is boolean 
+\end{enumerate}
+we can  now add to the snipppet :
+\begin{lstlisting}
+    def test_AS312_out_type(self):
+        self.assertIsInstance(Read_AS312,bool)
+\end{lstlisting}
+\textbf{Note : Don't forget to import read_as12 function from test file}
+
+\subsubsection{Raspberry Pi VR 220 Camera}
+according to the  data sheet \cite{Camera}
+we the  resoultion to  it uses is  1080p50 which is 1920x1080p so our  tests will have to  in copoarte  the  followoing:
+\begin{enumerate}
+    \item Test the  output shape  if open cv is  gonna  be  used 
+    \begin{enumerate}
+        \item test  the  amout of   elelecelm in the  3 dimesional   array 
+    \end{enumerate}
+    \item test the  file  type  is png
+\end{enumerate}
+this would lead me to the following code snippet.
+\begin{lstlisting}
+    def test_Raspberry_Pi_VR220_out_shape(self):
+    self.assertEqual(Read_Raspberry_PiVR220.shape,(1920,1080,3))
+\end{lstlisting}
+\subsubsection{Li-polymer Battery HAT}
+
+\subsubsection{memory moduldes }
+in this setion will dicuss the following:
+\begin{enumerate}
+    \item silicon power 32GB 
+    \item Turbo 1GB
+\end{enumerate}
+When conserding this  i have to  ask myself if  the raspbery pi handles directories 
+\subsubsection{MM2 Series 900 MHz}
+
+\subsubsection{conculsion}
+The  intiall  draft  code  for  the  test  devlopemnt  si the  following
+\begin{lstlisting}[style=mystyle,caption={Final draft test template}]
+    # waiting for other sections 
+\end{lstlisting}
