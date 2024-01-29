@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  29 JAN 2024 01:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  29 JAN 2024 10:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -801,39 +801,43 @@ Package natbib Warning: Citation `RS' on page 13 undefined on input line 371.
 LaTeX Warning: Reference `pi os' on page 13 undefined on input line 384.
 
 [13]
+Overfull \hbox (512.34213pt too wide) in paragraph at lines 388--397
+[][] 
+ []
+
 <Images/memory_devices.png, id=233, 1017.8025pt x 62.48344pt>
 File: Images/memory_devices.png Graphic file (type png)
 <use Images/memory_devices.png>
-Package pdftex.def Info: Images/memory_devices.png  used on input line 390.
+Package pdftex.def Info: Images/memory_devices.png  used on input line 407.
 (pdftex.def)             Requested size: 362.37569pt x 22.24612pt.
- [14 <./Images/memory_devices.png>]
-Overfull \hbox (84.0234pt too wide) in paragraph at lines 440--457
+[14 <./Images/memory_devices.png>]
+Overfull \hbox (84.0234pt too wide) in paragraph at lines 457--474
  [][] 
  []
 
 
-LaTeX Warning: Reference `Compareing DHT22 and DHT11' on page 15 undefined on input line 472.
+LaTeX Warning: Reference `Compareing DHT22 and DHT11' on page 15 undefined on input line 489.
 
 
-LaTeX Warning: Reference `table of light sensors' on page 15 undefined on input line 472.
+LaTeX Warning: Reference `table of light sensors' on page 15 undefined on input line 489.
 
 
-LaTeX Warning: Reference `Motion sensor components' on page 15 undefined on input line 472.
+LaTeX Warning: Reference `Motion sensor components' on page 15 undefined on input line 489.
 
 
-Chapters/liteature_review_chapters/hardwareconsiderations.tex:488: Package array Error:  Illegal pream-token (1): `c' used.
+Chapters/liteature_review_chapters/hardwareconsiderations.tex:505: Package array Error:  Illegal pream-token (1): `c' used.
 
 See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.488 \end{tabular}}
+l.505 \end{tabular}}
                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (125.07396pt too wide) in paragraph at lines 488--489
+Overfull \hbox (125.07396pt too wide) in paragraph at lines 505--506
 [][] 
  []
 
@@ -1055,7 +1059,7 @@ If that doesn't work, type  X <return>  to quit.
 
 Package natbib Warning: Citation `Savage' on page 24 undefined on input line 19.
 
-<Images/Silver_Maple.png, id=444, 432.61626pt x 342.27875pt>
+<Images/Silver_Maple.png, id=446, 432.61626pt x 342.27875pt>
 File: Images/Silver_Maple.png Graphic file (type png)
 <use Images/Silver_Maple.png>
 Package pdftex.def Info: Images/Silver_Maple.png  used on input line 22.
@@ -1063,7 +1067,7 @@ Package pdftex.def Info: Images/Silver_Maple.png  used on input line 22.
 
 Package natbib Warning: Citation `ITU' on page 24 undefined on input line 28.
 
-<Images/ITU attteuntion.png, id=445, 703.62875pt x 529.98pt>
+<Images/ITU attteuntion.png, id=447, 703.62875pt x 529.98pt>
 File: Images/ITU attteuntion.png Graphic file (type png)
 <use Images/ITU attteuntion.png>
 Package pdftex.def Info: Images/ITU attteuntion.png  used on input line 35.
@@ -1072,7 +1076,7 @@ Package pdftex.def Info: Images/ITU attteuntion.png  used on input line 35.
 
 Package natbib Warning: Citation `Sabetahd_Mousavi_Ghasemi_Vafaei_Poursorkhabi_Mohammadzadeh_Zandi_2022' on page 25 undefined on input line 54.
 
-<Images/atteuntion_2.png, id=461, 794.97pt x 262.73157pt>
+<Images/atteuntion_2.png, id=463, 794.97pt x 262.73157pt>
 File: Images/atteuntion_2.png Graphic file (type png)
 <use Images/atteuntion_2.png>
 Package pdftex.def Info: Images/atteuntion_2.png  used on input line 59.
@@ -1080,7 +1084,7 @@ Package pdftex.def Info: Images/atteuntion_2.png  used on input line 59.
 
 Package natbib Warning: Citation `lunken' on page 25 undefined on input line 66.
 
-<Images/absorstion.png, id=462, 243.91125pt x 306.14375pt>
+<Images/absorstion.png, id=464, 243.91125pt x 306.14375pt>
 File: Images/absorstion.png Graphic file (type png)
 <use Images/absorstion.png>
 Package pdftex.def Info: Images/absorstion.png  used on input line 70.
@@ -1332,17 +1336,17 @@ Package rerunfilecheck Info: Checksums for `main.out':
 ### simple group (level 1) entered at line 126 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16541 strings out of 474586
- 268266 string characters out of 5746153
+ 16544 strings out of 474586
+ 268317 string characters out of 5746153
  2117558 words of memory out of 5000000
- 38044 multiletter control sequences out of 15000+600000
+ 38045 multiletter control sequences out of 15000+600000
  567780 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,11n,93p,616b,2059s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (46 pages, 731051 bytes).
+Output written on main.pdf (46 pages, 732037 bytes).
 PDF statistics:
- 783 PDF objects out of 1000 (max. 8388607)
- 436 named destinations out of 1000 (max. 500000)
+ 785 PDF objects out of 1000 (max. 8388607)
+ 438 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
