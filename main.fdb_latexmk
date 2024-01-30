@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1706618330 "main.aux" "main.bbl" "main" 1706618519 2
+["bibtex main"] 1706619000 "main.aux" "main.bbl" "main" 1706619057 2
   "C:/Users/User/AppData/Local/Programs/MiKTeX/bibtex/bib/feupphdteses/References.bib" 1366811700 2206 985e03fb36d872d306e76cfacc160693 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/ieeetr.bst" 1291864344 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1706618517 18936 7ddf2abbb967d4e81276578f2f22cf56 "pdflatex"
+  "main.aux" 1706619055 19071 d0d2795e4a0f8f65d53ff44dd57eff8f "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1706618513 "c:/Users/User/OneDrive/Documents/latexfyp/main.tex" "main.pdf" "main" 1706618519 2
+["pdflatex"] 1706619052 "c:/Users/User/OneDrive/Documents/latexfyp/main.tex" "main.pdf" "main" 1706619057 2
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1706555524 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1705504362 12668 f75bc4312ca3bbeb0add8b117f12deec ""
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1701443778 24212800 497db0b608c779e35c5ca89c3700ebaa ""
@@ -136,7 +136,7 @@
   "Chapters/liteature_review_chapters/Atteunuation.tex" 1704240794 3387 4a8fd9e2e11d9b30a35ae807563182bc ""
   "Chapters/liteature_review_chapters/Introduction.tex" 1704240794 3491 e1837315541e82c1a27569ab5a57f4fc ""
   "Chapters/liteature_review_chapters/Mesh_network_considerations.tex" 1704240794 2140 a7bf96a82575db72a0ead4cef367eb20 ""
-  "Chapters/liteature_review_chapters/Software_considerations.tex" 1706612480 9268 3fffc7060699a985a2ece1e73066e2e1 ""
+  "Chapters/liteature_review_chapters/Software_considerations.tex" 1706619045 9560 3aa950ae32bcf3a5e6d5fe810b51a322 ""
   "Chapters/liteature_review_chapters/hardwareconsiderations.tex" 1706618505 23455 9ec33aaf95ef751d0061df5dbd1ea3e8 ""
   "Images/ITU attteuntion.png" 1704240796 57004 931422ddf892e404313a281ba380b523 ""
   "Images/InterfaceforDHT22.png" 1704240796 58432 152a45952b01b1c0a20938f9be52572c ""
@@ -154,15 +154,15 @@
   "Images/schematicforDHT22.png" 1704240796 44777 b7ff9eb19a05aea3ad5e82c9cfc4b8a0 ""
   "Images/tempssenorscompared.png" 1704240796 44582 289d67ae14bd4a64c8afd0339fd3d1ec ""
   "c:/Users/User/OneDrive/Documents/latexfyp/main.tex" 1706492486 2987 264fa1fac260fef5f54eab940c27f1d3 ""
-  "main.aux" 1706618517 18936 7ddf2abbb967d4e81276578f2f22cf56 "pdflatex"
-  "main.bbl" 1706618330 0 d41d8cd98f00b204e9800998ecf8427e "bibtex main"
+  "main.aux" 1706619055 19071 d0d2795e4a0f8f65d53ff44dd57eff8f "pdflatex"
+  "main.bbl" 1706619001 0 d41d8cd98f00b204e9800998ecf8427e "bibtex main"
   "main.ind" 0 -1 0 ""
-  "main.lof" 1706618517 1441 0ab5f0abf6b58fa128b4e0f4b7f5d8f3 "pdflatex"
-  "main.lol" 1706618517 1198 5dbfdd4eb9e326df7b2f8ed0810d053e "pdflatex"
-  "main.lot" 1706618517 1982 58fd0021036db43882ab012e98d8703b "pdflatex"
-  "main.out" 1706618517 6938 ff3c638eceb857e6ac49f74122e492db "pdflatex"
+  "main.lof" 1706619055 1441 0ab5f0abf6b58fa128b4e0f4b7f5d8f3 "pdflatex"
+  "main.lol" 1706619055 1198 5dbfdd4eb9e326df7b2f8ed0810d053e "pdflatex"
+  "main.lot" 1706619055 1982 58fd0021036db43882ab012e98d8703b "pdflatex"
+  "main.out" 1706619055 7121 6c145b08d12b617563759ebb22729887 "pdflatex"
   "main.tex" 1706492486 2987 264fa1fac260fef5f54eab940c27f1d3 ""
-  "main.toc" 1706618517 5165 adba7d5fab3d541a0727a97cf63995a3 "pdflatex"
+  "main.toc" 1706619055 5259 72f1b005728570beb7d5c42ce4c0a0b3 "pdflatex"
   (generated)
   "main.aux"
   "main.lof"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  30 JAN 2024 12:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  30 JAN 2024 12:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -853,211 +853,211 @@ Package natbib Warning: Citation `projects' on page 17 undefined on input line 1
 
 [17]
 
-LaTeX Warning: Reference `Sychematic for DHT22 revised' on page 18 undefined on input line 36.
+LaTeX Warning: Reference `Sychematic for DHT22 revised' on page 18 undefined on input line 37.
 
 [18] (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Chapters/liteature_review_chapters/Software_considerations.tex:52: Missing = inserted for \ifnum.
+Chapters/liteature_review_chapters/Software_considerations.tex:53: Missing = inserted for \ifnum.
 <to be read again> 
                    k
-l.52 ...e=mystyle,caption={Example code for DHT2}]
+l.53 ...e=mystyle,caption={Example code for DHT2}]
                                                   
 I was expecting to see `<', `=', or `>'. Didn't.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:52: Missing number, treated as zero.
+Chapters/liteature_review_chapters/Software_considerations.tex:53: Missing number, treated as zero.
 <to be read again> 
                    k
-l.52 ...e=mystyle,caption={Example code for DHT2}]
+l.53 ...e=mystyle,caption={Example code for DHT2}]
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Chapters/liteature_review_chapters/Software_considerations.tex:52: Package Listings Error: Strict positive integer expected.
+Chapters/liteature_review_chapters/Software_considerations.tex:53: Package Listings Error: Strict positive integer expected.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.52 ...e=mystyle,caption={Example code for DHT2}]
+l.53 ...e=mystyle,caption={Example code for DHT2}]
                                                   
 You can't use `4 keywordstyle' as tabsize. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 52.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 53.
 [19]
-Chapters/liteature_review_chapters/Software_considerations.tex:77: Missing = inserted for \ifnum.
+Chapters/liteature_review_chapters/Software_considerations.tex:78: Missing = inserted for \ifnum.
 <to be read again> 
                    k
-l.77 ...=mystyle,caption={Example code for AS312}]
+l.78 ...=mystyle,caption={Example code for AS312}]
                                                   
 I was expecting to see `<', `=', or `>'. Didn't.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:77: Missing number, treated as zero.
+Chapters/liteature_review_chapters/Software_considerations.tex:78: Missing number, treated as zero.
 <to be read again> 
                    k
-l.77 ...=mystyle,caption={Example code for AS312}]
+l.78 ...=mystyle,caption={Example code for AS312}]
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Chapters/liteature_review_chapters/Software_considerations.tex:77: Package Listings Error: Strict positive integer expected.
+Chapters/liteature_review_chapters/Software_considerations.tex:78: Package Listings Error: Strict positive integer expected.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...=mystyle,caption={Example code for AS312}]
+l.78 ...=mystyle,caption={Example code for AS312}]
                                                   
 You can't use `4 keywordstyle' as tabsize. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Reference `adc code' on page 20 undefined on input line 98.
+LaTeX Warning: Reference `adc code' on page 20 undefined on input line 99.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:111: Missing = inserted for \ifnum.
+Chapters/liteature_review_chapters/Software_considerations.tex:112: Missing = inserted for \ifnum.
 <to be read again> 
                    k
-l.111 ...isting}[style=mystyle,caption={ADC code}]
+l.112 ...isting}[style=mystyle,caption={ADC code}]
                                                   
 I was expecting to see `<', `=', or `>'. Didn't.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:111: Missing number, treated as zero.
+Chapters/liteature_review_chapters/Software_considerations.tex:112: Missing number, treated as zero.
 <to be read again> 
                    k
-l.111 ...isting}[style=mystyle,caption={ADC code}]
+l.112 ...isting}[style=mystyle,caption={ADC code}]
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Chapters/liteature_review_chapters/Software_considerations.tex:111: Package Listings Error: Strict positive integer expected.
+Chapters/liteature_review_chapters/Software_considerations.tex:112: Package Listings Error: Strict positive integer expected.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 ...isting}[style=mystyle,caption={ADC code}]
+l.112 ...isting}[style=mystyle,caption={ADC code}]
                                                   
 You can't use `4 keywordstyle' as tabsize. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [20]
-Chapters/liteature_review_chapters/Software_considerations.tex:126: Missing = inserted for \ifnum.
+Chapters/liteature_review_chapters/Software_considerations.tex:127: Missing = inserted for \ifnum.
 <to be read again> 
                    k
-l.126 ...,caption={example code for LCD display }]
+l.127 ...,caption={example code for LCD display }]
                                                   
 I was expecting to see `<', `=', or `>'. Didn't.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:126: Missing number, treated as zero.
+Chapters/liteature_review_chapters/Software_considerations.tex:127: Missing number, treated as zero.
 <to be read again> 
                    k
-l.126 ...,caption={example code for LCD display }]
+l.127 ...,caption={example code for LCD display }]
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Chapters/liteature_review_chapters/Software_considerations.tex:126: Package Listings Error: Strict positive integer expected.
+Chapters/liteature_review_chapters/Software_considerations.tex:127: Package Listings Error: Strict positive integer expected.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 ...,caption={example code for LCD display }]
+l.127 ...,caption={example code for LCD display }]
                                                   
 You can't use `4 keywordstyle' as tabsize. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:149: Missing = inserted for \ifnum.
+Chapters/liteature_review_chapters/Software_considerations.tex:150: Missing = inserted for \ifnum.
 <to be read again> 
                    k
-l.149 ...ystyle,caption={example code for camera}]
+l.150 ...ystyle,caption={example code for camera}]
                                                   
 I was expecting to see `<', `=', or `>'. Didn't.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:149: Missing number, treated as zero.
+Chapters/liteature_review_chapters/Software_considerations.tex:150: Missing number, treated as zero.
 <to be read again> 
                    k
-l.149 ...ystyle,caption={example code for camera}]
+l.150 ...ystyle,caption={example code for camera}]
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Chapters/liteature_review_chapters/Software_considerations.tex:149: Package Listings Error: Strict positive integer expected.
+Chapters/liteature_review_chapters/Software_considerations.tex:150: Package Listings Error: Strict positive integer expected.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.149 ...ystyle,caption={example code for camera}]
+l.150 ...ystyle,caption={example code for camera}]
                                                   
 You can't use `4 keywordstyle' as tabsize. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [21]
-Chapters/liteature_review_chapters/Software_considerations.tex:193: Missing = inserted for \ifnum.
+Chapters/liteature_review_chapters/Software_considerations.tex:194: Missing = inserted for \ifnum.
 <to be read again> 
                    k
-l.193 ...ode for turning sensor data into a data}]
+l.194 ...ode for turning sensor data into a data}]
                                                   
 I was expecting to see `<', `=', or `>'. Didn't.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:193: Missing number, treated as zero.
+Chapters/liteature_review_chapters/Software_considerations.tex:194: Missing number, treated as zero.
 <to be read again> 
                    k
-l.193 ...ode for turning sensor data into a data}]
+l.194 ...ode for turning sensor data into a data}]
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Chapters/liteature_review_chapters/Software_considerations.tex:193: Package Listings Error: Strict positive integer expected.
+Chapters/liteature_review_chapters/Software_considerations.tex:194: Package Listings Error: Strict positive integer expected.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.193 ...ode for turning sensor data into a data}]
+l.194 ...ode for turning sensor data into a data}]
                                                   
 You can't use `4 keywordstyle' as tabsize. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [22]
-Chapters/liteature_review_chapters/Software_considerations.tex:214: Missing = inserted for \ifnum.
+Chapters/liteature_review_chapters/Software_considerations.tex:215: Missing = inserted for \ifnum.
 <to be read again> 
                    k
-l.214 ...ion={example code for storing directory}]
+l.215 ...ion={example code for storing directory}]
                                                   
 I was expecting to see `<', `=', or `>'. Didn't.
 
-Chapters/liteature_review_chapters/Software_considerations.tex:214: Missing number, treated as zero.
+Chapters/liteature_review_chapters/Software_considerations.tex:215: Missing number, treated as zero.
 <to be read again> 
                    k
-l.214 ...ion={example code for storing directory}]
+l.215 ...ion={example code for storing directory}]
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Chapters/liteature_review_chapters/Software_considerations.tex:214: Package Listings Error: Strict positive integer expected.
+Chapters/liteature_review_chapters/Software_considerations.tex:215: Package Listings Error: Strict positive integer expected.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.214 ...ion={example code for storing directory}]
+l.215 ...ion={example code for storing directory}]
                                                   
 You can't use `4 keywordstyle' as tabsize. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1066,7 +1066,7 @@ If that doesn't work, type  X <return>  to quit.
 
 Package natbib Warning: Citation `Savage' on page 25 undefined on input line 19.
 
-<Images/Silver_Maple.png, id=458, 432.61626pt x 342.27875pt>
+<Images/Silver_Maple.png, id=460, 432.61626pt x 342.27875pt>
 File: Images/Silver_Maple.png Graphic file (type png)
 <use Images/Silver_Maple.png>
 Package pdftex.def Info: Images/Silver_Maple.png  used on input line 22.
@@ -1074,7 +1074,7 @@ Package pdftex.def Info: Images/Silver_Maple.png  used on input line 22.
 
 Package natbib Warning: Citation `ITU' on page 25 undefined on input line 28.
 
-<Images/ITU attteuntion.png, id=459, 703.62875pt x 529.98pt>
+<Images/ITU attteuntion.png, id=461, 703.62875pt x 529.98pt>
 File: Images/ITU attteuntion.png Graphic file (type png)
 <use Images/ITU attteuntion.png>
 Package pdftex.def Info: Images/ITU attteuntion.png  used on input line 35.
@@ -1083,7 +1083,7 @@ Package pdftex.def Info: Images/ITU attteuntion.png  used on input line 35.
 
 Package natbib Warning: Citation `Sabetahd_Mousavi_Ghasemi_Vafaei_Poursorkhabi_Mohammadzadeh_Zandi_2022' on page 26 undefined on input line 54.
 
-<Images/atteuntion_2.png, id=474, 794.97pt x 262.73157pt>
+<Images/atteuntion_2.png, id=476, 794.97pt x 262.73157pt>
 File: Images/atteuntion_2.png Graphic file (type png)
 <use Images/atteuntion_2.png>
 Package pdftex.def Info: Images/atteuntion_2.png  used on input line 59.
@@ -1091,7 +1091,7 @@ Package pdftex.def Info: Images/atteuntion_2.png  used on input line 59.
 
 Package natbib Warning: Citation `lunken' on page 26 undefined on input line 66.
 
-<Images/absorstion.png, id=475, 243.91125pt x 306.14375pt>
+<Images/absorstion.png, id=477, 243.91125pt x 306.14375pt>
 File: Images/absorstion.png Graphic file (type png)
 <use Images/absorstion.png>
 Package pdftex.def Info: Images/absorstion.png  used on input line 70.
@@ -1336,24 +1336,24 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  FF3C638ECEB857E6AC49F74122E492DB;6938.
+(rerunfilecheck)             After:  6C145B08D12B617563759EBB22729887;7121.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 93 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16562 strings out of 474586
- 268800 string characters out of 5746153
+ 16564 strings out of 474586
+ 268824 string characters out of 5746153
  2117558 words of memory out of 5000000
  38048 multiletter control sequences out of 15000+600000
  567780 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,11n,93p,616b,2059s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (47 pages, 735500 bytes).
+Output written on main.pdf (47 pages, 735943 bytes).
 PDF statistics:
- 800 PDF objects out of 1000 (max. 8388607)
- 448 named destinations out of 1000 (max. 500000)
+ 802 PDF objects out of 1000 (max. 8388607)
+ 450 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
