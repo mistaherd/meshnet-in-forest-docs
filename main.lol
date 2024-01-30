@@ -8,4 +8,5 @@
 \contentsline {lstlisting}{\numberline {3.1}{\ignorespaces sample test intial code}}{31}{lstlisting.3.1}%
 \contentsline {lstlisting}{\numberline {3.2}{\ignorespaces sample test for DHT22}}{31}{lstlisting.3.2}%
 \contentsline {lstlisting}{\numberline {3.3}{\ignorespaces unit test for DFR0026 and MCP3008}}{32}{lstlisting.3.3}%
-\contentsline {lstlisting}{\numberline {3.4}{\ignorespaces Final draft test template}}{33}{lstlisting.3.4}%
+\contentsline {lstlisting}{\numberline {3.4}{\ignorespaces si powerd SD snippnet}}{33}{lstlisting.3.4}%
+\contentsline {lstlisting}{\numberline {3.5}{\ignorespaces Final draft test template}}{33}{lstlisting.3.5}%

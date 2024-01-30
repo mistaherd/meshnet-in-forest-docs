@@ -233,10 +233,25 @@
 		root.quit()
 	\end{lstlisting}
 	Other useful Libraries allow you to  select all  .csv, png  called glob
+	for our TDD Section we will have  use the  following command:
+	\label{TDD sample bash}
+	\begin{minted}{Bash}
+		# !/bin/bash
+
+		dir_name=$1
+
+		size=$(du -sh "$dir_name" | cut -f1)
+
+		echo "Directory size: $size"
+ 
+	\end{minted}
+	This is a script that will look at a  director this can be home dirctory  this will cal the  space if 13K
+	the "| cut -f1" will only foucs on the  size string messeage and then print out the  size. this is  just  a sample  script 
 	\subsection{Test Driven devolmponet}
 	In this  project ill will be useing  Test Driven Development (TDD) is a software development approach where tests are written before the actual code
 	the following is the advantages and dissadvantges of TDD
 	\begin{enumerate}
 		\item 
 	\end{enumerate}
+
 	% \subsection{Conclusion}
