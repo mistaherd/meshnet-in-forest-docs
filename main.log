@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  30 JAN 2024 15:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.1)  31 JAN 2024 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -472,13 +472,11 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \usepackage
-                {gensymb}
+l.17 
+     
 Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for more information.
 
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/gensymb\gensymb.sty
-Package: gensymb 2022/10/17 v1.0.2 (KJH)
-) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2023/11/11 v3.97 The Babel package
 \babel@savecnt=\count338
 \U@D=\dimen196
@@ -587,10 +585,10 @@ l.53 \begin{document}
 
  
 Here is how much of TeX's memory you used:
- 17461 strings out of 474586
- 304232 string characters out of 5746153
+ 17406 strings out of 474586
+ 303235 string characters out of 5746153
  1923558 words of memory out of 5000000
- 39429 multiletter control sequences out of 15000+600000
+ 39378 multiletter control sequences out of 15000+600000
  558369 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,0n,93p,355b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
