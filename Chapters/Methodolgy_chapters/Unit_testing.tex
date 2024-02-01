@@ -38,6 +38,9 @@ class test_project_code(unittest.TestCase):
         self.assertLessEqual(Read_DHT22,80.3)
     
 \end{lstlisting} 
+This code import unitest . the from protest is  a python files  we can  install  functions from other python files this can be usefull for testing purposes
+then we initalized a test class call Unittest.testcase our firstion fucntion of the class  we  check if the number of the output  is a float or not this is  for  testing  tempearture
+the next function we test for  is the range i look at the datasheet online   this code is  simpley testing the  limits of the  DHT22
 for  humidity  the Datasheet which ranges from 0 to 100 \%
 we want to test for the following:
 \begin{enumerate}
@@ -61,6 +64,9 @@ class test_project_code(unittest.TestCase):
         self.assertGreaterEqual(hum,0.0)
         self.assertLessEqual(hum,100.0)
 \end{lstlisting}
+seen as we expect our sensor to  print out a humdity and temp values we  set the  output to  a tuple 
+to test for this we use isInstacne which will test if its a tuple
+next we test for the  limits of the  humidity
 \subsubsection{DFR0026 \& MCP3008}
 According to the  datasheet \cite{ada} we must keep in mind  that this  componet is  connected to  an ADC 
 this  will  give  me  the  following  test conditions:
@@ -80,18 +86,19 @@ this  will  give  me  the  following  test conditions:
         self.assertLessEqual(5.0000000)
         self.assertGreaterEqual(0.0000000)
 \end{lstlisting}
+this code is in the same in theres of limits
 \subsubsection{AS312}
 for  this section  we  want our  tests  to  be  the following:
 \begin{enumerate}
     \item test for type is boolean 
 \end{enumerate}
 we can  now add to the snipppet :
-\begin{lstlisting}
+\begin{lstlisting}[style=mystyle,caption={unit test for AS312}]
     def test_AS312_out_type(self):
         self.assertIsInstance(Read_AS312,bool)
 \end{lstlisting}
 \textbf{Note : Don't forget to import read_as12 function from test file}
-
+seen as  thhis is a motion sensor  our ouout will be true or false
 \subsubsection{Raspberry Pi VR 220 Camera}
 according to the  data sheet \cite{Camera}
 we the  resoultion to  it uses is  1080p50 which is 1920x1080p so our  tests will have to  in copoarte  the  followoing:
@@ -103,10 +110,11 @@ we the  resoultion to  it uses is  1080p50 which is 1920x1080p so our  tests wil
     \item test the  file  type  is png
 \end{enumerate}
 this would lead me to the following code snippet.
-\begin{lstlisting}
+\begin{lstlisting}[style=mystyle,caption={camera unit test}]
     def test_Raspberry_Pi_VR220_out_shape(self):
     self.assertEqual(Read_Raspberry_PiVR220.shape,(1920,1080,3))
 \end{lstlisting}
+this function check the  pixeal count or resoulkation
 \subsubsection{Li-polymer Battery HAT}
 
 \subsubsection{memory moduldes }
@@ -117,7 +125,7 @@ in this setion will dicuss the following:
 \end{enumerate}
 for this  i will use  useing  a  bash script(see this on page \pageref{TDD sample bash}) and what we are doing is  testing  the size in a  certain range for the silicon  SD card
 \begin{enumerate}
-    \item silicon power 32GB 
+    \item  Turbo 1GB
     as from above we are  import the file at which where our functions live in code frist we import the function
     \begin{lstlisting}[style=mystyle,caption={si powerd SD snippnet }]
         import unittest
@@ -129,7 +137,8 @@ for this  i will use  useing  a  bash script(see this on page \pageref{TDD sampl
             self.assertGreaterEqual(Read_Memory_module,0)
     \end{lstlisting}
     then simply we call assert and greater than which sets the bounds of the   modes the 1e9 is a way to put $1 × 10^9$
-
+    whcih output that will between 1GB and  0
+    \item silicon power 32GB
 \end{enumerate} 
 \subsubsection{MM2 Series 900 MHz}
 

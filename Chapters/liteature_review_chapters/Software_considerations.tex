@@ -17,6 +17,7 @@
 		\item How does  the os  respond to usb drives
 	\end{enumerate}
 	According to the \cite{projects} the imager will erase all the data while installing the os, from reaserch  the suggestion of backing up the data is  a  good sugestion.
+	for now i will use the recommended os and  stripdown from there which will be  dicussed  in the methodolgy section of this report.
 	
 	\subsection{Sensor code}
 	in this section, I will discuss the following :
@@ -48,8 +49,17 @@
 		sudo python setup.py install
 
 	\end{verbatim}
+	the code does the follwoing:
+	\begin{enumerate}
+		\item firstly git clone will clone the  repository on to device
+		\item Then change dirertorys  a
+		\item update linux
+		\item install dev kit for  python 
+		\item and install the setup 
+	\end{enumerate}
+	
 	\newpage
-	the following is the sample code  for this sensor 
+	this will then lead to  the  following code:
 	\begin{lstlisting}[style=mystyle,caption={Example code for DHT2}]
 		#Libraries
 		import Adafruit_DHT as dht
@@ -61,7 +71,11 @@
 		h,t=setup_DHT22(3)
 		print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(t,h))
 	\end{lstlisting}
-	this code will  import the DHT Libraries from Adafruit and  the  module of time, next a function is called where the  port is defined and  in the DHT  is mainly used DHT Libraries 
+	this code will do the following:
+	\begin{enumerate}
+		\item Import DHT from the adafuit libaray
+		\item in the  functipon whch takes the gpioport  as an integer this will read the data on the pin and  print it  out
+	\end{enumerate}
 	
 	\subsubsection{AS312}
 	for this section i followed  this \href{https://pimylifeup.com/raspberry-pi-motion-sensor/}{link}
@@ -73,6 +87,7 @@
 	\begin{verbatim}
 		sudo apt-get install python-rpi.gpio
 	\end{verbatim}
+	which will  intall a gpio python module
 	\newpage
 	Then type this into an IDE of your  choosing
 	\begin{lstlisting}[style=mystyle,caption={Example code for AS312}]
@@ -93,7 +108,11 @@
 		# must look up this 
 		GPIO.cleanup()
 	\end{lstlisting}
-	
+	this code does the  following:
+	\begin{enumerate}
+		\item it will look at the  pin for a pulse 
+		\item onece it sences a pulse  it will tiggerr  the camerae
+	\end{enumerate}
 	\subsubsection{DFR0026}	
 	from the last example, nothing has changed from the last component
 	an example code for this can be found on page \pageref{adc code}
@@ -117,33 +136,7 @@
 		print ('raw: {:.5f}'.format(DFR0026.value))
 		sleep(0.1)
 	\end{lstlisting}
-	\subsection{Kuman for Raspberry Pi 3B+ TFT LCD Display}
-	first in the terminal type the following:
-	\begin{verbatim}
-		sudo pip install Adafruit_ILI9341
-		sudo pip install Pillow              
-	\end{verbatim}
-	
-	\begin{lstlisting}[style=mystyle,caption={example code for LCD display }]
-		import Adafruit_ILI9341 as ILI9341
-		from PIL import Image, ImageDraw, ImageFont
-		# Configure the display driver GPIO pins
-		disp = ILI9341.ILI9341(dc=25, spi=SPI.SpiDev(0, 0), rst=24, mosi=19, sclk=18, miso=21)
-		# Initialize the display
-		disp.begin()
-		# Set the font
-		font = ImageFont.truetype('Arial.ttf', 16)
-		# Set the text colour
-		text_color = (255, 255, 255)  # White text color
-		# Create a blank image
-		image = Image. new('RGB', (disp.width, disp.height), (0, 0, 0))
-		# Create an ImageDraw object for drawing on the image
-		draw = ImageDraw.Draw(image)
-
-		# Draw the text onto the image
-		draw.text((10, 10), 'Hello, World!', font=font, fill=text_color)
-		disp.display(image.convert('RGB'))
-	\end{lstlisting}
+	this code will  selcect a  channel and device , port and  print the vaules of the adc's
 	\subsection{Raspberry Pi VR 220 Camera}
 	to get started with this simply look at the following \href{https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4}{link}
 	here is an example of the code of this module :
@@ -157,6 +150,7 @@
 		sleep(5)
 		camera.stop_preview()
 	\end{lstlisting}
+	this will  take a photo of what is in fron of the  camera
 
 	\subsection{MM2 Series 900 MHz}
 	for this section, the seller of this module has no public  documentation so it is hard to  come  with  an make a  interface for  this section   
@@ -235,7 +229,7 @@
 	Other useful Libraries allow you to  select all  .csv, png  called glob
 	for our TDD Section we will have  use the  following command:
 	\label{TDD sample bash}
-	\begin{minted}{Bash}
+	\begin{verbatim}
 		# !/bin/bash
 
 		dir_name=$1
@@ -243,15 +237,21 @@
 		size=$(du -sh "$dir_name" | cut -f1)
 
 		echo "Directory size: $size"
- 
-	\end{minted}
+	\end{verbatim}
 	This is a script that will look at a  director this can be home dirctory  this will cal the  space if 13K
 	the "| cut -f1" will only foucs on the  size string messeage and then print out the  size. this is  just  a sample  script 
 	\subsection{Test Driven devolmponet}
 	In this  project ill will be useing  Test Driven Development (TDD) is a software development approach where tests are written before the actual code
-	the following is the advantages and dissadvantges of TDD
+	the following is the advantages and dissadvantges of TDD:
 	\begin{enumerate}
-		\item 
+		\item Advantages
+		\begin{enumerate}
+			\item 
+		\end{enumerate}
+		\item Dissadvantages
+		\begin{enumerate}
+			\item 
+		\end{enumerate}
 	\end{enumerate}
 
 	% \subsection{Conclusion}
