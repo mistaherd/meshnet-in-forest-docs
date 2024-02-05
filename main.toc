@@ -1,0 +1,67 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Figures}{3}{chapter*.2}%
+\contentsline {chapter}{List of Tables}{4}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Literature Review}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{2}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Overview}{2}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Mesh network}{4}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Hardware Consideration}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Sensor considerations}{5}{subsection.2.2.1}%
+\contentsline {subsubsection}{Temperature \& Humidity sensor}{6}{section*.8}%
+\contentsline {subsubsection}{Light sensor}{8}{section*.15}%
+\contentsline {subsubsection}{Motion sensor}{10}{section*.19}%
+\contentsline {subsubsection}{Radio Module}{11}{section*.22}%
+\contentsline {subsection}{\numberline {2.2.2}ADC Considerations}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Camera}{13}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Memory module}{13}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Battery}{14}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Arduino vs PI Consideration }{15}{subsection.2.2.6}%
+\contentsline {subsubsection}{Picking a Raspberry Pi}{16}{section*.31}%
+\contentsline {subsubsection}{Picking an PI OS}{16}{section*.33}%
+\contentsline {subsection}{\numberline {2.2.7}Conclusion}{16}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}Software considerations}{17}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Raspberry pi OS}{17}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Sensor code}{17}{subsection.2.3.2}%
+\contentsline {subsubsection}{DHT22}{18}{section*.34}%
+\contentsline {subsubsection}{AS312}{19}{section*.35}%
+\contentsline {subsubsection}{DFR0026}{20}{section*.36}%
+\contentsline {subsection}{\numberline {2.3.3}MCP3008}{20}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Raspberry Pi VR 220 Camera}{21}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}MM2 Series 900 MHz}{21}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}code structure}{21}{subsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.3.7}File structure}{22}{subsection.2.3.7}%
+\contentsline {subsection}{\numberline {2.3.8}Test Driven devolmponet}{23}{subsection.2.3.8}%
+\contentsline {section}{\numberline {2.4}Attenuation}{24}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Absorption of water}{26}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}mesh network considerations}{27}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Review key of research Papers}{27}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Summary}{28}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Methodology}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Research Philosophy}{29}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Research Approach}{29}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Research Design}{30}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Data Collection Methods}{30}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Unit testing}{30}{section.3.6}%
+\contentsline {subsubsection}{DHT22}{30}{section*.42}%
+\contentsline {subsubsection}{DFR0026 \& MCP3008}{32}{section*.43}%
+\contentsline {subsubsection}{AS312}{32}{section*.44}%
+\contentsline {subsubsection}{Raspberry Pi VR 220 Camera}{32}{section*.45}%
+\contentsline {subsubsection}{Li-polymer Battery HAT}{33}{section*.46}%
+\contentsline {subsubsection}{memory moduldes }{33}{section*.47}%
+\contentsline {subsubsection}{MM2 Series 900 MHz}{33}{section*.48}%
+\contentsline {subsubsection}{conculsion}{33}{section*.49}%
+\contentsline {section}{\numberline {3.7}Model Development}{34}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Data Analysis Methods}{34}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Ethical Considerations}{34}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Validity and Reliability}{34}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Limitations and Delimitations}{34}{section.3.11}%
+\contentsline {section}{\numberline {3.12}Timeline}{34}{section.3.12}%
+\contentsline {chapter}{\numberline {4}Results}{35}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Discussion}{36}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion \& Future Work }{37}{chapter.6}%
+\contentsline {chapter}{Bibliography}{37}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Appendix A}{38}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Python Scripts}{39}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Bash scripts}{40}{appendix.C}%
