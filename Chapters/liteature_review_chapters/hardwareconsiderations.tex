@@ -263,12 +263,18 @@ the following is the interface for our device
 	\end{center}
 
 \end{figure}
-
+with 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/pinout_of_AS312.jpg}
+	\caption*{Pinout of  AS312}
+	\label{Pinout of  AS312}
+\end{figure}
 The connections are the following:
 \begin{enumerate}
 	\item VCC is connected  to 5v pin of the Pi
 	\item GND is connected to the GND of the  Pi
-	\item Vout is connected to GPIO 27
+	\item Vout is connected to GPIO 17
 \end{enumerate}
 This  component has the following:
 \begin{enumerate}
@@ -315,6 +321,7 @@ the two things we  want  for this is the high bit  Resolution  and  a  high samp
 			\hline
 			ADC pi Zero & 17 bits & 100KHz & 0-5.06v & 10mA \\
 			MCP3008 & 10 bits & 200 ksps & 2.7v- 5.5v & 500uA \\
+			DFR0553 & 16 bits & ~1.7Mhz & 0~5.0V&10mA\\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -515,6 +522,13 @@ Raspberry Pi 4 Model B  & 1.5 GHz              & 7                              
 \end{table}
 
 The above table displays the modules seen as our radio modules is 900Mhz  we want  1.5GHZ which is the Raspberry Pi 4  which needs USB\- c charger and an HDMI.
+for wireing our Pi here is  the GPIO pin pinout:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Images/Pinout_of_pi.png}
+	\caption*{Pinout for  the  pi}
+	\label{Pinout for  the  pi}
+\end{figure}
 \subsubsection{Picking an PI OS}
 \label{pi os}
 Seen as 
