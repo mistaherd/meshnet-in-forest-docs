@@ -94,12 +94,17 @@ keywordstyle=\color{BurntOrange}\bfseries,
 \bibliographystyle{ieeetr}
 
 \bibliography{References.bib}
-
-\appendix
 \chapter{Appendix A}
+\appendix
+
 \FloatBarrier
 \chapter{Python Scripts}
-\label{appPythonScripts}
+\section{Sensor Scripts}
+\input{Chapters/Appendix_tex/DHT22.tex}
+\newpage
+\input{Chapters/Appendix_tex/AS312.tex}
+\newpage
+
 \chapter{TDD Script}
 \input{Chapters/Appendix_tex/unittestingscripts.tex}
 

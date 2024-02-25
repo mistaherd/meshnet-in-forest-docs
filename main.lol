@@ -10,4 +10,6 @@
 \contentsline {lstlisting}{\numberline {2.4}{\ignorespaces unit test for AS312}}{36}{lstlisting.2.4}%
 \contentsline {lstlisting}{\numberline {2.5}{\ignorespaces camera unit test}}{36}{lstlisting.2.5}%
 \contentsline {lstlisting}{\numberline {2.6}{\ignorespaces si powerd SD snippnet}}{37}{lstlisting.2.6}%
-\contentsline {lstlisting}{\numberline {C.1}{\ignorespaces DHT22 unit test}}{43}{lstlisting.C.1}%
+\contentsline {lstlisting}{\numberline {A.1}{\ignorespaces DHT22code}}{44}{lstlisting.A.1}%
+\contentsline {lstlisting}{\numberline {A.2}{\ignorespaces code for AS312}}{46}{lstlisting.A.2}%
+\contentsline {lstlisting}{\numberline {B.1}{\ignorespaces DHT22 unit test}}{47}{lstlisting.B.1}%
