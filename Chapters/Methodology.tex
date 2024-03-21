@@ -23,23 +23,71 @@ Firstly once you have  your pi  heres  a  quick  guide to setup the pi are  the 
     this  will downlaod the  nessary  eniroment for  setinng up the  pi  intiall this will have to built out  through the  process of  the   project look at the timeline Section
     \item next simply follow the ReadME.md file  to  understand  how  to setup the py
 \end{enumerate}
-\section{Data Collection Methods}
-In this section  i dicuss the  following:
+
+
+
+\section{Additional  Research}
+In this section will discuss any extra research done on the project.
+in this section we will discuss the following:
 \begin{enumerate}
-    \item the  intall  unit test this is for  what we  expect  our  sensor  to  output this  will  be  updated
-    \item How  the data  from sensor will be stored 
-    \item the code  assoicated   with the above points 
+    \item ADC
+    \item Radio module
+    \item Camera
 \end{enumerate}
-
-
+\subsection{ADC}
+The MCP3008 was not  available when ordering parts,Another  part for this was choosen which is the  DFR0553 which has the following:
+\begin{enumerate}
+    \item a supply voltages(VCC) of 3.3 to 5 v
+    \item Analog signal  detection 0 to 5v
+    \item 4 analog chanel's
+    \item resolution of 16 bits
+    \item Operating current of 3mA
+\end{enumerate}
+\subsection{Radio module}
+for  this  section we want  to keep  the following in mind :
+\begin{enumerate}
+    \item We want a module that will send  and  received data
+    \item we don't  want  an  expensive solution due  to wanting to  have  multiple nodes
+    \item must we pick a standard? 
+    \item what module has  an open source project on it 
+    \item how do we  set up  a   mesh network with this 
+\end{enumerate}
+\subsubsection{Do we need a radio standard?}
+Lets assume we communicate with two pi via wires  we know that an interference will occur when  we  commutation that is wireless
+we can have multiple cases where interference can  occur these are  the following:
+\begin{enumerate}
+    \item the signal being reflected of objects such as  trees
+    \item the signal can reach the  receiver due to an object blocking the antenna
+    \item the signal isn't  power to be picked up by the receiver
+\end{enumerate}
+one essential part of this project is the  ability to have  our nodes have an address to set this up
+from a communication preceptive we could develop this when there is open source project that has sorted out the routeing for  you.
+only issue with this approach is if there is any issues that come from the open source project we will inheritthene
+with this in mind the following standards were found
+\begin{enumerate}
+    \item LoRa
+    \item Zigbee
+    \item Sigfox
+\end{enumerate}
+In \cite{Wu_Liebeherr_2023} lora is used  that will organize sensor
+data from all nodes in the spanning tree toward the root(laptop /PC) this can be show by the  following:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/lora_example_routing_proto.png}
+    \caption{protocol Wu used(wu\_lie et.al,2023:16705)}
+    \label{protocol Wu used(wu_lie et.al,2023:16705)}
+\end{figure}  
+this proves it possible  to make a  mesh network useing Lora.
+\par 
+Lora  
 \section{Software Module Development}
-this section is here to dicuss the method we took  for  developing software  for the  following:
+this section is here to discuss the method we took  for  developing software  for the  following:
 \begin{enumerate}
     \item Sensors 
     \item ADC
     \item Camera
     \item Radio module
-    \item Memory mangemnet
+    \item Memory management
     \item  TDD
 \end{enumerate}
 \subsection{Sensors}
@@ -58,7 +106,15 @@ this section is here to dicuss the method we took  for  developing software  for
 
 \subsection{TDD}
 \input{Chapters/Methodolgy_chapters/Unit_testing.tex}
-\section{Hardware updates}
+\section{Data Collection Methods}
+In this section  i discuss the  following:
+\begin{enumerate}
+    \item the  install  unit test this is for  what we  expect  our  sensor  to  output this  will  be  updated
+    \item How  the data  from sensor will be stored 
+    \item the code  associated   with the above points 
+\end{enumerate}
+
+
 
 \section{Data Analysis Methods}
 
