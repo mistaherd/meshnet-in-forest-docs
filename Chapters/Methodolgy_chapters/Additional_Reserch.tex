@@ -32,13 +32,13 @@ we can have multiple cases where interference can  occur these are  the followin
 \end{enumerate}
 one essential part of this project is the  ability to have  our nodes have an address to set this up
 from a communication preceptive we could develop this when there is open source project that has sorted out the routeing for  you.
-only issue with this approach is if there is any issues that come from the open source project we will inheritthene
+only issue with this approach is if there is any issues that come from the open source project we will inherit the bugs
 with this in mind the following standards were found
 \begin{enumerate}
     \item LoRa
-    \item Zigbee
-    \item Sigfox
 \end{enumerate}
+\subsubsection{LoRa}
+
 In \cite{Wu_Liebeherr_2023} lora is used that will organize sensor
 data from all nodes in the spanning tree toward the root(laptop /PC) this can be show by the  following:
 \begin{figure}[h!]
@@ -51,5 +51,33 @@ this proves it possible  to make a  mesh network using Lora.
 \par 
 from looking online Lora has more projects that are open source meaning we can use it.freely for example 
 \par
-for zigbee most of the application  that were found where indoor's i.e industial setting
-  
+Lora is uses spread spectrum modulation, In \cite{2003_Information_2023} spread spectrum is apparent in Shannon's theorem which states the channel capacity C the upper limit on the information rate of data that can be communciated at a lower error rate through the received signal power S:
+$$C=B\log_2(1+\frac{S}{N})$$
+Where B is the is the bandwidth of the channel in hertz.Where the bandwidth is:
+$$B=F_{max}-F_{min}$$
+spread spectrum  creates a pseudo-random code sequence that modulates the data signal  which will determine the  how  the signal is  spread out 
+\subsubsection{Why the MM2 Series 900 MHz wasnt picked}
+When ordering the parts for  this module issues where due to company not selling the product to  enterprise-level businesses so then two alternative radio modules were found:
+\begin{enumerate}
+    \item SB Components LoRa HAT for Raspberry Pi
+    \item RPIZ SHD LORA433 Raspberry Pi Shield - LoRa, 433 MHz, SX1268
+\end{enumerate}
+when we compare these we get the following table:
+
+\begin{table}[h!]
+    \scalebox{0.45}{
+        \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+            \hline
+            \rowcolor[HTML]{343434} 
+            \multicolumn{1}{|c|}{\cellcolor[HTML]{343434}\textbf{Modules}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{Tx/RX Voltage}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{Frequency}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{Range}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{TX/RX power}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{Through put}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{Error detection}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{Rx sensitivity}} & \multicolumn{1}{c|}{\cellcolor[HTML]{343434}\textbf{Hopping channel}} \\ \hline
+            SX1268 433M LoRa HAT & 5v & \begin{tabular}[c]{@{}l@{}}410.125$\sim$493.125MHz \\ or \\ 850.125$\sim$930.125MHz\end{tabular} & \begin{tabular}[c]{@{}l@{}}5KM(Sunny day; open area;\\  Antenna: AUX 5dBi,\\  Height 2.5m; \\ Air Speed: 2.4kbps)\end{tabular} & 11ma /100ma & 0.3Kbps & None & -147dBm@0.3Kbps (On air) & None \\ \hline
+            SB Components LoRa HAT for Raspberry Pi & 5v & 915/868/433 MHz & 5km & 22dBm & 0.3Kbps & None & N/A & None \\ \hline
+            \end{tabular}        
+        }
+        \caption{Comparing New Radio modules}
+        \label{Comparing New Radio modules}
+\end{table}
+SB Components LoRa HAT for Raspberry Pi   was picked which has the according to its datasheet to install it onto  the pi the designer has to  
+
+\subsection{What is  the differecne  between a  port and a channel}
+
