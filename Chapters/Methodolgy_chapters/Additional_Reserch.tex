@@ -55,7 +55,18 @@ Lora is uses spread spectrum modulation, In \cite{2003_Information_2023} spread 
 $$C=B\log_2(1+\frac{S}{N})$$
 Where B is the is the bandwidth of the channel in hertz.Where the bandwidth is:
 $$B=F_{max}-F_{min}$$
-spread spectrum  creates a pseudo-random code sequence that modulates the data signal  which will determine the  how  the signal is  spread out 
+spread spectrum  creates a pseudo-random code sequence that modulates the data signal  which will determine the  how  the signal is  spread out.
+
+To simulate the system we can use the following FIR response  as an example 
+\begin{figure}[h!]
+    \includegraphics[width=0.5\linewidth]{Images/FIR_response.png}
+    \caption{sample graph of a FIR response}
+    \label{sample graph of a FIR response}
+
+\end{figure}
+in a given  medium  of  transmit each bandwidth is the length the of the  sinc-roll-off which degrade depends on the  impulse response in this given bandwidth channels are separated in the same fashion .
+\subsection{What is  the difference  between a  port and a channel}
+\newpage
 \subsubsection{Why the MM2 Series 900 MHz wasnt picked}
 When ordering the parts for  this module issues where due to company not selling the product to  enterprise-level businesses so then two alternative radio modules were found:
 \begin{enumerate}
@@ -79,5 +90,5 @@ when we compare these we get the following table:
 \end{table}
 SB Components LoRa HAT for Raspberry Pi   was picked which has the according to its datasheet to install it onto  the pi the designer has to  
 
-\subsection{What is  the differecne  between a  port and a channel}
+
 
