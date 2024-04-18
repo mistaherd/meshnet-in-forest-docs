@@ -13,6 +13,8 @@ del main.pyg
 del main.lol
 del main.synctex.gz
 del main.fdb_latexmk
+del main.fls
+del main.out
 
 cls
 dir

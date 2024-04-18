@@ -34,6 +34,7 @@ one essential part of this project is the  ability to have  our nodes have an ad
 from a communication preceptive we could develop this when there is open source project that has sorted out the routeing for  you.
 only issue with this approach is if there is any issues that come from the open source project we will inherit the bugs
 with this in mind the following standards were found
+\newpage
 \begin{enumerate}
     \item LoRa
 \end{enumerate}
@@ -66,9 +67,9 @@ To simulate the system we can use the following FIR response  as an example
 \end{figure}
 in a given  medium  of  transmit each bandwidth is the length the of the  sinc-roll-off which degrade depends on the  impulse response in this given bandwidth channels are separated in the same fashion .
 \subsection{What is  the difference  between a  port and a channel}
-
+In \cite{flare} "A port is a virtual point where network connections start and end. Ports are software-based and managed by a computer's operating system. Each port is associated with a specific process or service. Ports allow computers to easily differentiate between different kinds of traffic: emails go to a different port than webpages, for instance, even though both reach a computer over the same Internet connection."
 \newpage
-\subsection{Why the MM2 Series 900 MHz wasnt picked}
+\subsection{Why the MM2 Series 900 MHz wasn't picked}
 When ordering the parts for  this module issues where due to company not selling the product to  enterprise-level businesses so then two alternative radio modules were found:
 \begin{enumerate}
     \item SB Components LoRa HAT for Raspberry Pi
@@ -89,7 +90,7 @@ when we compare these we get the following table:
         \caption{Comparing New Radio modules}
         \label{Comparing New Radio modules}
 \end{table}
-SB Components LoRa HAT for Raspberry Pi   was picked which has the according to its datasheet to install it onto  the pi the designer has to  
-\subsubsection{}
 
+\subsubsection{SB Components LoRa HAT}
+Which has a  E22-900T22S on the  board which has a throughput rate of 0.3kbps～62.5kbps so the maximum time it will take to get to a  node will be around 16 seconds depending on distance ,
 
