@@ -15,6 +15,6 @@ del main.synctex.gz
 del main.fdb_latexmk
 del main.fls
 del main.out
-
+del main.synctex(busy)
 cls
-dir
+
