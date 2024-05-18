@@ -1,0 +1,80 @@
+\section{Bashscripts}
+in this section we  will have  the following bash files:
+\begin{enumerate}
+    \item Camerea
+    \item main
+    \item memorytest
+    \item radiomodule
+\end{enumerate}
+\subsection{Camerea}
+\begin{lstlisting}[language=bash,caption={Code for triggering the camerea}]
+    #!/bin/bash
+    timestamp=$(date +"%Y-%m-%d_%H_%M_%S")
+    fname="camera_output_$timestamp.png"
+    output_dir="Images_camera"
+    if [ ! -d "$output_dir" ]; then
+    # Create the directory if it doesn't exist
+    mkdir -p "$output_dir"
+    fi
+    rpicam-still --raw -o "$output_dir/$fname"
+\end{lstlisting}
+\newpage
+\subsection{Main}
+\begin{lstlisting}[language=bash,caption={Code for runing the main function}]
+    #!/bin/bash
+    is_root() {
+    if [[ $EUID -ne 0 ]]; then
+        echo "This script requires root privileges. Please run with sudo."
+        exit 1
+    fi
+    }
+    if [[ $1 -eq 0 ]]; then
+        echo "Error no arugments provided"
+        echo -e "enter what is transmited:\n\r1:hello world \n\r2:text file \n\r3:csv file\n\r4:PNG\n\r"
+        exit 1
+    fi
+    # Call the is_root function to verify permissions
+    is_root
+    sudo chmod g+rw /dev/ttyS0
+    #get current time
+    current_time=$(date +%H:%M)
+    current_hour=$(echo $current_time | cut -d: -f 1)
+    previous_hour=$((current_hour-1))
+    while [ $current_time != "12:00" ]&&[ $current_time != "9:00" ]; do
+    if [ $current_time == "$current_hour:00" ]; then
+        # python Documents/Github/meshnetwork_in_forest/main/main.py $1
+        python main/main.py $1
+        echo "file ran successfully"
+    fi
+    break #because everyone needs a break sometime 
+    done
+\end{lstlisting}
+\newpage
+\subsection{Radio Module}
+\begin{lstlisting}[language=bash,caption={Code for the testing serial of the radio module}]
+    #!/bin/bash
+    #only use this  for  transcive module
+    # Function to check if the script is run with root privileges
+    is_root() {
+    if [[ $EUID -ne 0 ]]; then
+        echo "This script requires root privileges. Please run with sudo."
+        exit 1
+    fi
+    }
+
+    # Call the is_root function to verify permissions
+    is_root
+
+    # Set appropriate permissions for /dev/ttyS0 (consider group or user access)
+
+    sudo chmod g+rw /dev/ttyS0
+
+    if [[ "$1" == "1" ]]; then
+    python test_tranmiter.py
+    elif [[ "$1" == "0" ]]; then
+    python test_reciver.py
+    else
+    echo "Invalid argument. Please provide 1 (transmitter) or 0 (receiver)."
+    exit 1
+    fi
+\end{lstlisting}
