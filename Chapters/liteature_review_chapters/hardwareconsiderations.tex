@@ -280,17 +280,17 @@ This  component has the following:
 \begin{enumerate}
 	\item Range  of 12 meters 
 	\item An  angle  of  65$^o$ degree
-	\item A Delay of 15 \mu Seconds
+	\item A Delay of 15 $\mu$ Seconds
 \end{enumerate}
 
 \newpage
 \subsection{Radio Module}
-For this section, we have the following considerations:
+For this section there are the following considerations:
 \begin{itemize}
 	\item The devices are in a forest
 	\item Meaning  Gigahertz  isn't  a desirable frequency
-	\item We want a module that low low-power
-	\item a model that  will have a high throughput 
+	\item A module that has low-power
+	\item A model that  will have a high throughput 
 \end{itemize}
 
 Through research, I found the following table:
@@ -303,17 +303,17 @@ Through research, I found the following table:
 	
 \end{table}
 
-Out of these, I picked the MM2 Series 900 MHz\cite{freewave}.Note that the seller of this  radio module has  limited the documentation  of this module makes it hard to  draw an interface for this module which will be done  next  semester
+Out of these, the MM2 Series 900 MHz\cite{freewave} was chosen.Note that the seller of this  radio module has  limited the documentation  of this module.This makes it hard to  draw an interface for this module .
 \subsection{ADC Considerations}
 \label{Adc section}
-for the ADC  the following considerations:
+For the ADC  there are the following considerations:
 \begin{enumerate}
-	\item low power
-	\item high bit resolution
-	\item low amount of channels
-	\item high sample rate
+	\item Low power
+	\item High bit resolution
+	\item Low number of channels
+	\item High sample rate
 \end{enumerate}
-the two things we  want  for this is the high bit  Resolution  and  a  high sample rate
+The two things needed for this is a high bit  Resolution  and  a  high sample rate
 \begin{table}[h!]
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|}
@@ -328,16 +328,18 @@ the two things we  want  for this is the high bit  Resolution  and  a  high samp
 	\end{center}
 \end{table}
 
-Above are the components I had to choose from 
-for this project, I picked  MCP3008 due to its  resolution and  sample rate
-the following is the   schematic for the  MCP3008\cite{ada}
+Above are the components  to choose from 
+for this project,MCP3008 was chosen due to its  resolution and  sample rate
+\newpage
+The following is the schematic for the  MCP3008\cite{ada}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\linewidth]{Images/SchematicforMCP300.png}
 	\caption{Schematic for  MCP3008}
 	\label{Schematic for  MCP3008}
 \end{figure}
-the following are connections:
+
+The following are connections:
 \begin{enumerate}
 	\item VDD is connected to 3v3 pin of the  Pi
 	\item VRef is  also connected to  3v3 pin of the  Pi
@@ -348,19 +350,21 @@ the following are connections:
 	\item CS pin  is connected  to GPIO port 8
 	\item DGND ping is connected to the gnd pin
 \end{enumerate}
-this  commponet has the following:
+
+This  component has the following:
 \begin{enumerate}
-	\item A 10 bit resultion
-	\item seen as  the  reference  will  be 3.3v  
-	\item 200ksps meaning the delay to read is 5$\mu$ seconds
+	\item A 10 bit resolution
+	\item Seen as  the  reference  will  be 3.3v  
+	\item 200ksps, meaning the delay to read is 5$\mu$ seconds
 \end{enumerate}
+
 \subsection{Camera}
-For the camera, we have to keep in mind the following:
+For the camera,  the following has to be considered:
 \begin{enumerate}
 	\item Focal length
 	\item Resolution
 	\item Power
-	\item what lux values it works at
+	\item The lux values it operates at
 \end{enumerate}
 \begin{table}[h!]
 	\centering
@@ -377,23 +381,26 @@ For the camera, we have to keep in mind the following:
 	\caption{Camera module}
 	\label{Camera module}
 \end{table}
-The camera I pick is a Raspberry Pi VR 220\cite{RS} Camera to see how to connect look at the  following \href{https://youtu.be/yhM1NhD-kGs?si=yxgFZb84yxSGLtM3}{link} 
+
+The camera chosen is a Raspberry Pi VR 220\cite{RS} Camera To see how to connect look at the  following \href{https://youtu.be/yhM1NhD-kGs?si=yxgFZb84yxSGLtM3}{link}. 
 \subsection{Memory module}
 For this section, we consider the following:
 \begin{enumerate}
 	\item The file formatting of the sensor data
 	\item The file formatting of  the camera data
 	\item What are  the possible sizes of data
-	\item what is the size of the  raspberry pi OS
+	\item What is the  memory size of the  raspberry pi OS
 \end{enumerate}
-in my project, I plan on using the following:
+
+In my project the following is used:
 \begin{enumerate}
-	\item For the sensor I plan on use storing the data  in a  CSV file   with the following heading: (timestamp, heat, humidity, light level, anything detected) which can be around 25KB
-	\item For the camera in the plan using 10 MB is the  largest file  size
-	\item For the raspbery pi i downloaded  the raspberry imager  this has  loads of  options such as  the  following on \pageref{pi os}
+	\item The sensor data  is stored in a  CSV file with the following heading: (timestamp, heat, humidity, light level, anything detected), Which can be around 25KB
+	\item For the camera using 10 MB is the  largest file  size
+	\item For the Raspberry Pi  downloaded  the raspberry imager , This has  lots of  options such as  the  following on page \pageref{pi os}
 \end{enumerate}
-after has been we must consider a  mircoSD ,here is the following considerations:
-\begin{table}
+
+After has been we must consider a  mircoSD ,The following are considerations:
+\begin{table}[h!]
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 		\hline \\
 		Product Name & Capacity & Speed class & Read speed & Write speed & Temperature range & Operating volatage &Shock Resistance &Vibration Resistance \\
@@ -402,35 +409,36 @@ after has been we must consider a  mircoSD ,here is the following considerations
 		SANDISK Ultra Performance Class 10 microSDXC&128 GB& class 10 u1&up to 80 MB/s&up to 10 MB/s&N/A&N/A&yes&yes \\
 		Silicon Power 32GB 3D&32GB &class 10&Up to 100MB/s&Up to 100MB/s&0 to 70&2.7v - 3.6v&yes&yes \\
 		SanDisk 64GB Extreme PRO&64GB&UHS Speed Class 3&Up to 100MB/s& up to 90 MB/s&N/A&N/A&yes&yes \\
-
 		\hline
 	\end{tabular}
-	\caption{mirco SDs in consirdation}
+	\caption{Mirco SDs in consideration}
 	\label{mirco SDs in consirdation}
 \end{table}
-the best here is the silicon power 32GB due to its tempearure rnage and read and write times
-now for a  testing the data  and  tranfering  code i want  an flash drive so  i can  extract  python file and  mix and  manage  sensor data and  a back up for the data incase.
-for this we have  the  following to consider:
+
+The best here is the silicon power 32GB due to its temperature range and read and write times.
+we can consider extra memory: 
 \begin{enumerate}
 	\item DHTT22 has a sample period of  2 seconds
 	\item AS312 which has a  delay time of 15 $\mu$ seconds
 	\item MCP3008 5 $\mu$ seconds
 \end{enumerate}
-here is what I found through research:
+
+Through reserach,the following was discovered :
 \begin{table}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Images/memory_devices.png}
 	\caption{Memory usb to consider}
 	\label{Memory usb to consider}
 \end{table}
-The Raspberry Pi 4 supports USB 2 and  USB 3. For this, I'll pick the Turbo 1GB USB 2 Flash Drive
+
+The Raspberry Pi 4 supports USB 2 and  USB 3. For this, the Turbo 1GB USB 2 Flash Drive will  be chosen.
 
 \subsection{Battery}
-In this section, we want to consider the  following:
+In this section the  following must be considered:
 \begin{enumerate}
-	\item Have enough power for all  sensors  and  radio module
-	\item Have storage of the battery
-	\item Discharge rate of the  battery (how many operating hours can I get out of the  battery)
+	\item Enough power for all  sensors  and  radio module
+	\item Storage of the battery
+	\item Discharge rate of the  battery (how many operating hours can be got out of the  battery)
 \end{enumerate}
 Here are the following  Devices I found :
 \begin{table}[h!]
@@ -445,33 +453,34 @@ Here are the following  Devices I found :
 	\label{battery considerations}
 \end{table}
 
-The battery I'm going for is the li-polymer which has a micro USB 
-how to charge:
+The battery chosen  is the li-polymer which has a micro USB 
+How to charge:
 \begin{itemize}
 	\item Step 1: Insert the Li-polymer battery into a 2.0mm battery socket
 	\item Step 2: Connect the power adapter to a micro USB or Type-C interface by USB cable.
 \end{itemize}
-Aside: this commpoent has the following:
+
+Aside: this component has the following:
 \begin{enumerate}
 	\item A battery that is 3.7v 3000$mAh$ 
 	\item Output voltage of 5 volts
 	\item an estimated Power supply time  of  5 hours
 \end{enumerate}
 \subsection{Arduino vs PI Consideration }
-In this project, we will have to choose between what microprocessor we will use. we can have 3 options
+In this project, we will have to choose between what microprocessor we will use.There are 3 options:
 \begin{enumerate}
 	\item PCB (printed circuit board)
-	where we design the circuit in a program like Fusion 360. The major issue is due to  the current state of  silicon chips which will slow down  the progress of 
-	the implementation stage
+	where the circuit is deigned in a program like Fusion 360. The major issue is due to  the current state of  silicon chips which will slow down  the progress of the implementation stage
 	\item Arduino 
 	\item Raspberry Pi
 \end{enumerate}
-for these will consider the Arduino and  the Raspberry Pi	the Advantages and  disadvantages of these are the following:
+
+The advantages and disadvantages of the Arduino and  the Raspberry Pi are the following:
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{|c|c|}
 		\hline
-		Arduino & pi \\
+		Arduino & Pi \\
 	
 	\hline \hline
 	Advantages & Advantages \\
@@ -482,7 +491,7 @@ for these will consider the Arduino and  the Raspberry Pi	the Advantages and  di
 	Disadvantages & Disadvantages \\
 	\hline \hline
 	1. Arduino has a supper set of C++ & 1. Pi is a technically a small CPU \\
-	2. Arduino only has 6 Analogue pins  & 2. The pi needs an ADC circuit to deal with inputs that are analogue \\
+	2. Arduino only has 6 Analogue pins  & 2. The Pi needs an ADC circuit to deal with inputs that are analogue \\
 	
 	\hline
 	\end{tabular}
@@ -490,9 +499,8 @@ for these will consider the Arduino and  the Raspberry Pi	the Advantages and  di
 	\label{Advantages /Disadvantages of Arduino vs pi}
 \end{table}
 
-Although the  Arduino would be more efficient than the Raspberry Pi due to
-Raspberry Pi has an Operating System I am picking the Pi as I'm more familiar with Python and Linux. Linux can  be used to handle the networking side  of   the project
-I am willing to lose some efficiency in power for an easier time making the code for  this  project 
+Although the  Arduino would be more efficient than the Raspberry Pi due to Raspberry Pi has an Operating System . The Pi was picked due familiar with Python and Linux. Linux can  be used to handle the networking side  of   the project
+At the cost of  some efficiency in power for an easier time writing the code for  this  project 
 \subsubsection{Picking a Raspberry Pi}
 Now that we have  picked out a device to  use  we need to define what we need in terms of   the following:
 \begin{enumerate}
