@@ -502,15 +502,16 @@ The advantages and disadvantages of the Arduino and  the Raspberry Pi are the fo
 Although the  Arduino would be more efficient than the Raspberry Pi due to Raspberry Pi has an Operating System . The Pi was picked due familiar with Python and Linux. Linux can  be used to handle the networking side  of   the project
 At the cost of  some efficiency in power for an easier time writing the code for  this  project 
 \subsubsection{Picking a Raspberry Pi}
-Now that we have  picked out a device to  use  we need to define what we need in terms of   the following:
+Now that a device was chosen to  use the following need to be defined:
 \begin{enumerate}
 	\item The amount of GIPO PORTS we need 
 	\item Nature of the output of the sensor
 	\item Speed of the clock
 \end{enumerate}	
-GPIO(General purpose input/output) is used  to select the input/output the pi can only take in  digital signals only
-Seen as we have our components chosen that require A GPIO port (temperature/ humidity, on page \pageref{Compareing DHT22 and DHT11}, Light on page \pageref{table of light sensors}, motion on page \pageref{Motion sensor components})
-we need at least  3 GPIO ports to be available to us as the light sensor and the motion will  need  an adc as looking through the documentation .firstly let's look at the  different models
+
+GPIO(General purpose input/output) is used  to select the input/output. The Pi can  take in  digital signals only Seen as the components are chosen that require A GPIO port (temperature/ humidity, on page \pageref{Compareing DHT22 and DHT11}, Light on page \pageref{table of light sensors}, motion on page \pageref{Motion sensor components})
+
+At least  3 GPIO ports to be available to us as the light sensor and the motion will  need  an adc as looking through the documentation .firstly let's look at the  different models:
 \begin{table}[h!]
 \scalebox{0.6}{\begin{tabular}{|l|l|r|l|l|l|1|}
 \hline
@@ -530,19 +531,17 @@ Raspberry Pi 4 Model B  & 1.5 GHz              & 7                              
 \label{Table of Raspberry Pi's}
 \end{table}
 
-The above table displays the modules seen as our radio modules is 900Mhz  we want  1.5GHZ which is the Raspberry Pi 4  which needs USB\- c charger and an HDMI.
-for wireing our Pi here is  the GPIO pin pinout:
+The above table displays the modules ,As our radio modules is 900Mhz  we want  1.5GHZ which is the Raspberry Pi 4.This needs a USB\- c charger and an HDMI mini cable.
+For wiring our Pi here is  the GPIO pin layout:
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Images/Pinout_of_pi.png}
 	\caption*{Pinout for  the  pi}
 	\label{Pinout for  the  pi}
 \end{figure}
-\subsubsection{Picking an PI OS}
 \label{pi os}
-Seen as 
 \subsection{Conclusion}
-In this project the hardware needed is the  following commponets:
+In this project the hardware needed is the  following components:
 \begin{enumerate}
 	\item 1 x Raspberry Pi 4 Model B 
 	\item 1 x HDMI cable
@@ -556,7 +555,7 @@ In this project the hardware needed is the  following commponets:
 	\item 1 x Raspberry Pi VR 220 Camera
 	\item  1 x Li-polymer Battery HAT 
 	\item 1 x Turbo 1GB
-	\item 1 x silicon power 32GB  mirosd
+	\item 1 x silicon power 32GB  microSD
 	
 	
 \end{enumerate}
