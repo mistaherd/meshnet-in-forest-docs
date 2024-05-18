@@ -29,6 +29,19 @@
 % \graphicspath{/Users/User/Documents/latexfilesFYP/Images}
 \definecolor{light-gray}{gray}{0.92}
 \definecolor{mainColor}{RGB}{211, 47, 47} % some dark red
+\lstdefinestyle{bashstyle}{
+    language=bash,                % Set language to Bash
+    basicstyle=\ttfamily,         % Use a monospaced font (like Courier)
+    keywordstyle=\color{blue},     % Highlight keywords in blue
+    commentstyle=\color{green},    % Highlight comments in green
+    stringstyle=\color{red},       % Highlight strings in red
+    showstringspaces=false,        % Don't show spaces within strings
+    numbers=left,                 % Show line numbers on the left
+    numberstyle=\tiny\color{gray}, % Line numbers in small gray font
+    frame=single,                  % Put a frame around the code block
+    breaklines=true,               % Break long lines
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Arrow for line breaks
+}
 
 \lstdefinestyle{mystyle}{
   language=Python,        % Specify the language (e.g., Python)
