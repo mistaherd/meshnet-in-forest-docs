@@ -1,52 +1,50 @@
-In this project we need to have data to transmit firstly let's describe what we want our network to have:
+In this project there needs to be data to transmit,The network needs to be able to:
 \begin{enumerate}
-	\item we want our mesh network to transmit  data for  example  temperature, humidity and  light and camera
-	\item I want there to  be data read every hour  and  stored  as a CSV file  the image file  will depend on the module I pick
-	\item I want to have a  motion to  detect  any animal that passes  the  node 
+	\item Transmit  data for  example  temperature, humidity,light and camera images.
+	\item Read data every hour  and  stored it as a CSV file, The image file  will depend on the module chosen
+	\item Detect  any animal that passes  the  node with a motion sensor. 
 \end{enumerate}
 \newpage
-the following is  a  rough circuit diagram  for the project:
+The following is  a  rough circuit diagram  for the project:
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Images/block_diagram_for_mesh_device.png}
 	\caption{Rough circuit diagram for project}
 	\label{Rough circuit diagram for project}
 \end{figure}
-firstly let's establish the following:
 \begin{enumerate}
-	\item I can't use  PCB due to  the ordering process taking too long to come due to the  time given  to me 
-	\item using any  type of board like wire wrap  would take too long and is  outside of  the  goals of this project
-	\item This leaves with  a  choice of either the  Arduino or pi
+	\item A PCB cannot be used due to  the ordering process taking too long for the timeframe of this project 
+	\item Any  type of board like wire wrap  would take too long and would be outside of  the  goals of this project
+	\item A  choice of either the  Arduino or Raspberry Pi is left
 \end{enumerate}
-This  section will Dicuss the following:
+This section discusses the following:
 \begin{enumerate}
-	\item The sensors we will use in the project
-	\item the ADC we will have  to will have to  consider
-	\item the camera i picked considation  for  in this  project
-	\item the memory module condestrations
-	\item the battery i  picked
-	\item Considering the ardunio vs PI
+	\item The sensors to be used in the project
+	\item The ADC we will have  to will have to  consider
+	\item The camera chosen will have to be  considered  for this project
+	\item The memory module considerations
+	\item The battery chosen
+	\item A choice made between Ardunio or Raspberry PI
 \end{enumerate}
 
 \subsection{Sensor considerations}
-In this section, we will discuss  the process of  considering each commponet of the sensors
-these sensor will be the following:
+In this section, the process of  considering each component of the sensors will be discussed.
+These components are:
 \begin{enumerate}
 	\item Temperature
-	\item Humdity
+	\item Humidity
 	\item Light
 	\item Motion
 \end{enumerate}
 \subsubsection{Temperature \& Humidity sensor}
-In our consideration for  this  sensor we can establish that we want our sensor to work in the following  conditions:
+The sensor needs to be able to work in the following conditions:
 \begin{enumerate}
-	\item our mesh node will be outside
-	\item Our device is in Ireland		\item Our device is in a forest
+	\item The mesh node will be outside
+	\item The device is in Ireland		\item The device is in a forest
 \end{enumerate}
-From that knowledge, I researched the  temperature range in Ireland,
+Taking these requirements into consideration,the temperature in Ireland was researched.
 
-
-According to  Met eireann\cite{Eirrean}, we get the following table which  the highest temperature in a  Shaded
+The following table was obtained from Met Eireann \cite{Eirrean}. which shows  the highest air temperature in a  shaded area
 \begin{table}[h!]
 	\begin{tabular}{ | c | c | c | }
 		\hline
@@ -68,8 +66,7 @@ According to  Met eireann\cite{Eirrean}, we get the following table which  the h
 		\label{Highest shader air Met eirrean}
 	\end{table}
 
-According to the table, the highest temperature is 33.3  
-now to look at the  other  extreme for the Lowest temperature:
+According to the table, the highest temperature is 33.3.The  other  extreme of the Lowest temperature was then considered:
 	\begin{table}[h!]
 		\begin{tabular}{ | c | c | c | }
 		\hline
@@ -92,10 +89,9 @@ now to look at the  other  extreme for the Lowest temperature:
 	\end{table}
 
 According to the table above the lowest temp is -19.1
-In consideration for where the project our condition was a range of -19.1\textdegree C to 33.3\textdegree C.
+In consideration for where the project the condition is a range of -19.1\textdegree C to 33.3\textdegree C.
 \newpage
-I also  looked  at  humdity this  referes to the amount of water vaper in the air. from  met eirrean \cite{eirrean2}
-got this  table:
+Humdity was also researched,Humidity refers to the amount of water vapeor in the air. The following table was obtained from Met Eireann \cite{eirrean2}:
 \begin{table}[h!]
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 		\hline
@@ -108,7 +104,8 @@ got this  table:
 	\caption{Realtive Humidity(\%) according to met eirrean}
 	\label{Realtive Humidity according to met eirrean}
 \end{table}
-The ranges are 68.3\% to 88 \% So with these  conserdations here are  the  diffrent components:
+
+The ranges are from 68.3\% to 88 \% Taking these considerations into account.Here are the different components:
 
 \begin{table}[h!]
 	\centering
@@ -116,7 +113,7 @@ The ranges are 68.3\% to 88 \% So with these  conserdations here are  the  diffr
 	\caption{Comparing of temperature sensors}
 	\label{Comparing of temperature sensors}
 \end{table}
-After this, I limited this down to two sensors DHT22 and DHT11. The  following are the advantages and disadvantages of the DHT22 and DHT11:
+After this, the choice between two sensors was narrowed down to DHT22 and DHT11. The  following are the advantages and disadvantages of the DHT22 and DHT11:
 \begin{table}[h!]
 	\centering
 	\scalebox{0.8}{\begin{tabular}{|c|c|c|}
@@ -133,9 +130,10 @@ After this, I limited this down to two sensors DHT22 and DHT11. The  following a
 	\label{Compareing DHT22 and DHT11}
 
 \end{table}
-So in conclusion I choose DHT22 which is a  Digital output. See a wiring diagram below
-\newpage
-This will have an Interface of the following:
+
+ DHT22 was chosen. Which has a  Digital output. See a wiring diagram next page:
+ \newpage
+This will have an interface of the following:
 
 \begin{figure}[h!]
 	\centering
@@ -151,25 +149,26 @@ This will have an Interface of the following:
 		\label{Sychematic for DHT22 revised}
 	\end{subfigure}
 \end{figure}
-From above we see our schematic, DHT22 connections are the following:
+
+From above the schematic is seen. DHT22 connections are the following:
 \begin{itemize}
-	\item VDD is connected to 5v of the pi
+	\item VDD is connected to 5v of the Pi
 	\item the Data pin is connected to GPIO 3
-	\item Gnd pin  of the  pi is  connected to the ground  of DHT22 
+	\item Gnd pin  of the  Pi is  connected to the ground  of DHT22 
 
 \end{itemize}
 \cite{sparkfun} The following is the \href{https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf}{link} to the datasheet of this module
-when reading from this  componet there is  a  delay  of 2 second due to the  sampling period.
+when reading from this  component. There is  a  delay  of 2 seconds due to the  sampling period.
 
 \subsubsection{Light sensor}
-In this section, we want to consider the following:
+In this section the following will be considered:
 \begin{enumerate}
-	\item What region are we in 
-	\item What light levels do we  expect in this  country
+	\item What region the project is in 
+	\item What light levels are expected in this  country
 	\item What sensor  will  accommodate this  range
 \end{enumerate}
 \newpage
-For this sensor we also must consider the outside aspect of the  project  i found this table on \cite{wiki_2023}
+For this sensor  the outside aspect of the  project must also be considered.The following table was found on \cite{wiki_2023}:
 	\begin{table}[h!]
 	\centering
 	\begin{tabular}{|l|l|}
@@ -190,8 +189,8 @@ For this sensor we also must consider the outside aspect of the  project  i foun
 	\caption{Illuminates values}
 	\label{Illuminates values}
 \end{table}
-	This table is the  assoicated lux level  incate when the vaules are . 
-	From  above we want our sensor to be 0.002 to 25000 lux ideally, with that in mind here are the components I found  through research:
+	This table is the  associated lux level  indicating when the values are . 
+	From  above the sensor should ideally be 0.002 to 25000 lux, Bearing this in mind  these components were researched:
 	\begin{table}[h!]
 	\small
 	\centering
@@ -210,7 +209,8 @@ For this sensor we also must consider the outside aspect of the  project  i foun
 	\label{table of light sensors}
 \end{table}
 \newpage
-After doing research DFR0026 \cite{DFR0026} is the option I propose to use as it is the best for our application  which will have an analogue  output to see the interface see below:
+
+After research DFR0026 \cite{DFR0026} is the option proposed for use as it is the best for this application,  which will have an analogue  output to see the interface (see below):
 
 \begin{figure}[h!]
 	\centering
@@ -226,16 +226,17 @@ The following are  the connections:
 	\item The output is connected to  ch 0
 	\item the output ranges  from  0 to  5 v
 \end{enumerate}
-The commpoent relies on the  ADC  which  is on page\pageref{Adc section}
+The component relies on the  ADC  which  is on page\pageref{Adc section}
+
 \subsubsection{Motion sensor}
 
-For this section, we have  to consider the following:
+For this section the following must be considered:
 \begin{enumerate}
 	\item The range of the  sensor
 	\item The degree of the  sensor
 	\item How long of a  delay is the sensor
 \end{enumerate}
-The  following are  the components I considered:
+The  following are  the components considered:
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
@@ -251,9 +252,9 @@ The  following are  the components I considered:
 	\label{Motion sensor components}
 \end{table}
 
-The sensor I'm choosing is AS312\cite{micros}(which has a delay time of 2 seconds) which is a Digital interface to see the wiring see below:
+The sensor chosen is AS312\cite{micros}(which has a delay time of 2 seconds) which is a digital interface to see the wiring ,See below:
 \newpage
-the following is the interface for our device
+The following is the interface for the device:
 
 \begin{figure}[h!]
 	\begin{center}
@@ -263,14 +264,13 @@ the following is the interface for our device
 	\end{center}
 
 \end{figure}
-with 
+The connections are the following:
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Images/pinout_of_AS312.jpg}
 	\caption*{Pinout of  AS312}
 	\label{Pinout of  AS312}
 \end{figure}
-The connections are the following:
 \begin{enumerate}
 	\item VCC is connected  to 5v pin of the Pi
 	\item GND is connected to the GND of the  Pi
@@ -282,7 +282,6 @@ This  component has the following:
 	\item An  angle  of  65$^o$ degree
 	\item A Delay of 15 \mu Seconds
 \end{enumerate}
-\subsubsection{Sensor connections}
 
 \newpage
 \subsection{Radio Module}
