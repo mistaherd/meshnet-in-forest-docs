@@ -6,3 +6,4 @@ bibtex main.aux
 pdflatex main.tex
 pdflatex main.tex
 main.pdf
+clean.bat
