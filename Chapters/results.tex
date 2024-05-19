@@ -1,4 +1,4 @@
-In thes section we will  be showing results for  different aspects of this project this  will  include the following:
+In this section we will  be showing results for  different aspects of this project this  will  include the following:
 \begin{enumerate}
     \item Recorded data from sensors
     \item Recorded data from transceiver
@@ -18,17 +18,26 @@ in this section  will have  tables from the following components:
     \centering
 
     \begin{tabular}{|c|c|c|}
-        \hline
+        \hline\\
         date/time of record & Temperature &Humidity \\
-        \hline\hline
-        2024-02-21 00:03:56&22& 66 \\
+        \hline\hline\\
+        2024-05-03_17-31-52&49&20\\
+        2024-05-03_17-43-54&49&20\\
+        2024-05-03_17-31-52&49&20\\
+        2024-05-03_17-43-54&49&20
         \hline
     \end{tabular}
-    \caption{Recorded data from  DHT22 on the \today}
-    \label{Recorded data from  DHT22 on the \today}
+    \caption{Recorded data from  DHT22 on the $5^{th}$of march}
+    \label{Recorded data from  DHT22 on the 5th of march}
 \end{table}
-
-last we tested if our code  satisfies our  python code after testing the unit test code we upadated see the foolwing message
+If this is  plotted the following is gotten:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/temp_and_humidity_over_time.png}
+    \caption{Temperature and Humidity plotted overtime}
+    \label{Temperature and Humidity plotted overtime}
+\end{figure} 
+last we tested if our code  satisfies our  python code after testing the unit test code we upadated see the following message
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{Images/unit_testoutput.jpg}
@@ -41,9 +50,9 @@ last we tested if our code  satisfies our  python code after testing the unit te
 \begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|}
-        \hline
+        \hline\\
         date/time of record & motion detected(yes/no)\\
-        \hline \hline
+        \hline \hline\\
         2024-03-25_15-02-57&False \\
         2024-03-25_15-04-37&True\\
         2024-05-03_18-07-51&False\\
@@ -54,14 +63,13 @@ last we tested if our code  satisfies our  python code after testing the unit te
     \label{Recorded data from  AS312 on the \today}
 \end{table}
 \subsection{DFR0026}
-\subsubsection{Results during protypes}
-for our first test we got  the following  table 
+For first test we got  the following table: 
 \begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|}
-        \hline
+        \hline\\
         Date/time of record & lux values(lux)\\
-        \hline \hline
+        \hline \hline\\
         2024-03-25_15-02-57&940\\
         2024-03-25_15-03-13&945\\
         2024-03-25_15-04-37&4963\\
@@ -71,6 +79,13 @@ for our first test we got  the following  table
     \caption{Recorded data from DFR0026 on the 25th of march 2024}
     \label{Recorded data from DFR0026 on the 25th of march 2024}
 \end{table}
+If this is plotted we get the following:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/lux_values_overtime.png}
+    \caption{lux values overtime}
+    \label{lux values overtime}
+\end{figure}
 \newpage
 \subsection{Raspberry Pi VR 220}
 When testing  the Raspberry Pi VR 220
@@ -83,34 +98,34 @@ When testing  the Raspberry Pi VR 220
 \end{figure}
 
 \section{Recorded data from transceiver}
-when tessting  the radio module the follow was tested:
-\begin{enumerate}
-    \item Sending a message across the serial
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[options]{name}
-        \caption*{heading}
-        \label{}
-    \end{figure}
-    \item Sending a txt file across the serial
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[options]{name}
-        \caption*{heading}
-        \label{}
-    \end{figure}
-    \item Sending a csv file across the serial
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[options]{name}
-        \caption*{heading}
-        \label{}
-    \end{figure}
-    \item Sending a image file across the serial
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[options]{name}
-        \caption*{heading}
-        \label{}
-    \end{figure}
-\end{enumerate}
+when testing  the radio module the follow was tested:
+% \begin{enumerate}
+%     \item Sending a message across the serial
+%     \begin{figure}[h!]
+%         \centering
+%         \includegraphics[options]{name}
+%         \caption*{heading}
+%         \label{}
+%     \end{figure}
+%     \item Sending a txt file across the serial
+%     \begin{figure}[h!]
+%         \centering
+%         \includegraphics[options]{name}
+%         \caption*{heading}
+%         \label{}
+%     \end{figure}
+%     \item Sending a csv file across the serial
+%     \begin{figure}[h!]
+%         \centering
+%         \includegraphics[options]{name}
+%         \caption*{heading}
+%         \label{}
+%     \end{figure}
+%     \item Sending a image file across the serial
+%     \begin{figure}[h!]
+%         \centering
+%         \includegraphics[options]{name}
+%         \caption*{heading}
+%         \label{}
+%     \end{figure}
+% \end{enumerate}
