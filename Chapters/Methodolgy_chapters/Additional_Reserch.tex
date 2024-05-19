@@ -1,3 +1,4 @@
+\section{Additional Research}
 In this section will discuss any extra research done on the project.
 in this section we will discuss the following:
 \begin{enumerate}
@@ -91,6 +92,27 @@ when we compare these we get the following table:
         \label{Comparing New Radio modules}
 \end{table}
 
-\subsubsection{SB Components LoRa HAT}
-Which has a  E22-900T22S on the  board which has a throughput rate of 0.3kbps～62.5kbps so the maximum time it will take to get to a  node will be around 16 seconds depending on distance ,
-
+\subsection{SB Components LoRa HAT}
+Which has a  E22-900T22S on the  board which has a throughput rate of 0.3kbps\～62.5kbps so the maximum time it will take to get to a  node will be around 16 seconds depending on distance ,the module has two was of interacting with the board:
+\begin{enumerate}
+    \item Pi
+    \item usb to windows desktop in this configuration we  can test single node from our laptop this is just to  test sending message across the serial 
+\end{enumerate}
+This hat supports three frequencies:
+\begin{enumerate}
+    \item 868 Mhz
+    \item 433 Mhz
+    \item 915 Mhz
+\end{enumerate}
+\subsubsection{E22-900T22S}
+E22-900T22S is a wireless serial port module (UART) based on SEMTECH's SX1262 RF chip. It has multiple transmission modes, working in the 850.125MHz~930.125MHz, (default 900.125MHz).which has the following functions:
+\begin{enumerate}
+    \item LoRa spread spectrum
+    \item Listen before talk(LBT):
+    
+    The module will monitor the channel  before transmitting data , if the environment exceeds the threshold. it will be delayed .
+    \item RSSI(Received Signal Strength Indicator):
+    \item Networking function: 
+    \item Ultra-low power consumption
+    \item Broadcast monitoring
+\end{enumerate}
