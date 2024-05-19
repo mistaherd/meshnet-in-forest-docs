@@ -1,4 +1,3 @@
-\section{Additional Research}
 In this section will discuss any extra research done on the project.
 in this section we will discuss the following:
 \begin{enumerate}
@@ -109,10 +108,16 @@ E22-900T22S is a wireless serial port module (UART) based on SEMTECH's SX1262 RF
 \begin{enumerate}
     \item LoRa spread spectrum
     \item Listen before talk(LBT):
-    
+
     The module will monitor the channel  before transmitting data , if the environment exceeds the threshold. it will be delayed .
     \item RSSI(Received Signal Strength Indicator):
+    
+    It's a measurement of how strong a radio signal is when it's received by a device,This is used in tandem with the LBT function
+
     \item Networking function: 
-    \item Ultra-low power consumption
-    \item Broadcast monitoring
+    
+    The module can implement multi-level repeater networking, 
+    as discuss above section when a  single is  sent  over long distance it gets weaker, walls floors and  other objects can block or distort this signal , A repeater reive these signal's and  simply amplified and retransmits the data,Multi-level  have secondary repeaters will boost the signal further in order to avoid signal loss.
+    \item Ultra-low power consumption:
+    \item Broadcast monitoring:Set the module address to 0xFFFF, which can monitor the data transmission of the module
 \end{enumerate}

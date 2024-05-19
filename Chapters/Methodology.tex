@@ -3,281 +3,68 @@
 In this  Section the  proposed  methodology of this  project will be discussed this will cover the  following:
 \begin{enumerate}
     \item The Procedure of the project
-    \item The Additional reserach
+    \item The Additional research
     \item The setup of the raspberry pi
-    \item The Model Development
+    \item The Software Model Development
     \item The Data Analysis Methods
     \item The validity and reliability 
     \item The Limitations and Delimitation
     \item The timeline
 \end{enumerate} 
+\section{Procedure}
+the following is the steps of this project:
+\begin{enumerate}
+    \item Consider the environment in which we commutate across
+    \item Determine the desired  range  for sensor to operate in.
+    \item Find the the wide range of components available
+    \item Limit the base hardware based on the constraints of the project
+    \item Select hardware based on these constraints
+    \item State the software needed for the project
+    \item State how to setup the software
+    \item State the software needed to drive these sensor
+    \item Write unit test to develop the software
+    \item Dicuss how to track the sensor data
+    \item Dicuss the limitations 
+    \item Dicuss the timeline at which the project occurred
+\end{enumerate}
 \section{Setup of raspberry pi}
 Firstly once you have  your pi  heres  a  quick  guide to setup the pi are  the following:
 \begin{enumerate}
-    \item once you unpack the  pi be sure  to  connect keyboard mouse  and hdmi cable
-    \item next on a computer you must download the  raspberry pi imager and  selet the  64 bit  recommned os 
-    \item once u have os set simpley put the  mircosd card  into  the pi once the  pi is  setup you can make sub dirrys for this project type the  following:
+    \item Unpack the  pi be sure  to  connect keyboard mouse  and hdmi cable
+    \item Download the  raspberry pi imager and  select the  32 bit  recommend os 
+    \item Put the  micro_SD card  into  the pi once the  pi is  setup you can make sub directories for this project type the  following:
     \begin{verbatim}
         git clone https://github.com/mistaherd/meshnetwork_in_forest.git
     \end{verbatim}
-    this  will downlaod the  nessary  eniroment for  setinng up the  pi  intiall this will have to built out  through the  process of  the   project look at the timeline Section
-    \item next simply follow the ReadME.md file  to  understand  how  to setup the py
+    This  will download the  essentially  environment for  setting up the  Pi  initial this will have to built out  through the  process of  the   project look at the timeline Section
+    \item Next configure the legacy camera  options
+    \begin{verbatim}
+        sudo raspi-config
+    \end{verbatim}
+    \item Download the following tools from linux
+    \begin{verbatim}
+        sudo apt update
+        sudo apt install raspistill
+        sudo apt install tmux
+    \end{verbatim}
 \end{enumerate}
-
-
 \section{Additional  Research}
 \input{Chapters/Methodolgy_chapters/Additional_Reserch.tex}
 \section{Software Module Development}
-This section is here to discuss the method we took  for  developing software  for the  following:
-\begin{enumerate}
-    \item Sensors 
-    \item ADC
-    \item Camera
-    \item Radio module
-    \item Memory management
-    \item  TDD
-\end{enumerate}
-\subsection{Sensors}
-This Section will discuss the following:
-\begin{enumerate}
-    \item DHT22
-    \item AS312
-    \item DFR0026
-\end{enumerate}
-To see the light sensor look on page \pageref{ADC section} 
-\subsubsection{DHT22}
-For this section we used the following libraries:
-\begin{lstlisting}[style=mystyle]
-#!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
-import adafruit_dht 
-import board
-import pandas as pd  
-\end{lstlisting} 
-This uses the library from \href{https://github.com/mrmcwethy/Adafruit_CircuitPython_DHT}{this link}
-\begin{enumerate}
-    \item we define the our class
-    \begin{lstlisting}[style=mystyle]
-    class DHT22:
-    ##Set DATA pin to pin 4
-        def __init__(self):
-            """this will setup the  data pin  for  DHT2"""
-            # self.dhtDevice =adafruit_dht.DHT22(board.D4)
-            self.dhtDevice =adafruit_dht.DHT11(board.D4)
-            self.humidity=self.dhtDevice.humidity
-            self.temperature=self.dhtDevice.temperature
-    \end{lstlisting}
-    In this class we have  define our DhT device as 11 seen as the DHT22 was  broken
-    so we set  our gpio pin 4 and setup the variables that read the  sensor data
-    \item Next we read the data from the following function.
-    \begin{lstlisting}[style=mystyle]
-        def Read_DHT22_data(self)-> tuple[float,float,str]:
-        """This  will setup a DHT instance and  return the data from the sensor"""
-        try:
-            return self.temperature,self.humidity
-        except RuntimeError as e:
-            print(f"Error reading sensor: {e}")
-            return None, None
-    \end{lstlisting}
-    this will  return out the  temperature and humidity if the sensor is not connected
-    this  will return nothing . next  use the following: 
-    \begin{lstlisting}[style=mystyle]
-        if __name__ =="__main__":
-            DHT22()
-    \end{lstlisting}
-\end{enumerate}
-\subsubsection{AS312}
-For this we import the following libraries:
-\begin{lstlisting}[style=mystyle]
-    #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
-    import RPi.GPIO as GPIO
-    import time
-\end{lstlisting}
-\begin{enumerate}
-    \item next  we set up our variables  in the class
-    \begin{lstlisting}[style=mystyle]
-    class AS312:
-	def __init__(self):
-		"connect the AS312 to pin 17"
-		self.pin_number=17
-		self.GPIO=GPIO
-		self.GPIO.setmode(GPIO.BCM)
-		self.GPIO.setup(self.pin_number,GPIO.IN)
-		self.current_state=0
-    \end{lstlisting}
-    This sets current state as 0
-    \item next  we detect  movement
-    \begin{lstlisting}[style=mystyle]
-        def read_state(self)->bool:
-            time.sleep(0.1)
-            self.current_state =bool(self.GPIO.input(self.pin_number))
-            return self.current_state
-    \end{lstlisting}
-
-\end{enumerate}
-
-\subsubsection{DFR0026}
-\label{ADC section}
-From the repository DFRobot_ADS1115 we do the following:
-\begin{enumerate}
-    \item import the libraries
-    \begin{lstlisting}[style=mystyle]
-        #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
-        from DFRobot_ADS1115 import ADS1115
-        import time
-    \end{lstlisting}
-    \item Next we define our variables
-    \begin{lstlisting}[style=mystyle]
-    class DFR0026():
-        def __init__(self):
-            self.ADS1115_REG_CONFIG_PGA_6_144V        = 0x00 # 6.144V range = Gain 2/3
-            self.ADS1115_REG_CONFIG_PGA_4_096V        = 0x02 # 4.096V range = Gain 1
-            self.ADS1115_REG_CONFIG_PGA_2_048V        = 0x04 # 2.048V range = Gain 2 (default)
-            self.ADS1115_REG_CONFIG_PGA_1_024V        = 0x06 # 1.024V range = Gain 4
-            self.ADS1115_REG_CONFIG_PGA_0_512V        = 0x08 # 0.512V range = Gain 8
-            self.ADS1115_REG_CONFIG_PGA_0_256V        = 0x0A # 0.256V range = Gain 16
-            self.ads1115 = ADS1115()
-            self.ads1115.set_addr_ADS1115(0x48)
-            self.ads1115.set_gain(self.ADS1115_REG_CONFIG_PGA_6_144V)
-            self.adc_channel=0
-    \end{lstlisting}
-    This configures all the pins  and set the associative gain
-    \item Next read the analogue channel
-    \begin{lstlisting}[style=mystyle]
-        def read_voltage(self):
-            return self.ads1115.read_voltage(self.adc_channel)
-    \end{lstlisting}
-\end{enumerate}
-\newpage
-\subsection{Camera}
-Here are the steps for module development of the Camera:
-\begin{enumerate}
-    \item install the following libraries:
-    \begin{lstlisting}[style=mystyle]
-        #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
-        from picamera2 import Picamera2 ,Preview
-        from time import sleep
-        from datetime import datetime
-    \end{lstlisting}
-    \item we dine our class variables
-    \begin{lstlisting}[style=mystyle]
-    class Raspberry_Pi_VR_220:
-        def __init__(self):
-            """setup an instan  for the  camera"""
-            self.timestamp=datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            self.fname ='/home/mistaherd/Documents/Github/meshnetwork_in_forest/Images_camera/{}.png'.format(self.timestamp)
-            self.camera=Picamera2()
-            self.camera_config=self.camera.create_preview_configuration()
-            self.timeamount=2
-    \end{lstlisting}
-    \item  make the function for  takeing  a  picture
-    \begin{lstlisting}[style=mystyle]
-        def take_pic(self)-> str:
-            """this will take  a picture from camera"""
-            self.camera.configure(self.camera_config)
-            self.camera.start_preview(Preview.QTGL)
-            self.camera.start()
-            sleep(self.timeamount)
-            self.camera.capture_file(self.fname)
-            return self.fname
-    \end{lstlisting}
-\end{enumerate}
-\newpage
-\subsection{Memory Management}
-For this we want to  read data  and append and check it the memory size.Here are the following steps:
-\begin{enumerate}
-    \item  import the following  libraries:
-    \begin{lstlisting}[style=mystyle]
-        #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
-        import pandas as pd
-        from DHT22 import DHT22
-        from AS312 import AS312
-        from DFR0026 import DFR0026
-        import glob
-        import re 
-        import subprocess
-    \end{lstlisting}
-    \item define our class  senors
-    \begin{lstlisting}[style=mystyle]
-    class sensor_data:
-        def __init__(self):
-            self.dht22 = DHT22()
-            self.humidity,self.temperature=self.dht22.Read_DHT22_data()
-            self.AS312=AS312(17)
-            self.motion_detected =AS312.read_state()
-            self.DF0026 =DFR0026()
-            self.light_value=self.DF0026.Read_data()
-            self.fname="sensor_data.csv"
-    \end{lstlisting}
-    \item We write and append our data to  the csv file
-    \begin{lstlisting}[style=mystyle]
-        def write_append_csv(self):
-		data = { "Timestamp" : self.timestamp,
-			"Temperature(oc)" : self.Temperature,
-			"Humidity(%)" : self.humidity,
-			"Light(lux)" :self.light_value,
-			"Motion Detected": self.motion_detected
-			}
-		df = pd.DataFrame(data)
-		if glob.glob(self.fname):	
-			df.to_csv(self.fname,mode='a' ,index=False,header=False)
-		else:
-			df.to_csv(self.fname,mode='w' ,index=False)
-    \end{lstlisting}
-    \newpage
-    \item Next we define our variables for testing  memory
-    \begin{lstlisting}[style=mystyle]
-    class Memory_tester():
-        def __init__(self):
-            self.units={"K":10e3,"M": 10e6,"G":10e9}
-            self.regex ="\d{4}\.\[0-9]{1,3}[K,M,G]"
-            self.fname="../bash_scrpits/memorytest.sh" 
-            self.output_bash=subprocess.check_output(["bash",self.fname],universal_newlines=True)
-    \end{lstlisting}
-    \item next we check our memory
-    \begin{lstlisting}[style=mystyle]
-        def check_memory(self):
-            try:
-                if re.search(self.regex,self.output_bash):
-                    value,unit=match.group(0).split()
-                    try:
-                        return float(value)*self.units[unit]
-                    except KeyError:
-                        raise ValueError(f"unknown unit: {unit}")
-                
-            except subprocess.CalledProcessError as e:
-                raise ValueError(f"Error running script:{e.output}")
-    \end{lstlisting}
-    \item  we then  make an error if its useing  20 percent memory
-    \begin{lstlisting}[style=mystyle]
-        def error_check(self):
-            mem=self.check_memory()
-            max=32*10e9
-            if mem >= 0.2* max:
-                raise MemoryError("memory on pi is about to  used up")
-    \end{lstlisting}
-    \item to make sure  our class run from another python file 
-    \begin{lstlisting}[style=mystyle]
-        if __name__=="__main__":
-            sensor_data()
-            Memory_tester()
-    \end{lstlisting}
-\end{enumerate}
-
+\input{Chapters/Methodolgy_chapters/software_model_develpoment.tex}
 \newpage
 \input{Chapters/Methodolgy_chapters/Unit_testing.tex}
-
 \section{Data Analysis Methods}
+In this section we will Discuss the tool we use to analyze the sensor data the following will be dicussed:
+\begin{enumerate}
+    \item Met Eireann weather forecast API
+    \item Matplotlib
+\end{enumerate}
+\subsection{Met Eireann weather forecast API}
+we can compare our humidity and temperature and compare this will the output of this  API
+\subsection{Matplotlib}
+we can use this libraries to plot our changes in the data.
 
-Statistical and machine learning techniques are employed to analyze the data collected from both computational models and real-world sources. These techniques are used to identify patterns, trends, and relationships within the data.
-
-
-\section{Validity and Reliability}
-
-Validation of computational models is achieved through rigorous testing and evaluation. This involves comparing model predictions with real-world data and examining the sensitivity of the models to different parameters. Reliability is ensured through the use of standardized methods and procedures for data collection, analysis, and interpretation.
-
-\section{Limitations and Delimitations}
-
-The computational nature of the research introduces limitations due to the complexity of the systems being modeled and the potential for errors in modeling and data analysis. Moreover, the generalizability of the findings may be limited to the specific contexts and conditions considered in the research.
 
 \section{Timeline}
 The research  phase will be  conducted from 20/09/2023 to \today.The prosed impanation phase is from january till \today
