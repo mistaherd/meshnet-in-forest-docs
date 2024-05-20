@@ -1,6 +1,6 @@
-The following is the process of devlop:
+The following is the process of development:
 \begin{itemize}
-    \item To make  test  that will be  there for  the  codeing  section of  the  project 
+    \item To make a test  that will be  there for  the coding section of  the  project 
 \end{itemize}
 this section will discuss the  following for  testing:
 \begin{enumerate}
@@ -13,18 +13,18 @@ this section will discuss the  following for  testing:
     \item  1 x Li-polymer Battery HAT 
 \end{enumerate}
 \subsubsection{DHT22}
-According to the  data sheet \cite{sparkfun} seen as  the data is   8 bits  and  the  range at which this   operates at  -40 to 80$^{o}$c for tempeature
-meaning we have  at least  7 bit in the  exponent to  represent  the   measured value.
-to represent  the  high  end of this  sensor i used the  following calculation:
-$$ 2^6 +2^4 = 80$$ which mean  we have  a 2 bits dedicated to decimal place so the  high temperature to be 80.3$^{o}$c
-for the  lowest temp we have 6 bits  to  represent  - 40 due to  2s complement  so lowest  will   be -40.3$^{o}C$
-so with that  that  stablish we  must  make a  unit  that will do  the  following:
+According to the  data sheet \cite{sparkfun} seen the data is   8 bits  and  the  range at which this   operates at  -40 to 80$^{o}$c for temperature
+meaning we have at least  7 bits in the exponent to represent the measured value.
+to represent  the  high  end of this  sensor I used the  following calculation:
+$$ 2^6 +2^4 = 80$$ which means we have 2 bits dedicated to decimal place so the  high temperature is 80.3$^{o}$c
+for the  lowest temp, we have 6 bits  to  represent  - 40 due to  2s complement  so the lowest  will   be -40.3$^{o}C$
+so with that, that  establish we  must  make a  unit  that will do  the  following:
 \begin{enumerate}
     \item Test if the  output is  a float
     \item Test the  high end of  the  temp sensor so it  reads  80.3 as  the highest
     \item Test for the  lowest   temp   around 
 \end{enumerate}
-be sure to follow  steps  for  folder  setup  follow instructions on page \pageref{folderstructure}.
+be sure to follow the steps for folder setup and follow the instructions on page \pageref{folderstructure}.
 we get the following sample code:
 \begin{lstlisting}[style=mystyle,caption={sample test intial code}]
 import unittest
@@ -37,10 +37,10 @@ class test_project_code(unittest.TestCase):
         self.assertLessEqual(Read_DHT22,80.3)
     
 \end{lstlisting} 
-This code imports unittest . the from DHT22 is  a python files  we can  install  functions from other python files this can be useful for testing purposes
-then we initialized a test class call Unittest.test as our first function of the class  we  check if the number of the output  is a float or not this is  for  testing  temperature
-the next function we test for  is the range look at the data sheet online  for . This code is  simply testing the  limits of the  DHT22
-for  humidity  the Data sheet which ranges from 0 to 100 \%
+This code imports unit tests. the DHT22 is  a Python file where we can  install  functions from other Python files this can be useful for testing purposes
+then we initialized a test class called Unittest. test as our first function of the class  we  check if the number of the output  is a float or not this is  for  testing  temperature
+the next function we test for is the range look at the datasheet online. This code is  simply testing the  limits of the  DHT22
+for  humidity, the Datasheet ranges from 0 to 100 \%
 we want to test for the following:
 \begin{enumerate}
     \item Test if the recorded output is a tuple
@@ -49,7 +49,7 @@ we want to test for the following:
     \item Test if the humidity recorded is  a  float or  integer
     \item Test if the humidity recorded is  between 0 and 100
 \end{enumerate}
-this lead to the  following code 
+this led to the  following code 
 \begin{lstlisting}[style=mystyle,caption={sample test for DHT22}]
 import unittest
 from DHT22 import DHT22
@@ -66,16 +66,16 @@ class test_project_code(unittest.TestCase):
         self.assertGreaterEqual(temp,-30.3)
         self.assertLessEqual(temp,80.3)
 \end{lstlisting}
-seen as we expect our sensor to  print out a humidity and temp values we  set the  output to  a tuple 
-to test for this we use isInstacne which will test if its a tuple
-next we test for the  limits of the  humidity
+seen as we expect our sensor to  print out humidity and temp values we  set the  output to  a tuple 
+to test for this we use "isInstacne" which will test if it is a tuple
+next, we test for the  limits of the  humidity
 \subsubsection{DFR0026}
 According to the  data sheet \cite{ada} we must keep in mind  that this  component is  connected to  an ADC 
 this  will  give  me  the  following  test conditions:
 \begin{enumerate}
-    \item Test if  the output is a dictionary with elements of a string and integer in it.
+    \item Test if the output is a dictionary with elements of a string and integer in it.
 
-    \item Test  the  range of this  with the  upper limit being 5v the analogue voltage meaning:
+    \item Test  the  range of this  with the  upper limit being 5v the analog voltage meaning:
     $$\begin{aligned}\text{output}&= \frac{2^n\cdot \text{Analogue Input value}}{\text{Reference voltage}}\\ &=\frac{2^{16}\cdot 5}{5}=65536\end{aligned}$$
     \item test the  lover limit being 3.3v as the analogue$\frac{2^{16}\cdot 3.3}{5}=43253$
 \end{enumerate}
@@ -103,10 +103,10 @@ we can  now add to the snipppet :
     def test_AS312_out_type(self):
         self.assertIsInstance(AS312_instance.read_state,booll)
 \end{lstlisting}
-seen as  this is a motion sensor  our output will be true or false.
+seen as this is a motion sensor our output will be true or false.
 
 \subsubsection{Raspberry Pi VR 220 Camera}
-according to the  data sheet \cite{Camera} The  resolution to  it uses is  1080p50 which is 1920x1080p so our  tests will have to  in corporate  the  following:
+according to the  datasheet \cite{Camera} The  resolution it uses is  1080p50 which is 1920x1080p so our  tests will have to incorporate the  following:
 \begin{enumerate}
     \item Test  if the file can run
 \end{enumerate}
@@ -115,7 +115,7 @@ This would lead to the following code snippet.
     def test_Raspberry_Pi_VR220_out_shape(self):
         self.assertEqual(camera_obj.run.returncode, 0)
 \end{lstlisting}
-This function check the pixel count or resolution
+This function checks the pixel count or resolution
 
 \subsubsection{memory module}
 in this section will discuss the following:
@@ -131,14 +131,14 @@ For this use a  bash script(see this on page \pageref{TDD sample bash}) to test 
     \end{lstlisting}
 \end{enumerate} 
 \subsubsection{SB Components LoRa HAT}
-for this section we want to test the following:
+for this section, we want to test the following:
 \begin{enumerate}
     \item Test the serial connection
     \item Test the serial interrupt
-    \item Test the sending/receiving of a message like "hello world"
+    \item Test the sending/receiving of a message like "Hello world"
     \item Test the sending/receiving of a text file 
-    \item Test the sending/receiving of a csv file
-    \item Test the sending/receiving of a image file
+    \item Test the sending/receiving of a CSV file
+    \item Test the sending/receiving of an image file
 \end{enumerate}
 This will give  the following code:
 \begin{lstlisting}[style=mystyle]
@@ -179,7 +179,7 @@ This will give  the following code:
         unittest.main()
 \end{lstlisting}
 \subsubsection{Unit test iterations}
-This section will discuss the iterations of unit test the following are the iterations of  our unit testing:
+This section will discuss the iterations of the unit test following are the iterations of  our unit testing:
 \begin{enumerate}
     \item In the first iteration  the following was worked on:
     \begin{itemize}
@@ -192,5 +192,5 @@ This section will discuss the iterations of unit test the following are the iter
     \end{itemize}
 
     This was formed in the when the lit review was written
-    \item most the iterations where coming out the code and testing  each section 
+    \item Most of the iterations were coming out of the code and testing  each section 
 \end{enumerate}

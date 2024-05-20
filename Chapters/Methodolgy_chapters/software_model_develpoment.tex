@@ -16,40 +16,40 @@ This Section will discuss the following:
 \end{enumerate}
 To see the light sensor look on page \pageref{ADC section} 
 \subsubsection{DHT22}
-For this section we used the following libraries:
+For this section, we used the following libraries:
 \begin{lstlisting}[style=mystyle,numbers=left,firstnumber=1]
 #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
 import adafruit_dht 
 import board
-import pandas as pd  
+import pandas as PD  
 \end{lstlisting} 
 This uses the library from \href{https://github.com/mrmcwethy/Adafruit_CircuitPython_DHT}{this link}
 \begin{enumerate}
-    \item we define the our class
+    \item we define our class
     \begin{lstlisting}[style=mystyle,numbers=left,firstnumber=1]
     class DHT22:
     ##Set DATA pin to pin 4
         def __init__(self):
-            """this will setup the  data pin  for  DHT2"""
+            "This will set up the  data pin  for  DHT2"
             # self.dhtDevice =adafruit_dht.DHT22(board.D4)
             self.dhtDevice =adafruit_dht.DHT11(board.D4)
             self.humidity=self.dhtDevice.humidity
             self.temperature=self.dhtDevice.temperature
     \end{lstlisting}
-    In this class we have  define our DhT device as 11 seen as the DHT22 was  broken
-    so we set  our gpio pin 4 and setup the variables that read the  sensor data
+    In this class, we have defined our DhT device as 11 seeing as the DHT22 was  broken
+    so we set  our GPIO pin 4 and set the variables that read the  sensor data
     \item Next we read the data from the following function.
     \begin{lstlisting}[style=mystyle,numbers=left,firstnumber=1]
         def Read_DHT22_data(self)-> tuple[float,float,str]:
-        """This  will setup a DHT instance and  return the data from the sensor"""
+        """ This  will set a DHT instance and  return the data from the sensor"
         try:
-            return self.temperature,self.humidity
+            return self. temperature, self.humidity
         except RuntimeError as e:
             print(f"Error reading sensor: {e}")
             return None, None
     \end{lstlisting}
-    this will  return out the  temperature and humidity if the sensor is not connected
-    this  will return nothing . next  use the following: 
+    this will  return the  temperature and humidity if the sensor is not connected
+    this will return nothing. next  use the following: 
     \begin{lstlisting}[style=mystyle,numbers=left,firstnumber=1]
         if __name__ =="__main__":
             DHT22()
@@ -66,7 +66,7 @@ This uses the library from \href{https://github.com/mrmcwethy/Adafruit_CircuitPy
     import time
 \end{lstlisting}
 
-    \item next  we set up our variables  in the class
+    \item Next we set up our variables  in the class
 
     \begin{lstlisting}[style=mystyle,numbers=left,firstnumber=1]
     class AS312:
@@ -78,7 +78,7 @@ This uses the library from \href{https://github.com/mrmcwethy/Adafruit_CircuitPy
 		self.GPIO.setup(self.pin_number,GPIO.IN)
 		self.current_state=0
     \end{lstlisting}
-    This sets current state as 0
+    This sets the current state as 0
     \item next  we detect  movement
     \begin{lstlisting}[style=mystyle]
         def read_state(self)->bool:
@@ -91,7 +91,7 @@ This uses the library from \href{https://github.com/mrmcwethy/Adafruit_CircuitPy
 
 \subsubsection{DFR0026}
 \label{ADC section}
-From the repository DFRobot\_ADS1115 the following is considered:
+From the repository DFRobot\_ADS1115, the following is considered:
 \begin{enumerate}
 
 \item Import the libraries: 
@@ -134,7 +134,7 @@ This configures all the pins and sets the associative gain.
 \subsection{Camera}
 Here are the steps for module development of the Camera:
 \begin{enumerate}
-    \item install the following libraries:
+    \item installs the following libraries:
     \begin{lstlisting}[style=mystyle]
         #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
         from picamera2 import Picamera2 ,Preview
@@ -145,33 +145,33 @@ Here are the steps for module development of the Camera:
     \begin{lstlisting}[style=mystyle]
     class Raspberry_Pi_VR_220:
         def __init__(self):
-            """setup an instan  for the  camera"""
+            "setup an instance  for the  camera"
             self.timestamp=datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
             self.fname ='/home/mistaherd/Documents/Github/meshnetwork_in_forest/Images_camera/{}.png'.format(self.timestamp)
             self.camera=Picamera2()
             self.camera_config=self.camera.create_preview_configuration()
             self.timeamount=2
     \end{lstlisting}
-    \item  make the function for  takeing  a  picture
+    \item  make the function for taking a  picture
     \begin{lstlisting}[style=mystyle]
         def take_pic(self)-> str:
-            """this will take  a picture from camera"""
+            "This will take  a picture from the camera"
             self.camera.configure(self.camera_config)
             self.camera.start_preview(Preview.QTGL)
-            self.camera.start()
+            self. camera.start()
             sleep(self.timeamount)
             self.camera.capture_file(self.fname)
-            return self.fname
+            return self. fname
     \end{lstlisting}
 \end{enumerate}
 \newpage
 \subsection{Memory Management}
-For this we want to  read data  and append and check it the memory size.Here are the following steps:
+For this, we want to read data and append and check the memory size. Here are the following steps:
 \begin{enumerate}
     \item  import the following  libraries:
     \begin{lstlisting}[style=mystyle]
         #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
-        import pandas as pd
+        import pandas as PD
         from DHT22 import DHT22
         from AS312 import AS312
         from DFR0026 import DFR0026
@@ -184,20 +184,20 @@ For this we want to  read data  and append and check it the memory size.Here are
     class sensor_data:
         def __init__(self):
             self.dht22 = DHT22()
-            self.humidity,self.temperature=self.dht22.Read_DHT22_data()
+            self. humidity, self.temperature=self.dht22.Read_DHT22_data()
             self.AS312=AS312(17)
             self.motion_detected =AS312.read_state()
             self.DF0026 =DFR0026()
             self.light_value=self.DF0026.Read_data()
             self.fname="sensor_data.csv"
     \end{lstlisting}
-    \item We write and append our data to  the csv file
+    \item We write and append our data to  the CSV file
     \begin{lstlisting}[style=mystyle]
         def write_append_csv(self):
-		data = { "Timestamp" : self.timestamp,
-			"Temperature(oc)" : self.Temperature,
-			"Humidity(%)" : self.humidity,
-			"Light(lux)" :self.light_value,
+		data = { "Timestamp": self.timestamp,
+			"Temperature(oc)": self.Temperature,
+			"Humidity(%)": self.humidity,
+			"Light(lux)": self.light_value,
 			"Motion Detected": self.motion_detected
 			}
 		df = pd.DataFrame(data)
@@ -216,7 +216,7 @@ For this we want to  read data  and append and check it the memory size.Here are
             self.fname="../bash_scrpits/memorytest.sh" 
             self.output_bash=subprocess.check_output(["bash",self.fname],universal_newlines=True)
     \end{lstlisting}
-    \item next we check our memory
+    \item Next we check our memory
     \begin{lstlisting}[style=mystyle]
         def check_memory(self):
             try:
@@ -230,7 +230,7 @@ For this we want to  read data  and append and check it the memory size.Here are
             except subprocess.CalledProcessError as e:
                 raise ValueError(f"Error running script:{e.output}")
     \end{lstlisting}
-    \item  we then  make an error if its useing  20 percent memory
+    \item  we then  make an error if it's using  20 percent memory
     \begin{lstlisting}[style=mystyle]
         def error_check(self):
             mem=self.check_memory()
@@ -238,7 +238,7 @@ For this we want to  read data  and append and check it the memory size.Here are
             if mem >= 0.2* max:
                 raise MemoryError("memory on pi is about to  used up")
     \end{lstlisting}
-    \item to make sure  our class run from another python file 
+    \item to make sure  our class runs from another Python file 
     \begin{lstlisting}[style=mystyle]
         if __name__=="__main__":
             sensor_data()
@@ -246,15 +246,15 @@ For this we want to  read data  and append and check it the memory size.Here are
     \end{lstlisting}
 \end{enumerate}
 \subsection{Radio module}
-This section is based off the github repository: \url{https://github.com/sbcshop/Lora-HAT-for-Raspberry-Pi}
-here are the following approach for this module
+This section is based on the GitHub repository: \url{https://github.com/sbcshop/Lora-HAT-for-Raspberry-Pi}
+here are the following approaches for this module
 \begin{enumerate}
     \item First import the following  libraries:
     \begin{lstlisting}[style=mystyle]
         #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
         import time
         import serial
-        import pandas as pd
+        import pandas as PD
         import numpy as np
         import threading
         import base64
@@ -275,26 +275,26 @@ here are the following approach for this module
                 self.event=threading.Event()
     \end{lstlisting}
     
-    Where "self.transcive\_ser" set our serial port up which in linux is  '/dev/ttyS0' we can  control timeout to be  6 seconds but for this section well keep it at 1,"self.event" it seeting  a threing event to occur in the code "
+    Where "self.transceiver\_ser" sets our serial port up which in Linux is  '/dev/ttyS0' we can  control timeout to be  6 seconds but for this section will keep it at 1, "self. event" it setting  a triggering an event to occur in the code "
 
-    \item Setup a interrupt
+    \item Setup an interrupt
     \begin{lstlisting}[style=mystyle]
         def serial_interrupt(self):
 		if self.recived:
-			self.event.set()
+			self. event.set()
     \end{lstlisting}
     
     If there is any information to be sent on the wireless channel this will stop all operations
-    \item Make a process that will calculated the bytes  before sending the data
+    \item Make a process that will calculate the bytes  before sending the data
 
     \begin{lstlisting}[style=mystyle]
         def cal_bytes(self)-> int:
 		    return len([bytes(self.data[i],'utf-8').hex() for i in range(len(self.data))])
     \end{lstlisting}
-    \item Test sending and receiving  hello world!
+    \item Test sending and receiving Hello world!
     \begin{lstlisting}[style=mystyle]
         def transceive_test_message(self,transceive:bool):
-            """send /recive a hello world"""
+            "send /receive a hello world"
             if transceive:
                 # self.message
                 #transmite
@@ -303,16 +303,16 @@ here are the following approach for this module
             if not transceive:
                 while time.time()< self.reive_timelimit:
                     self.transceive_ser.attachInterrupt(self.serial_interrupt)
-                    if self.event.is_set():
+                    if self. event.is_set():
                         data_read=self.transceive_ser.readline()
                         data=data_read.decode("utf-8")
                         print("message received:",data)
-                        self.event.clear()
+                        self. event.clear()
     \end{lstlisting}
     \item test send/receiving a txt file
     \begin{lstlisting}[style=mystyle]
         def transceive_test_txt_file(self,transceive:bool):
-            """send /revive a txt file"""
+            "send /revive a txt file"
             if transceive:
                 with open(self.txt_fname,'r') as f:
                     data=f.read()
@@ -322,11 +322,11 @@ here are the following approach for this module
             if not transceive:
                 while time.time()< self.timelimit:
                     self.transceive_ser.attachInterrupt(self.serial_interrupt)
-                    if self.event.is_set():
+                    if self. event.is_set():
                         data_read=self.transceive_ser.readline()
                         data=data_read.decode("utf-8")
                         print("message received:",data)
-                        self.event.clear()
+                        self. event.clear()
                         return data
     \end{lstlisting}
     \item Test sending and revecing csv file
@@ -341,17 +341,17 @@ here are the following approach for this module
             if not transceive:
                 while time.time() <self.timelimit:
                     self.transceive_ser.attachInterrupt(self.serial_interrupt)
-                    if self.event.is_set():
+                    if self. event.is_set():
                         data=self.transceive_ser.readlines()
                         output=[data[i].decode()[:-1].split(",") for i in range(len(data))]
                         df=pd.DataFrame(output)
-                        self.event.clear()
+                        self. event.clear()
                         return df
     \end{lstlisting}
     \item Test sending and receiving an image file
     \begin{lstlisting}[style=mystyle]
         def Transcevie_png_file(self,transceive:bool):
-            """Transmit a PNG file"""
+            "Transmit a PNG file"
             if transceive:
                 with open(self.png_fname, 'rb') as f:
                     self.data = f.read()
@@ -365,33 +365,33 @@ here are the following approach for this module
             if not transceive:
                 output=[]
                 self.transceive_ser.attachInterrupt(self.serial_interrupt)
-                if self.event.is_set():
+                if self. event.is_set():
                     while(self.transceive_ser.read() != b''):
                         data_read = self.transceive_ser.read()
                         print("bytes reviced %a"%data_read)
                         output.append(base64.b64decode(data_read))
                     output=b"".join(output)
-                    self.event.clear()
+                    self. event.clear()
                     return output
     \end{lstlisting}
-    \item For demo make sure to define the following:
+    \item For the demo make sure to define the following:
     \begin{lstlisting}[style=mystyle]
         def transive_choice(self,arugement):
-            """ run this for demo"""
-            if not self.event.is_set():
+            """ run this for demo"
+            if not self. event.is_set():
                 #transmit something
                 self.transmit=True
                 choice ={
                     1:lambda :self.transceive_test_message(self.transmit),
                     2:lambda :self.transceive_test_txt_file(self.transmit),
                     3:lambda :self.transceive_test_csv(self.transmit),
-                    4:lambda :self.Transcevie_png_file(self.transmit)}
+                    4:lambda: self.Transcevie_png_file(self.transmit)}
                 choice[arugement]()
             #revived somthing
             self.transmit=False
             choice[self.user_message]()
     \end{lstlisting}
-    \item have file as a module
+    \item has a file as a module
     \begin{lstlisting}[style=mystyle]
         if __name__=='__main__':
 	        Transciever()
