@@ -1,8 +1,8 @@
-In this project there needs to be data to transmit,The network needs to be able to:
+In this project there needs to be data to transmit, The network needs to be able to:
 \begin{enumerate}
-	\item Transmit  data for  example  temperature, humidity,light and camera images.
-	\item Read data every hour  and  stored it as a CSV file, The image file  will depend on the module chosen
-	\item Detect  any animal that passes  the  node with a motion sensor. 
+	\item Transmit data for example temperature, humidity, light and camera images.
+	\item Read data every hour  and store it as a CSV file, The image file  will depend on the module chosen
+	\item Detect any animal that passes the node with a motion sensor. 
 \end{enumerate}
 \newpage
 The following is  a  rough circuit diagram  for the project:
@@ -28,7 +28,7 @@ This section discusses the following:
 \end{enumerate}
 
 \subsection{Sensor considerations}
-In this section, the process of  considering each component of the sensors will be discussed.
+In this section, the process of considering each component of the sensors will be discussed.
 These components are:
 \begin{enumerate}
 	\item Temperature
@@ -42,7 +42,7 @@ The sensor needs to be able to work in the following conditions:
 	\item The mesh node will be outside
 	\item The device is in Ireland		\item The device is in a forest
 \end{enumerate}
-Taking these requirements into consideration,the temperature in Ireland was researched.
+Taking these requirements into consideration, the temperature in Ireland was researched.
 
 The following table was obtained from Met Eireann \cite{Eirrean}. which shows  the highest air temperature in a  shaded area
 \begin{table}[h!]
@@ -66,7 +66,7 @@ The following table was obtained from Met Eireann \cite{Eirrean}. which shows  t
 		\label{Highest shader air Met eirrean}
 	\end{table}
 
-According to the table, the highest temperature is 33.3.The  other  extreme of the Lowest temperature was then considered:
+According to the table, the highest temperature is 33.3. The  other  extreme of the Lowest temperature was then considered:
 	\begin{table}[h!]
 		\begin{tabular}{ | c | c | c | }
 		\hline
@@ -89,9 +89,9 @@ According to the table, the highest temperature is 33.3.The  other  extreme of t
 	\end{table}
 
 According to the table above the lowest temp is -19.1
-In consideration for where the project the condition is a range of -19.1\textdegree C to 33.3\textdegree C.
+In consideration of where the project the condition is a range of -19.1\textdegree C to 33.3\textdegree C.
 \newpage
-Humdity was also researched,Humidity refers to the amount of water vapeor in the air. The following table was obtained from Met Eireann \cite{eirrean2}:
+Humidity was also researched, Humidity refers to the amount of water vapor in the air. The following table was obtained from Met Eireann \cite{eirrean2}:
 \begin{table}[h!]
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 		\hline
@@ -105,7 +105,7 @@ Humdity was also researched,Humidity refers to the amount of water vapeor in the
 	\label{Realtive Humidity according to met eirrean}
 \end{table}
 
-The ranges are from 68.3\% to 88 \% Taking these considerations into account.Here are the different components:
+The ranges are from 68.3\% to 88 \% Taking these considerations into account. Here are the different components:
 
 \begin{table}[h!]
 	\centering
@@ -113,7 +113,7 @@ The ranges are from 68.3\% to 88 \% Taking these considerations into account.Her
 	\caption{Comparing of temperature sensors}
 	\label{Comparing of temperature sensors}
 \end{table}
-After this, the choice between two sensors was narrowed down to DHT22 and DHT11. The  following are the advantages and disadvantages of the DHT22 and DHT11:
+After this, the choice between the two sensors was narrowed down to DHT22 and DHT11. The  following are the advantages and disadvantages of the DHT22 and DHT11:
 \begin{table}[h!]
 	\centering
 	\scalebox{0.8}{\begin{tabular}{|c|c|c|}
@@ -158,17 +158,17 @@ From above the schematic is seen. DHT22 connections are the following:
 
 \end{itemize}
 \cite{sparkfun} The following is the \href{https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf}{link} to the datasheet of this module
-when reading from this  component. There is  a  delay  of 2 seconds due to the  sampling period.
+when reading from this component. There is a delay of 2 seconds due to the sampling period.
 
 \subsubsection{Light sensor}
-In this section the following will be considered:
+In this section, the following will be considered:
 \begin{enumerate}
 	\item What region the project is in 
 	\item What light levels are expected in this  country
 	\item What sensor  will  accommodate this  range
 \end{enumerate}
 \newpage
-For this sensor  the outside aspect of the  project must also be considered.The following table was found on \cite{wiki_2023}:
+For this sensor, the outside aspect of the project must also be considered. The following table was found on \cite{wiki_2023}:
 	\begin{table}[h!]
 	\centering
 	\begin{tabular}{|l|l|}
@@ -189,7 +189,7 @@ For this sensor  the outside aspect of the  project must also be considered.The 
 	\caption{Illuminates values}
 	\label{Illuminates values}
 \end{table}
-	This table is the  associated lux level  indicating when the values are . 
+	This table is the associated lux level indicating when the values are. 
 	From  above the sensor should ideally be 0.002 to 25000 lux, Bearing this in mind  these components were researched:
 	\begin{table}[h!]
 	\small
@@ -210,7 +210,7 @@ For this sensor  the outside aspect of the  project must also be considered.The 
 \end{table}
 \newpage
 
-After research DFR0026 \cite{DFR0026} is the option proposed for use as it is the best for this application,  which will have an analogue  output to see the interface (see below):
+After research DFR0026 \cite{DFR0026} is the option proposed for use as it is the best for this application,  which will have an analog output to see the interface (see below):
 
 \begin{figure}[h!]
 	\centering
@@ -230,7 +230,7 @@ The component relies on the  ADC  which  is on page\pageref{Adc section}
 
 \subsubsection{Motion sensor}
 
-For this section the following must be considered:
+For this section, the following must be considered:
 \begin{enumerate}
 	\item The range of the  sensor
 	\item The degree of the  sensor
@@ -252,7 +252,7 @@ The  following are  the components considered:
 	\label{Motion sensor components}
 \end{table}
 
-The sensor chosen is AS312\cite{micros}(which has a delay time of 2 seconds) which is a digital interface to see the wiring ,See below:
+The sensor chosen is AS312\cite{micros}(which has a delay time of 2 seconds) which is a digital interface to see the wiring, See below:
 \newpage
 The following is the interface for the device:
 
@@ -285,7 +285,7 @@ This  component has the following:
 
 \newpage
 \subsection{Radio Module}
-For this section there are the following considerations:
+For this section, there are the following considerations:
 \begin{itemize}
 	\item The devices are in a forest
 	\item Meaning  Gigahertz  isn't  a desirable frequency
@@ -303,13 +303,13 @@ Through research, I found the following table:
 	
 \end{table}
 
-Out of these, the MM2 Series 900 MHz\cite{freewave} was chosen.Note that the seller of this  radio module has  limited the documentation  of this module.This makes it hard to  draw an interface for this module .
+Out of these, the MM2 Series 900 MHz\cite{freewave} was chosen. Note that the seller of this radio module has limited the documentation of this module. This makes it hard to draw an interface for this module.
 \subsection{ADC Considerations}
 \label{Adc section}
 For the ADC  there are the following considerations:
 \begin{enumerate}
 	\item Low power
-	\item High bit resolution
+	\item High-bit resolution
 	\item Low number of channels
 	\item High sample rate
 \end{enumerate}
@@ -329,7 +329,7 @@ The two things needed for this is a high bit  Resolution  and  a  high sample ra
 \end{table}
 
 Above are the components  to choose from 
-for this project,MCP3008 was chosen due to its  resolution and  sample rate
+for this project, MCP3008 was chosen due to its  resolution and  sample rate
 \newpage
 The following is the schematic for the  MCP3008\cite{ada}
 \begin{figure}[h!]
@@ -342,18 +342,18 @@ The following is the schematic for the  MCP3008\cite{ada}
 The following are connections:
 \begin{enumerate}
 	\item VDD is connected to 3v3 pin of the  Pi
-	\item VRef is  also connected to  3v3 pin of the  Pi
-	\item AGND is connected to the gnd pin 
+	\item VRef is  also connected to the 3v3 pin of the  Pi
+	\item AGND is connected to the GND pin 
 	\item CLK pin is connected to GPIO port 11
 	\item Dout pin is connected to GPIO port 9
 	\item Din pin is connected to GPIO port 19
 	\item CS pin  is connected  to GPIO port 8
-	\item DGND ping is connected to the gnd pin
+	\item DGND ping is connected to the GND pin
 \end{enumerate}
 
 This  component has the following:
 \begin{enumerate}
-	\item A 10 bit resolution
+	\item A 10-bit resolution
 	\item Seen as  the  reference  will  be 3.3v  
 	\item 200ksps, meaning the delay to read is 5$\mu$ seconds
 \end{enumerate}
@@ -382,24 +382,24 @@ For the camera,  the following has to be considered:
 	\label{Camera module}
 \end{table}
 
-The camera chosen is a Raspberry Pi VR 220\cite{RS} Camera To see how to connect look at the  following \href{https://youtu.be/yhM1NhD-kGs?si=yxgFZb84yxSGLtM3}{link}. 
+The camera chosen is a Raspberry Pi VR 220\cite{RS} Camera To see how to connect look at the following \href{https://youtu.be/yhM1NhD-kGs?si=yxgFZb84yxSGLtM3}{link}. 
 \subsection{Memory module}
 For this section, we consider the following:
 \begin{enumerate}
 	\item The file formatting of the sensor data
 	\item The file formatting of  the camera data
 	\item What are  the possible sizes of data
-	\item What is the  memory size of the  raspberry pi OS
+	\item What is the  memory size of the Raspberry Pi OS
 \end{enumerate}
 
-In my project the following is used:
+In my project, the following is used:
 \begin{enumerate}
 	\item The sensor data  is stored in a  CSV file with the following heading: (timestamp, heat, humidity, light level, anything detected), Which can be around 25KB
 	\item For the camera using 10 MB is the  largest file  size
-	\item For the Raspberry Pi  downloaded  the raspberry imager , This has  lots of  options such as  the  following on page \pageref{pi os}
+	\item For the Raspberry Pi download the Raspberry Imager, This has  lots of  options such as  the  following on page \pageref{pi os}
 \end{enumerate}
 
-After has been we must consider a  mircoSD ,The following are considerations:
+After has been we must consider a  mircoSD, The following are considerations:
 \begin{table}[h!]
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 		\hline \\
@@ -423,7 +423,7 @@ we can consider extra memory:
 	\item MCP3008 5 $\mu$ seconds
 \end{enumerate}
 
-Through research,the following was discovered :
+Through research, the following was discovered :
 \begin{table}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Images/memory_devices.png}
@@ -431,10 +431,10 @@ Through research,the following was discovered :
 	\label{Memory usb to consider}
 \end{table}
 
-The Raspberry Pi 4 supports USB 2 and  USB 3. For this, the Turbo 1GB USB 2 Flash Drive will  be chosen.
+The Raspberry Pi 4 supports USB 2 and  USB 3. For this, the Turbo 1GB USB 2 Flash Drive will be chosen.
 
 \subsection{Battery}
-In this section the  following must be considered:
+In this section, the  following must be considered:
 \begin{enumerate}
 	\item Enough power for all  sensors  and  radio module
 	\item Storage of the battery
@@ -467,10 +467,10 @@ Aside: this component has the following:
 	\item an estimated Power supply time  of  5 hours
 \end{enumerate}
 \subsection{Arduino vs PI Consideration }
-In this project, we will have to choose between what microprocessor we will use.There are 3 options:
+In this project, we will have to choose between what microprocessor we will use. There are 3 options:
 \begin{enumerate}
 	\item PCB (printed circuit board)
-	where the circuit is deigned in a program like Fusion 360. The major issue is due to  the current state of  silicon chips which will slow down  the progress of the implementation stage
+	where the circuit is designed in a program like Fusion 360. The major issue is due to  the current state of  silicon chips which will slow down  the progress of the implementation stage
 	\item Arduino 
 	\item Raspberry Pi
 \end{enumerate}
@@ -491,7 +491,7 @@ The advantages and disadvantages of the Arduino and  the Raspberry Pi are the fo
 	Disadvantages & Disadvantages \\
 	\hline \hline
 	1. Arduino has a supper set of C++ & 1. Pi is a technically a small CPU \\
-	2. Arduino only has 6 Analogue pins  & 2. The Pi needs an ADC circuit to deal with inputs that are analogue \\
+	2. Arduino only has 6 Analogue pins  & 2. The Pi needs an ADC circuit to deal with inputs that are analog \\
 	
 	\hline
 	\end{tabular}
@@ -499,19 +499,19 @@ The advantages and disadvantages of the Arduino and  the Raspberry Pi are the fo
 	\label{Advantages /Disadvantages of Arduino vs pi}
 \end{table}
 
-Although the  Arduino would be more efficient than the Raspberry Pi due to Raspberry Pi has an Operating System . The Pi was picked due familiar with Python and Linux. Linux can  be used to handle the networking side  of   the project
+However, the  Arduino would be more efficient than the Raspberry Pi due to Raspberry Pi having an Operating System. The Pi was picked due to familiarity with Python and Linux. Linux can  be used to handle the networking side  of   the project
 At the cost of  some efficiency in power for an easier time writing the code for  this  project 
 \subsubsection{Picking a Raspberry Pi}
-Now that a device was chosen to  use the following need to be defined:
+Now that a device was chosen to  use the following needs to be defined:
 \begin{enumerate}
 	\item The amount of GIPO PORTS we need 
 	\item Nature of the output of the sensor
 	\item Speed of the clock
 \end{enumerate}	
 
-GPIO(General purpose input/output) is used  to select the input/output. The Pi can  take in  digital signals only Seen as the components are chosen that require A GPIO port (temperature/ humidity, on page \pageref{Compareing DHT22 and DHT11}, Light on page \pageref{table of light sensors}, motion on page \pageref{Motion sensor components})
+GPIO(General purpose input/output) is used to select the input/output. The Pi can  take in  digital signals only Seen as the components are chosen that require A GPIO port (temperature/ humidity, on page \pageref{Compareing DHT22 and DHT11}, Light on page \pageref{table of light sensors}, motion on page \pageref{Motion sensor components})
 
-At least  3 GPIO ports to be available to us as the light sensor and the motion will  need  an adc as looking through the documentation .firstly let's look at the  different models:
+At least  3 GPIO ports to be available to us as the light sensor and the motion will  need  an adc as looking through the documentation First, let's look at the  different models:
 \begin{table}[h!]
 \scalebox{0.6}{\begin{tabular}{|l|l|r|l|l|l|1|}
 	\hline
@@ -532,7 +532,7 @@ At least  3 GPIO ports to be available to us as the light sensor and the motion 
 \label{Table of Raspberry Pi's}
 \end{table}
 
-The above table displays the modules ,As our radio modules is 900Mhz  we want  1.5GHZ which is the Raspberry Pi 4.This needs a USB\- c charger and an HDMI mini cable.
+The above table displays the modules, As our radio module is 900Mhz  we want  1.5GHZ which is the Raspberry Pi 4. This needs a USB\- c -charger and an HDMI mini cable.
 For wiring our Pi here is  the GPIO pin layout:
 \begin{figure}[h!]
 	\centering
@@ -542,7 +542,7 @@ For wiring our Pi here is  the GPIO pin layout:
 \end{figure}
 
 \subsection{Conclusion}
-In this project the hardware needed is the  following components:
+In this project, the hardware needed is the  following components:
 \begin{enumerate}
 	\item 1 x Raspberry Pi 4 Model B 
 	\item 1 x HDMI cable
