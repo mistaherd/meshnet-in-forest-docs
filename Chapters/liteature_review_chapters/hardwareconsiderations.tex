@@ -4,7 +4,7 @@ In this project there needs to be data to transmit, The network needs to be able
 	\item Read data every hour  and store it as a CSV file, The image file  will depend on the module chosen
 	\item Detect any animal that passes the node with a motion sensor. 
 \end{enumerate}
-\newpage
+
 The following is  a  rough circuit diagram  for the project:
 \begin{figure}[h!]
 	\centering
@@ -65,7 +65,7 @@ The following table was obtained from Met Eireann \cite{Eirrean}. which shows  t
 		\caption{Highest shader air Met Eireann(13$^{th}$ June 2023)}
 		\label{Highest shader air Met eirrean}
 	\end{table}
-
+\newpage
 According to the table, the highest temperature is 33.3. The  other  extreme of the Lowest temperature was then considered:
 	\begin{table}[h!]
 		\begin{tabular}{ | c | c | c | }
@@ -90,7 +90,7 @@ According to the table, the highest temperature is 33.3. The  other  extreme of 
 
 According to the table above the lowest temp is -19.1
 In consideration of where the project the condition is a range of -19.1\textdegree C to 33.3\textdegree C.
-\newpage
+
 Humidity was also researched, Humidity refers to the amount of water vapor in the air. The following table was obtained from Met Eireann \cite{eirrean2}:
 \begin{table}[h!]
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -113,6 +113,7 @@ The ranges are from 68.3\% to 88 \% Taking these considerations into account. He
 	\caption{Comparing of temperature sensors}
 	\label{Comparing of temperature sensors}
 \end{table}
+\newpage
 After this, the choice between the two sensors was narrowed down to DHT22 and DHT11. The  following are the advantages and disadvantages of the DHT22 and DHT11:
 \begin{table}[h!]
 	\centering
@@ -132,7 +133,7 @@ After this, the choice between the two sensors was narrowed down to DHT22 and DH
 \end{table}
 
  DHT22 was chosen. Which has a  Digital output. See a wiring diagram next page:
- \newpage
+
 This will have an interface of the following:
 
 \begin{figure}[h!]
@@ -167,7 +168,7 @@ In this section, the following will be considered:
 	\item What light levels are expected in this  country
 	\item What sensor  will  accommodate this  range
 \end{enumerate}
-\newpage
+
 For this sensor, the outside aspect of the project must also be considered. The following table was found on \cite{wiki_2023}:
 	\begin{table}[h!]
 	\centering
@@ -189,6 +190,7 @@ For this sensor, the outside aspect of the project must also be considered. The 
 	\caption{Illuminates values}
 	\label{Illuminates values}
 \end{table}
+
 	This table is the associated lux level indicating when the values are. 
 	From  above the sensor should ideally be 0.002 to 25000 lux, Bearing this in mind  these components were researched:
 	\begin{table}[h!]
@@ -208,9 +210,10 @@ For this sensor, the outside aspect of the project must also be considered. The 
 	\caption{table of light sensors}
 	\label{table of light sensors}
 \end{table}
-\newpage
 
-After research DFR0026 \cite{DFR0026} is the option proposed for use as it is the best for this application,  which will have an analog output to see the interface (see below):
+After research DFR0026 \cite{DFR0026} is the option proposed for use as it is the best for this application,  which will have an analog output.
+\newpage
+To see the interface (see below):
 
 \begin{figure}[h!]
 	\centering
@@ -222,7 +225,7 @@ After research DFR0026 \cite{DFR0026} is the option proposed for use as it is th
 The following are  the connections:
 \begin{enumerate}
 	\item VCC pin is connected  to 5v
-	\item Gnd of the  sensor is connected to Gnd of the Pi
+	\item Gnd of the  sensor is connected to GND of the Pi
 	\item The output is connected to  ch 0
 	\item the output ranges  from  0 to  5 v
 \end{enumerate}
@@ -366,6 +369,7 @@ For the camera,  the following has to be considered:
 	\item Power
 	\item The lux values it operates at
 \end{enumerate}
+\newpage
 \begin{table}[h!]
 	\centering
 	\scalebox{0.6}{\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
@@ -403,7 +407,7 @@ After has been we must consider a  mircoSD, The following are considerations:
 \begin{table}[h!]
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 		\hline \\
-		Product Name & Capacity & Speed class & Read speed & Write speed & Temperature range & Operating volatage &Shock Resistance &Vibration Resistance \\
+		Product Name & Capacity & Speed class & Read speed & Write speed & Temperature range & Operating voltage &Shock Resistance &Vibration Resistance \\
 		\hline \hline
 		SAMSUNG EVO Plus Class 10 microSDXC& 256 GB &U3&up to 130MB/s&up to 130MB/s&N/A&N/A&yes&yes \\
 		SANDISK Ultra Performance Class 10 microSDXC&128 GB& class 10 u1&up to 80 MB/s&up to 10 MB/s&N/A&N/A&yes&yes \\
@@ -528,7 +532,7 @@ At least  3 GPIO ports to be available to us as the light sensor and the motion 
 	\hline
 \end{tabular}
 }
-\caption{Table of Raspberry Pi's}
+\caption{Table of Raspberry Pis}
 \label{Table of Raspberry Pi's}
 \end{table}
 
@@ -540,7 +544,7 @@ For wiring our Pi here is  the GPIO pin layout:
 	\caption*{Pinout for  the  pi}
 	\label{Pinout for  the  pi}
 \end{figure}
-
+\newpage
 \subsection{Conclusion}
 In this project, the hardware needed is the  following components:
 \begin{enumerate}

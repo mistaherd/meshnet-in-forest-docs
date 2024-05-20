@@ -1,6 +1,10 @@
 {
     "cSpell.words": [
         "adafuit",
-        "Eireann"
+        "Eireann",
+        "GPIO",
+        "nonint",
+        "numpy",
+        "strftime"
     ]
 }

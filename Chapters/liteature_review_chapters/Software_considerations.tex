@@ -1,4 +1,3 @@
-
 Having established the essential hardware needed for this project. Next, consider the following  for the software of the  project:
 	\begin{enumerate}
 	    \item How to structure code 
@@ -53,20 +52,19 @@ Having established the essential hardware needed for this project. Next, conside
 	the code does the following:
 	\begin{enumerate}
 		\item firstly git clone will clone the  repository onto to device
-		\item Then change dirertorys  a
-		\item update linux
+		\item Then change directories  a
+		\item update Linux
 		\item install dev kit for  python 
 		\item and install the setup 
 	\end{enumerate}
 	
-	\newpage
 	this will then lead to  the  following code:
 	\begin{lstlisting}[style=mystyle,caption={Example code for DHT2},numbers=left,firstnumber=1]
 		#Libraries
-		import Adafruit_DHT as dht
+		import Adafruit_DHT as DHT
 		from time import sleep
 		def setup_DHT22(Gpoiport:int):
-		humidityy,temp=dht.read_retry(dht.DHT22, Gpoiport)
+		humidity,temp=dht.read_retry(DHT.DHT22, Gpoiport)
 			sleep(5)
 			return humidity, temp
 		h,t=setup_DHT22(3)
@@ -74,8 +72,8 @@ Having established the essential hardware needed for this project. Next, conside
 	\end{lstlisting}
 	this code will do the following:
 	\begin{enumerate}
-		\item Import DHT from the adafuit library
-		\item in the  function which takes the gpioport  as an integer this will read the data on the pin and  print it  out
+		\item Import DHT from the Adafuit library
+		\item in the  function which takes the GPIO port  as an integer this will read the data on the pin and  print it  out
 	\end{enumerate}
 	
 	\subsubsection{AS312}
@@ -89,7 +87,6 @@ Having established the essential hardware needed for this project. Next, conside
 		sudo apt-get install python-rpi.gpio
 	\end{verbatim}
 	which will install a gpio python module
-	\newpage
 	Then type this into an IDE of your  choosing
 	\begin{lstlisting}[style=mystyle,caption={Example code for AS312},numbers=left,firstnumber=1]
 		import RPi.GPIO as GPIO
@@ -112,7 +109,7 @@ Having established the essential hardware needed for this project. Next, conside
 	this code does the  following:
 	\begin{enumerate}
 		\item it will look at the  pin for a pulse 
-		\item onece it sences a pulse  it will tiggerr  the camerae
+		\item Once it senses a pulse  it will trigger  the camera
 	\end{enumerate}
 	\subsubsection{DFR0026}	
 	from the last example, nothing has changed from the last component
@@ -122,7 +119,7 @@ Having established the essential hardware needed for this project. Next, conside
 	\begin{enumerate}
 		\item The MCP3008 data out is GIPO 9 
 	\end{enumerate}
-	this section follows this \href{https://randomnerdtutorials.com/raspberry-pi-analog-inputs-python-mcp3008/}{link}
+	This section follows this \href{https://randomnerdtutorials.com/raspberry-pi-analog-inputs-python-mcp3008/}{link}
 	firstly try the following in command in the terminal 
 	\begin{verbatim}
 	sudo raspi-config nonint do_spi 0
@@ -209,7 +206,7 @@ Having established the essential hardware needed for this project. Next, conside
 	here is a  sample of how to   store where the  file is  gonna be:
 	\begin{lstlisting}[style=mystyle,caption={example code for storing directory},numbers=left,firstnumber=1]
 		import tkinter as tk
-		from tkinter import filedialog
+		from Tkinter import filedialog
 		import json
 		import os
 
@@ -228,8 +225,9 @@ Having established the essential hardware needed for this project. Next, conside
 		root.quit()
 	\end{lstlisting}
 	Other useful Libraries allow you to  select all  .csv, png  called glob
-	for our TDD Section, we will have  use the  following command:
+	for our TDD Section, we will have to use the  following command:
 	\label{TDD sample bash}
+	\newpage
 	\begin{verbatim}
 		# !/bin/bash
 
@@ -252,5 +250,3 @@ Having established the essential hardware needed for this project. Next, conside
 			\item TDD provides immediate feedback on whether your code works as intended,
 		\end{enumerate}
 	\end{enumerate}
-
-	% \subsection{Conclusion}
