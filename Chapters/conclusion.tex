@@ -1,6 +1,5 @@
 \section{Conclusion}
 \label{ch:conclusion} % For easy referencing
-
 In this final year project, We have explored the implementation and development of mesh networks within the challenging environment of a forest. Through:
 \begin{enumerate}
     \item The wireless commutation environment 
@@ -40,7 +39,7 @@ In this section will discuss the problems notice while working on this:
 \begin{enumerate}
     \item When trying to look for radio modules the MM2 Series 900 MHz this part couldn't be ordered due to the vender only accepting business customers this cost 4 week of research to look for another module
     \item Once the appropriate modules  after looking and noticing that the documentation is very poor dint help as well.
-    \item One avenue not expected of this was enabling the serial .So once we enable via sudo raspi-config ,and use the code from this \href{https://github.com/sbcshop/Lora-HAT-for-Raspberry-Pi}{link} (use lora_receiver and lora_transmitter) when we get the following error:
+    \item One avenue not expected of this was enabling the serial .So once we enable via sudo raspi-config ,and use the code from this \href{https://github.com/sbcshop/Lora-HAT-for-Raspberry-Pi}{link} (use lora\_receiver.py and lora\_transmitter.py) when we get the following error:
 
     \begin{figure}[h!]
         \centering
@@ -65,9 +64,14 @@ This section will discuss the errors that occurred theses are the following:
 \subsection{Camera}
 This Section will discuss the errors that occurred with this module these are the following:
 \begin{enumerate}
-    \item 
+    \item When using the python file "camera.py" this wouldn't complie due to  how the old libarry is no longer supported this costed around 2 weeks due to finding different fourms and tracking the  right libary down eventual .the decision was made to make a bash command  to run the camera
 \end{enumerate}
 \subsection{Lack of hat for sensors}
+This Section will discuss the issues of this which are  the following:
+\begin{enumerate}
+    \item When wiring up all the sensors it took serval minutes to wire the devices up which lead to miss wiring the temp sensor which blew  leading to and order of replacement to be made
+    \item This issue along with the could of  lead to  the code being simpler in nature them what is present in the repository
+\end{enumerate}
 \section{Future Work}
 
 While this project hasn't achieved its core objectives, several avenues for future research and development remain open:
@@ -92,4 +96,4 @@ While this project hasn't achieved its core objectives, several avenues for futu
 \end{itemize}
 
 \subsection{Final Remarks}
-The deployment of mesh networks in forest environments holds immense promise. The work presented here serves as a solid foundation for future endeavors.into the actual routeing of the network and testing this
+The deployment of mesh networks in forest environments holds immense promise. The work provided here doesn't outline how achieve this but can be viewed as a method to achieving  this nature
