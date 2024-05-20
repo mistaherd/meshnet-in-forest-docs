@@ -11,17 +11,17 @@ Having established the essential hardware needed for this project. Next, conside
 	\label{pi os}
 	In this section, it must be kept in mind  that each OS is  heavyweight the following needs to be considered:
 	\begin{enumerate}
-		\item If the SD is formatted the  data on the SD is lost. Does it corrupt the card?
+		\item If the SD is formatted the data on the SD is lost. Does it corrupt the card?
 		\item An os that is low in capacity 
-		\item Is a desktop needed or can we use the  terminal?
-		\item How does  the OS  respond to USB drives?
+		\item Is a desktop needed or can we use the terminal?
+		\item How does the OS  respond to USB drives?
 	\end{enumerate}
 
-	According to the \cite{projects} the imager will erase all the data while installing the os. From research  the suggestion of backing up the data is  a  good suggestions.
-	for now the recommended OS is used. and  strip down as the project progresses. which will be  discussed  in the methodology section of this report.
+	According to the \cite{projects} the imager will erase all the data while installing the os. From research, the suggestion of backing up the data is a good suggestion.
+	for now, the recommended OS is used. and  strip down as the project progresses. which will be discussed in the methodology section of this report.
 	
 	\subsection{Sensor code}
-	In this section the following will be discussed :
+	In this section, the following will be discussed :
 	\begin{enumerate}
 		\item DHT22
 		\item AS312
@@ -31,7 +31,7 @@ Having established the essential hardware needed for this project. Next, conside
 		\item Raspberry Pi VR 220 Camera 
 	\end{enumerate}
 
-	the project code will mainly be object-oriented. so the goal is to first test it with my laptop and  Create A bash file  full of  commands to install  the libraries,making the code to be split up  into  different parts so that all that is needed is the libraries used and code that won't all have to  compiled in one file.
+	the project code will mainly be object-oriented. so the goal is to first test it with my laptop and  Create A bash file full of commands to install the libraries, making the code split up into different parts so that all that is needed is the libraries used and code that won't all have to be compiled in one file.
 
 	\subsubsection{DHT22}
 	In this section we have to consider the following: 
@@ -40,7 +40,7 @@ Having established the essential hardware needed for this project. Next, conside
 		\item The type of output is digital so no  extra hardware/code is needed
 	\end{enumerate}
 
-	The following is  a rough guide on how to read from the DHT22 from the following \href{https://www.instructables.com/Raspberry-Pi-Tutorial-How-to-Use-the-DHT-22/}{link}.
+	The following is a rough guide on how to read from the DHT22 from the following \href{https://www.instructables.com/Raspberry-Pi-Tutorial-How-to-Use-the-DHT-22/}{link}.
 	Firstly open the terminal in the Pi and
 	type the following commands:
 	\begin{lstlisting}[style=bashstyle]
@@ -52,7 +52,7 @@ Having established the essential hardware needed for this project. Next, conside
 	\end{lstlisting}
 	the code does the following:
 	\begin{enumerate}
-		\item firstly git clone will clone the  repository on to device
+		\item firstly git clone will clone the  repository onto to device
 		\item Then change dirertorys  a
 		\item update linux
 		\item install dev kit for  python 
@@ -68,7 +68,7 @@ Having established the essential hardware needed for this project. Next, conside
 		def setup_DHT22(Gpoiport:int):
 		humidityy,temp=dht.read_retry(dht.DHT22, Gpoiport)
 			sleep(5)
-			return humundity,temp
+			return humidity, temp
 		h,t=setup_DHT22(3)
 		print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(t,h))
 	\end{lstlisting}
@@ -88,7 +88,7 @@ Having established the essential hardware needed for this project. Next, conside
 	\begin{verbatim}
 		sudo apt-get install python-rpi.gpio
 	\end{verbatim}
-	which will  intall a gpio python module
+	which will install a gpio python module
 	\newpage
 	Then type this into an IDE of your  choosing
 	\begin{lstlisting}[style=mystyle,caption={Example code for AS312},numbers=left,firstnumber=1]
@@ -137,7 +137,7 @@ Having established the essential hardware needed for this project. Next, conside
 		print ('raw: {:.5f}'.format(DFR0026.value))
 		sleep(0.1)
 	\end{lstlisting}
-	this code will  selcect a  channel and device , port and  print the vaules of the adc's
+	this code will select a  channel and device, port and  print the values of the ADC's
 	\subsection{Raspberry Pi VR 220 Camera}
 	to get started with this simply look at the following \href{https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4}{link}
 	here is an example of the code of this module :
@@ -151,10 +151,10 @@ Having established the essential hardware needed for this project. Next, conside
 		sleep(5)
 		camera.stop_preview()
 	\end{lstlisting}
-	this will  take a photo of what is in fron of the  camera
+	this will  take a photo of what is in front of the  camera
 
 	\subsection{MM2 Series 900 MHz}
-	for this section, the seller of this module has no public  documentation so it is hard to  come  with  an make a  interface for  this section   
+	for this section, the seller of this module has no public  documentation so it is hard to  come up with  an make interface for  this section   
 	\subsection{code structure}
 	The code structure for this  will be an object-oriented program all the individual sensors and  hardware  for the pi will be as displayed above the code in this section will be formatted into objects for example I will have an  object   called proj\_sensor and  a method of this  would be  DHT22 while an attribute of this would  be  the  sample rate
 	the following is a  rough breakdown of the  structure of the code
@@ -187,10 +187,10 @@ Having established the essential hardware needed for this project. Next, conside
 	the following is an example of how  to  make a CSV file:
 	firstly let's make a data frame:
 	\begin{lstlisting}[style=mystyle,caption={sample code for turning sensor data into a data},numbers=left,firstnumber=1]
-		import pandas as pd
+		import pandas as PD
 		import numpy as np
 		from datetime import datetime
-		cols_name=["Timestamp","Tempeature","Hummidty","Light_level","Motion_dected"]
+		cols_name=["Timestamp", "Temperature", "Hummidty", "Light_level", "Motion_dected"]
 
 		#assume that being recorded now
 		data=[]
@@ -217,7 +217,7 @@ Having established the essential hardware needed for this project. Next, conside
 		root.withdraw()
 		selected_dir = filedialog.askdirectory()
 
-		if not os.path.exists('selected_dir.json'):
+		if not os. path.exists('selected_dir.json'):
 			# Write the selected directory to a JSON file
 			with open('selected_dir.json', 'w') as f:
 				json.dump(selected_dir, f)
@@ -228,7 +228,7 @@ Having established the essential hardware needed for this project. Next, conside
 		root.quit()
 	\end{lstlisting}
 	Other useful Libraries allow you to  select all  .csv, png  called glob
-	for our TDD Section we will have  use the  following command:
+	for our TDD Section, we will have  use the  following command:
 	\label{TDD sample bash}
 	\begin{verbatim}
 		# !/bin/bash
@@ -239,7 +239,7 @@ Having established the essential hardware needed for this project. Next, conside
 
 		echo "Directory size: $size"
 	\end{verbatim}
-	This is a script that will look at a  director this can be home directory  this will cal the  space if 13K
+	This is a script that will look at a  director this can be a home directory that will call the  space 13K
 	the "| cut -f1" will only foucs on the  size string messeage and then print out the  size. this is  just  a sample  script 
 	\subsection{Test Driven development}
 	In this  project ill will be useing  Test Driven Development (TDD) is a software development approach where tests are written before the actual code
