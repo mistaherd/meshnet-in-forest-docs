@@ -23,15 +23,51 @@ This project has contributed significantly to the understanding to the process o
     \item \textbf{Addressing Challenges:} in a line of sight environment the sending and receiving of image is a hard task due to  how large the file is byte by byte
     \item \textbf{Performance Evaluation:} every method eventually worked via serial but image files had the  most problems
     \item \textbf{Practical Implications:} Schedule the sending  and  receiving  of data we can use this to extract the sensor data
-    \item \textbf{Familarilty  diffent tools:} This project forces the project implementation to use the terminal in linux ,bash , In Linux the concept of Dev files these are files where port can be defined for example port 80 on window would be 
+    \item \textbf{Familiarity  different tools:} This project forces the project implementation to use the terminal in linux ,bash , In Linux the concept of Dev files these are files where port can be defined for example port 80 on window would be \textcolor{yellow}{/dev/tty80},also the addition of tools like ssh which allowed remote connection to the Pi board,batch files were use to make these connections easier,A stronger familiarly with git was gained due to the keeping the project version controlled,A display of further knowledge of python was gain due to  project such as  using virtual environments and  how to properly structure OPP program , An understanding of  TDD for coding projects was gained where the implementor is forced to  use these methods
 \end{itemize}
 \section{Sources of Error}
 In this section the following will be discussed:
 \begin{enumerate}
     \item Radio module
+    \item MCP3008
     \item Time management
     \item Lack of knowledge of linux OS
+    \item Camera
+    \item Lack of hat for sensors
 \end{enumerate}
+\subsection{Radio Module}
+In this section will discuss the problems notice while working on this:
+\begin{enumerate}
+    \item When trying to look for radio modules the MM2 Series 900 MHz this part couldn't be ordered due to the vender only accepting business customers this cost 4 week of research to look for another module
+    \item Once the appropriate modules  after looking and noticing that the documentation is very poor dint help as well.
+    \item One avenue not expected of this was enabling the serial .So once we enable via sudo raspi-config ,and use the code from this \href{https://github.com/sbcshop/Lora-HAT-for-Raspberry-Pi}{link} (use lora_receiver and lora_transmitter) when we get the following error:
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Images/write_issue_linux_ser.png}
+        \caption{Issue when trying to write to serial }
+        \label{Issue when trying to write to serial}
+    \end{figure}
+    This issue caused a lot of time to fix with a simple chmod rw operation will fix the issue which should be  indicated in the documentation but there isn't.
+    \item After getting a working demo on all use cases  of the module the image file caused  the most issues this was due to the nature of how larger the data in a  image file further research should of been put into  how an image is  sent across a communication channel.
+    \item The lack of documentation meant time was spent looking at the components on board and  finding how it worked. 
+\end{enumerate}
+\subsection{MCP3008}
+This section the Errors that occurred with this modules are the following:
+\begin{enumerate}
+    \item When it came to ordering this part , There was issues with the venter so an other ADC had to be chosen this caused another few weeks to go by .
+\end{enumerate}
+\subsection{Lack of knowledge of linux os}
+This section will discuss the errors that occurred theses are the following:
+\begin{enumerate}
+    \item Since the lack of experience with linux  is evident  this lead to time spent learning about certain commands that will help with the project concepts such as  piping  commands nmap where  foreign before this project a lot of time was spent learning the best tools for this project
+\end{enumerate}
+\subsection{Camera}
+This Section will discuss the errors that occurred with this module these are the following:
+\begin{enumerate}
+    \item 
+\end{enumerate}
+\subsection{Lack of hat for sensors}
 \section{Future Work}
 
 While this project hasn't achieved its core objectives, several avenues for future research and development remain open:
