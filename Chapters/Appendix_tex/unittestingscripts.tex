@@ -5,7 +5,7 @@ This section is  for All  the TDD section of  this  report in this  section will
     \item AS312
     \item DFR0026
     \item Raspberry Pi VR 220 Camera
-    \item silicon power 32GB
+    \item Memory management
     \item SB Components LoRa HAT for Raspberry Pi
 \end{enumerate}
 \subsection{DHT22}
@@ -81,7 +81,7 @@ This section is  for All  the TDD section of  this  report in this  section will
 \end{lstlisting}
 \newpage
 \subsection{Radio Module}
-\begin{lstlisting}
+\begin{lstlisting}[style=mystyle,caption={unit test code for Radio module}]
     #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
     import unittest
     from Radiomodule import Transciever
@@ -116,4 +116,6 @@ This section is  for All  the TDD section of  this  report in this  section will
             Transciever_instance.Transcevie_png_file(True)
             received_bin=Transciever_instance.Transcevie_png_file(False)
             self.assertEqual(expted_out,received_bin)
+    if __name__ == '__main__':
+        unittest.main()
 \end{lstlisting}

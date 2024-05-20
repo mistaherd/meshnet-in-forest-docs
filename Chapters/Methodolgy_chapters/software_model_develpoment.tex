@@ -94,14 +94,16 @@ This uses the library from \href{https://github.com/mrmcwethy/Adafruit_CircuitPy
 From the repository DFRobot_ADS1115 the following is considered:
 \begin{enumerate}
 
-    \item Import the libraries: 
+\item Import the libraries: 
+
 \begin{lstlisting}[style=mystyle]
 #!/home/mistaherd/Documents/Github/meshnetwork_in_forest/env/lib/python3.11
 from DFRobot_ADS1115 import ADS1115
 import time
 \end{lstlisting}
     
-    \item Define our variables:
+\item Define our variables:
+     
 \begin{lstlisting}[style=mystyle]
 class DFR0026():
     def __init__(self):
@@ -116,14 +118,16 @@ class DFR0026():
         self.ads1115.set_gain(self.ADS1115_REG_CONFIG_PGA_6_144V)
         self.adc_channel = 0
 \end{lstlisting}
-    This configures all the pins and sets the associative gain.
     
-    \item Read the analog channel:
+This configures all the pins and sets the associative gain.
+    
+\item Read the analog channel:
 
 \begin{lstlisting}[style=mystyle]
     def read_voltage(self):
         return self.ads1115.read_voltage(self.adc_channel)
 \end{lstlisting}
+
 \end{enumerate}
     
 \newpage
@@ -272,6 +276,7 @@ here are the following approach for this module
     \end{lstlisting}
     
     Where "self.transcive_ser" set our serial port up which in linux is  '/dev/ttyS0' we can  control timeout to be  6 seconds but for this section well keep it at 1,"self.event" it seeting  a threing event to occur in the code "
+
     \item Setup a interrupt
     \begin{lstlisting}[style=mystyle]
         def serial_interrupt(self):

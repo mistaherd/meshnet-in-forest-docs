@@ -37,80 +37,82 @@ class test_project_code(unittest.TestCase):
         self.assertLessEqual(Read_DHT22,80.3)
     
 \end{lstlisting} 
-This code import unitest . the from protest is  a python files  we can  install  functions from other python files this can be usefull for testing purposes
-then we initalized a test class call Unittest.testcase our firstion fucntion of the class  we  check if the number of the output  is a float or not this is  for  testing  tempearture
-the next function we test for  is the range i look at the datasheet online   this code is  simpley testing the  limits of the  DHT22
-for  humidity  the Datasheet which ranges from 0 to 100 \%
+This code imports unittest . the from DHT22 is  a python files  we can  install  functions from other python files this can be useful for testing purposes
+then we initialized a test class call Unittest.test as our first function of the class  we  check if the number of the output  is a float or not this is  for  testing  temperature
+the next function we test for  is the range look at the data sheet online  for . This code is  simply testing the  limits of the  DHT22
+for  humidity  the Data sheet which ranges from 0 to 100 \%
 we want to test for the following:
 \begin{enumerate}
-    \item Test if the  output is  a float
-    \item Test if the  output ranges 0 to 100
+    \item Test if the recorded output is a tuple
+    \item Test if the temperature recorded  is a float or  integer
+    \item Test if the temperature recorded is  in the  range from -30 to 80.3
+    \item Test if the humidity recorded is  a  float or  integer
+    \item Test if the humidity recorded is  between 0 and 100
 \end{enumerate}
 this lead to the  following code 
 \begin{lstlisting}[style=mystyle,caption={sample test for DHT22}]
 import unittest
-from protest import Read_DHT22
+from DHT22 import DHT22
+dht22_instance=DHT22()
 class test_project_code(unittest.TestCase):
     hum,temp=Read_DHT22(2)
     def test_DHT22_output_type(self):
-        self.assertIsInstance(Read_DHT22,tuple)
-    #....
+        self.assertIsInstance(dht22_instance.Read_DHT22_data, tuple)
 
-    def test_DHT22_hum_output_type(self):
-        self.assertIsInstance(hum,float)
+    def test_DHT_22_temp_output_type(self):
+        self.assertIsInstance(temp, (int,float) )
 
-    def test_DHT22_hum_range(self):
-        self.assertGreaterEqual(hum,0.0)
-        self.assertLessEqual(hum,100.0)
+    def test_DHT22_temp_range(self):
+        self.assertGreaterEqual(temp,-30.3)
+        self.assertLessEqual(temp,80.3)
 \end{lstlisting}
-seen as we expect our sensor to  print out a humdity and temp values we  set the  output to  a tuple 
+seen as we expect our sensor to  print out a humidity and temp values we  set the  output to  a tuple 
 to test for this we use isInstacne which will test if its a tuple
 next we test for the  limits of the  humidity
-\subsubsection{DFR0026 \& MCP3008}
-According to the  datasheet \cite{ada} we must keep in mind  that this  componet is  connected to  an ADC 
+\subsubsection{DFR0026}
+According to the  data sheet \cite{ada} we must keep in mind  that this  component is  connected to  an ADC 
 this  will  give  me  the  following  test conditions:
 \begin{enumerate}
-    \item Test if  the output is a float
+    \item Test if  the output is a dictionary with elements of a string and intger in it.
 
-    \item Test  the  range of this  with the  upper limit being 5v 
-    \item test the  lover limit being 0 
+    \item Test  the  range of this  with the  upper limit being 5v the analogue voltage meaning:$\begin{aligned}\text{output}&= \frac{2^n\cdot \text{Analogue Input value}}{\text{Refeence voltage}}\\ &=\frac{2^{16}\cdot 5}{5}=65536\end{aligned}$
+    \item test the  lover limit being 3.3v as the analogue$\frac{2^{16}\codt 3.3}{5}=43253$
 \end{enumerate}
 \begin{lstlisting}[style=mystyle,caption={unit test for  DFR0026 and  MCP3008}]
     import unittest
-    from protest import Read_DHT22,Read_MCP3008
+    from DFR0026 import DFR0026
     class test_project_code(unittest.TestCase):
-    def test_DFR0026_MCP3008_out_type(self):
-        self.assertIsInstance(Read_MCP3008,float)
-    def test_DFR0026_MCP3008_out_range(self):
-        self.assertLessEqual(5.0000000)
-        self.assertGreaterEqual(0.0000000)
+    def test_DFR0026_out_type(self):
+        self.assertIsInstance(DFR0026().read_voltage(),dict[str,int])
+    def test_DFR0026_out_range(self):
+        self.assertLessEqual(DFR0026().read_voltage(),65536)
+        self.assertGreaterEqual(DFR0026().read_voltage(),43253)
 \end{lstlisting}
-this code is in the same in theres of limits
 \subsubsection{AS312}
 for  this section  we  want our  tests  to  be  the following:
 \begin{enumerate}
-    \item test for type is boolean 
+    \item test if output type is boolean 
 \end{enumerate}
 we can  now add to the snipppet :
 \begin{lstlisting}[style=mystyle,caption={unit test for AS312}]
+    import unittest
+    from AS312 import AS312
+    AS312_instance=AS312()
+    class test_project_code(unittest.TestCase):
     def test_AS312_out_type(self):
-        self.assertIsInstance(Read_AS312,bool)
+        self.assertIsInstance(AS312_instance.read_state,booll)
 \end{lstlisting}
-\textbf{Note : Don't forget to import read_as12 function from test file}
-seen as  thhis is a motion sensor  our ouout will be true or false
+seen as  this is a motion sensor  our output will be true or false.
+
 \subsubsection{Raspberry Pi VR 220 Camera}
 according to the  data sheet \cite{Camera} The  resolution to  it uses is  1080p50 which is 1920x1080p so our  tests will have to  in corporate  the  following:
 \begin{enumerate}
-    \item Test the  output shape  if open cv is  gonna  be  used 
-    \begin{enumerate}
-        \item Test  the  amount of   elements in the  3 dimensional   array 
-    \end{enumerate}
-    \item Test the  file  type  is png
+    \item Test  if the file can run
 \end{enumerate}
 This would lead to the following code snippet.
 \begin{lstlisting}[style=mystyle,caption={camera unit test}]
     def test_Raspberry_Pi_VR220_out_shape(self):
-        self.assertEqual(Read_Raspberry_PiVR220.shape,(1920,1080,3))
+        self.assertEqual(camera_obj.run.returncode, 0)
 \end{lstlisting}
 This function check the pixel count or resolution
 
@@ -118,15 +120,67 @@ This function check the pixel count or resolution
 in this section will discuss the following:
 \begin{enumerate}
     \item silicon power 32GB 
-\end{enumerate}
 For this use a  bash script(see this on page \pageref{TDD sample bash}) to test the size in a  certain range for the silicon  SD card
-    \item silicon power 32GB
+    \item which will be 0B to 32GB
+    
+    \begin{lstlisting}[style=mystyle]
+        def Test_memory_silicon_power_32GB(self):
+            self.assertLessEqual(memorytest_obj.check_memory,32e9)
+            self.assertGreaterEqual(memorytest_obj.check_memory,0)
+    \end{lstlisting}
 \end{enumerate} 
 \subsubsection{SB Components LoRa HAT}
- 
+for this section we want to test the following:
+\begin{enumerate}
+    \item Test the serial connection
+    \item Test the serial interrupt
+    \item Test the sending/receiving of a message like "hello world"
+    \item Test the sending/receiving of a text file 
+    \item Test the sending/receiving of a csv file
+    \item Test the sending/receiving of a image file
+\end{enumerate}
+This will give  the following code:
+\begin{lstlisting}[style=mystyle]
+    import unittest
+    from Radiomodule import Transciever
+    Transciever_instance=Transciever()
+    class test_project_code(unittest.TestCase):
+        def test_serial_connection(self):
+            self.assertIsInstance(Transciever_instance.transceive_ser,serial.Serial)
+        def test_serial_interrupt(self):
+            self.assertEqual(Transciever_instance.event.is_set(),(False,True))
+        def test_transceiver_test_message(self):
+            message=Transciever_instance.message
+            Transciever_instance.transceive_test_message(True)
+            received_message=Transciever_instance.transceive_test_message(False)
+            self.assertEqual(message,received_message)
+        def test_transceiver_test_txt_file(self):
+            txt_fname=Transciever_instance.txt_fname
+            with open(txt_file,'r') as f:
+                expected_txt=f.read()
+            Transciever_instance.transceive_test_txt_file(True)
+            received_txt_file=Transciever_instance.transceive_test_txt_file(False)
+            self.assertEqual(expected_txt,received_txt_file)
+        def test_transciver_test_csv(self):
+            csv_fname=Transciever_instance.csv_fname
+            expected_df=pd.read_csv(csv_fname)
+            Transciever_instance.transceive_test_csv(True)
+            reviced_df=Transciever_instance.transceive_test_csv(False)
+            self.assertEqual(expected_df,reviced_df)
+        def test_trancsive_img_file(self):
+            img_fname=Transciever_instance.png_fname
+            with open(img_fname,'rb')as f:
+                expted_out=f.read()
+            Transciever_instance.Transcevie_png_file(True)
+            received_bin=Transciever_instance.Transcevie_png_file(False)
+            self.assertEqual(expted_out,received_bin)
+    if __name__ == '__main__':
+        unittest.main()
+\end{lstlisting}
 \subsubsection{Unit test iterations}
 the first iterations as see here has the following problems for the sensors:
 \begin{enumerate}
     \item Time stamp for DHT22 wasn't in a string format 
-    \item Forget to look for but a float and int  in the DHT22.rgiead function
+    \item Forget to look for but a float and int  in the DHT22.read function
+    \item 
 \end{enumerate}
