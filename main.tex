@@ -1,6 +1,5 @@
 \documentclass[11pt]{report}
 \usepackage[a4paper,bottom=3.0cm]{geometry} % Adjust margins as needed
-
 \usepackage{subcaption}
 \usepackage[table,xcdraw]{xcolor}
 % Packages for document formatting
@@ -43,24 +42,26 @@
 }
 
 \lstdefinestyle{mystyle}{
-  language=Python,        % Specify the language (e.g., Python)
-  keywordstyle=\color{blue},   % Color for keywords
-  commentstyle=\color{green},  % Color for comments
-  basicstyle=\ttfamily,   % Use a monospace font
-  numbers=left,           % Add line numbers to the left
-  numberstyle=\tiny\color{black}, % Style for line numbers
-  breaklines=true,        % Allow line breaks
-  frame=single,           % Add a frame around the code
-  tabsize=4               % Set the tab size
-keywordstyle=\color{BurntOrange}\bfseries,
-}
+    language=Python,        % Specify the language (e.g., Python)
+    keywordstyle=\color{blue},   % Color for keywords
+    commentstyle=\color{green},  % Color for comments
+    basicstyle=\ttfamily,    % Use a monospace font
+    numbers=left,            % Add line numbers to the left
+    numberstyle=\tiny\color{black}, % Style for line numbers
+    breaklines=true,         % Allow line breaks
+    frame=single,            % Add a frame around the code
+    tabsize=4               % Set the tab size
+} 
+\usepackage{etoolbox}
+
+
 % Define page margins
 \geometry{margin=1in}
 
 \usepackage{natbib}
 % Title and author information
 % C:\Users\User\Documents\latexfilesFYP\Images
-
+\AfterEndEnvironment{lstlisting}{\leavevmode}
 
 \begin{document}
 \input{Chapters/cover.tex}
@@ -86,18 +87,18 @@ keywordstyle=\color{BurntOrange}\bfseries,
 \input{Chapters/Literature_Review.tex} %done
 
 \chapter{Methodology}
-\input{Chapters/Methodology.tex} %done  Include your methodology content from a separate file
+\input{Chapters/Methodology.tex} %impove unit test  Include your methodology content from a separate file
 
 \chapter{Results}
 \input{Chapters/results.tex} % Include your results content from a separate file
 
 
 % \chapter{Discussion}
-% \input{chapters/discussion.tex} % Include your discussion content from a separate file
+% \input{Chapters/discussion.tex} % Include your discussion content from a separate file
 
 \chapter{Conclusion \& Future Work }
 
-\input{chapters/conclusion.tex} % Include your conclusion content from a separate file
+\input{Chapters/conclusion.tex} % Include your conclusion content from a separate file
 
 \newpage
 \addcontentsline{toc}{chapter}{Bibliography}
@@ -118,4 +119,5 @@ keywordstyle=\color{BurntOrange}\bfseries,
 \newpage
 \addcontentsline{toc}{chapter}{Index}
 \printindex
+
 \end{document}

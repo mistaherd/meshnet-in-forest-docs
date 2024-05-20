@@ -61,7 +61,7 @@ Having established the  essential hardware needed for this project.Next consider
 	
 	\newpage
 	this will then lead to  the  following code:
-	\begin{lstlisting}[style=mystyle,caption={Example code for DHT2}]
+	\begin{lstlisting}[style=mystyle,caption={Example code for DHT2},numbers=left,firstnumber=1]
 		#Libraries
 		import Adafruit_DHT as dht
 		from time import sleep
@@ -91,7 +91,7 @@ Having established the  essential hardware needed for this project.Next consider
 	which will  intall a gpio python module
 	\newpage
 	Then type this into an IDE of your  choosing
-	\begin{lstlisting}[style=mystyle,caption={Example code for AS312}]
+	\begin{lstlisting}[style=mystyle,caption={Example code for AS312},numbers=left,firstnumber=1]
 		import RPi.GPIO as GPIO
 		import time
 
@@ -129,7 +129,7 @@ Having established the  essential hardware needed for this project.Next consider
 	\end{verbatim}
 	
 	\label{adc code}
-	\begin{lstlisting}[style=mystyle,caption={ADC code}]
+	\begin{lstlisting}[style=mystyle,caption={ADC code},numbers=left,firstnumber=1]
 		from gpiozero import MCP3008
 		from time import sleep
 		DFR0026 = MCP3008(channel=0, device=0,port=9)
@@ -141,7 +141,7 @@ Having established the  essential hardware needed for this project.Next consider
 	\subsection{Raspberry Pi VR 220 Camera}
 	to get started with this simply look at the following \href{https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4}{link}
 	here is an example of the code of this module :
-	\begin{lstlisting}[style=mystyle,caption={example code for camera}]
+	\begin{lstlisting}[style=mystyle,caption={example code for camera},numbers=left,firstnumber=1]
 		from picamera import PiCamera
 		from time import sleep
 
@@ -186,7 +186,7 @@ Having established the  essential hardware needed for this project.Next consider
 	for file sorting, I will use the Python Library glob  which I can use  to look for  files 
 	the following is an example of how  to  make a CSV file:
 	firstly let's make a data frame:
-	\begin{lstlisting}[style=mystyle,caption={sample code for turning sensor data into a data}]
+	\begin{lstlisting}[style=mystyle,caption={sample code for turning sensor data into a data},numbers=left,firstnumber=1]
 		import pandas as pd
 		import numpy as np
 		from datetime import datetime
@@ -207,7 +207,7 @@ Having established the  essential hardware needed for this project.Next consider
 	Next, use the.To\_csv method from  pandas
 	another Libraries that could  be useful is the Tkinter
 	here is a  sample of how to   store where the  file is  gonna be:
-	\begin{lstlisting}[style=mystyle,caption={example code for storing directory}]
+	\begin{lstlisting}[style=mystyle,caption={example code for storing directory},numbers=left,firstnumber=1]
 		import tkinter as tk
 		from tkinter import filedialog
 		import json
@@ -239,19 +239,17 @@ Having established the  essential hardware needed for this project.Next consider
 
 		echo "Directory size: $size"
 	\end{verbatim}
-	This is a script that will look at a  director this can be home dirctory  this will cal the  space if 13K
+	This is a script that will look at a  director this can be home directory  this will cal the  space if 13K
 	the "| cut -f1" will only foucs on the  size string messeage and then print out the  size. this is  just  a sample  script 
-	\subsection{Test Driven devolmponet}
+	\subsection{Test Driven development}
 	In this  project ill will be useing  Test Driven Development (TDD) is a software development approach where tests are written before the actual code
-	the following is the advantages and dissadvantges of TDD:
+	the following is the advantages of TDD:
 	\begin{enumerate}
 		\item Advantages
 		\begin{enumerate}
-			\item 
-		\end{enumerate}
-		\item Dissadvantages
-		\begin{enumerate}
-			\item 
+			\item TDD forces you to consider potential failure points and edge cases upfront, leading to earlier detection and resolution of bugs.
+			\item TDD encourages you to think about the desired behaviour and interfaces of your code
+			\item TDD provides immediate feedback on whether your code works as intended,
 		\end{enumerate}
 	\end{enumerate}
 
