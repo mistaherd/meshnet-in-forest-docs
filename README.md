@@ -1,7 +1,9 @@
 Mesh network in Forest - Documentation
 
 Welcome to the official documentation for the Mesh network in Forest project. This repository provides comprehensive guides, tutorials, and resources for building, deploying, and maintaining a resilient, off-grid mesh network in challenging forested environments.
+
 🌳 About The Project
+
 
 Forested areas present unique challenges for communication due to signal attenuation from foliage, varied terrain, and lack of power infrastructure. This project aims to provide a practical, open-source solution for creating reliable communication networks for various applications, such as:
 
